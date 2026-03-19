@@ -3,216 +3,22 @@
     "mon": {
       "id": "mon",
       "title": "Monday",
-      "items": [
-        {
-          "id": "d1-a6i3c4wut",
-          "name": "Herb‑Crusted Pork Tenderloin",
-          "category": "Meat",
-          "prepTime": 45,
-          "macros": {
-            "calories": 340,
-            "protein": 35,
-            "carbs": 5,
-            "fat": 20
-          },
-          "ingredients": [
-            "1 kg - Pork Tenderloin",
-            "30 g - Olive Oil",
-            "15 g - Fresh Herbs",
-            "5 g - Salt",
-            "3 g - Black Pepper"
-          ]
-        },
-        {
-          "id": "d15-dmmb8p9t4",
-          "name": "Beef Stir‑Fry with Broccoli",
-          "category": "Meat",
-          "prepTime": 25,
-          "macros": {
-            "calories": 410,
-            "protein": 30,
-            "carbs": 12,
-            "fat": 20
-          },
-          "ingredients": [
-            "200 g - Beef Strips",
-            "150 g - Broccoli",
-            "20 g - Soy Sauce",
-            "10 g - Sesame Oil",
-            "5 g - Ginger"
-          ]
-        },
-        {
-          "id": "d45-5cvy791xu",
-          "name": "Grilled Lamb Chops",
-          "category": "Meat",
-          "prepTime": 25,
-          "macros": {
-            "calories": 460,
-            "protein": 34,
-            "carbs": 0,
-            "fat": 34
-          },
-          "ingredients": [
-            "200 g - Lamb Chops",
-            "20 g - Olive Oil",
-            "10 g - Rosemary",
-            "5 g - Salt",
-            "3 g - Black Pepper"
-          ]
-        }
-      ]
+      "items": []
     },
     "tue": {
       "id": "tue",
       "title": "Tuesday",
-      "items": [
-        {
-          "id": "d1-a32ce1d33",
-          "name": "Herb‑Crusted Pork Tenderloin",
-          "category": "Meat",
-          "prepTime": 45,
-          "macros": {
-            "calories": 340,
-            "protein": 35,
-            "carbs": 5,
-            "fat": 20
-          },
-          "ingredients": [
-            "1 kg - Pork Tenderloin",
-            "30 g - Olive Oil",
-            "15 g - Fresh Herbs",
-            "5 g - Salt",
-            "3 g - Black Pepper"
-          ]
-        },
-        {
-          "id": "d50-9ca36afsi",
-          "name": "Cedar‑Wood Chicken",
-          "category": "Meat",
-          "prepTime": 45,
-          "macros": {
-            "calories": 410,
-            "protein": 30,
-            "carbs": 2,
-            "fat": 23
-          },
-          "ingredients": [
-            "250 g - Chicken Breast",
-            "20 g - Cedar Wood Chips",
-            "15 g - Honey",
-            "5 g - Salt",
-            "3 g - Pepper"
-          ]
-        },
-        {
-          "id": "d52-70spz7a3q",
-          "name": "Pork Ramen with Soft‑Boiled Egg",
-          "category": "Meat",
-          "prepTime": 75,
-          "macros": {
-            "calories": 780,
-            "protein": 38,
-            "carbs": 65,
-            "fat": 36
-          },
-          "ingredients": [
-            "250 g - Pork Belly",
-            "200 g - Ramen Noodles",
-            "1 L - Pork Broth",
-            "30 g - Soy Sauce",
-            "20 g - Mirin"
-          ]
-        }
-      ]
+      "items": []
     },
     "wed": {
       "id": "wed",
       "title": "Wednesday",
-      "items": [
-        {
-          "id": "d034-2onhuv58u",
-          "name": "Chocolate Brownie",
-          "category": "Dessert",
-          "prepTime": 30,
-          "macros": {
-            "calories": 350,
-            "protein": 6,
-            "carbs": 44,
-            "fat": 18
-          },
-          "ingredients": [
-            "200 g - Dark Chocolate",
-            "150 g - Butter",
-            "100 g - Sugar",
-            "30 g - Flour",
-            "5 g - Baking Powder"
-          ]
-        },
-        {
-          "id": "d097-7k029s4zb",
-          "name": "Oatmeal Cookies",
-          "category": "Dessert",
-          "prepTime": 20,
-          "macros": {
-            "calories": 280,
-            "protein": 4,
-            "carbs": 48,
-            "fat": 8
-          },
-          "ingredients": [
-            "200 g - Oats",
-            "150 g - Chocolate Chips",
-            "100 g - Sugar",
-            "50 g - Butter",
-            "5 g - Baking Powder"
-          ]
-        }
-      ]
+      "items": []
     },
     "thu": {
       "id": "thu",
       "title": "Thursday",
-      "items": [
-        {
-          "id": "d003-xrf99muzd",
-          "name": "Chicken Quesadilla",
-          "category": "Meat",
-          "prepTime": 15,
-          "macros": {
-            "calories": 320,
-            "protein": 16,
-            "carbs": 36,
-            "fat": 18
-          },
-          "ingredients": [
-            "200 g - Chicken Breast",
-            "2 - Tortillas",
-            "50 g - Cheddar",
-            "30 g - Salsa",
-            "30 g - Guacamole"
-          ]
-        },
-        {
-          "id": "d097-oib804t2a",
-          "name": "Oatmeal Cookies",
-          "category": "Dessert",
-          "prepTime": 20,
-          "macros": {
-            "calories": 280,
-            "protein": 4,
-            "carbs": 48,
-            "fat": 8
-          },
-          "ingredients": [
-            "200 g - Oats",
-            "150 g - Chocolate Chips",
-            "100 g - Sugar",
-            "50 g - Butter",
-            "5 g - Baking Powder"
-          ]
-        }
-      ]
+      "items": []
     },
     "fri": {
       "id": "fri",

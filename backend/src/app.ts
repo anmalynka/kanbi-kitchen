@@ -9,8 +9,17 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const recipesPath = path.join(__dirname, '../../recipes.json');
-const planPath = path.join(__dirname, '../../plan.json');
+
+// Resolve paths to handle both local dev and Docker production
+// In Docker, files are in the same dir as package.json
+// In local dev, they are in the root
+const recipesPath = fs.existsSync(path.join(__dirname, '../../recipes.json')) 
+    ? path.join(__dirname, '../../recipes.json')
+    : path.join(process.cwd(), './recipes.json');
+
+const planPath = fs.existsSync(path.join(__dirname, '../../plan.json'))
+    ? path.join(__dirname, '../../plan.json')
+    : path.join(process.cwd(), './plan.json');
 
 app.use(cors());
 app.use(express.json());

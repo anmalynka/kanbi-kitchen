@@ -3,17 +3,21 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy ONLY backend's package files
+COPY backend/package*.json ./
 
 # Install ALL dependencies (including dev)
 RUN npm install
 
-# Copy source code and tsconfig
-COPY . .
+# Copy ONLY backend's source code and tsconfig
+COPY backend/ .
+
+# Copy recipes.json and plan.json from the root into the root of /app (they are needed by the app)
+COPY recipes.json plan.json /app/
 
 # Run build and list contents of /app to debug
-RUN npm run build && ls -la /app
+# We expect /app/dist to be created
+RUN npm run build && ls -la /app/dist
 
 # Production stage
 FROM node:18-alpine
@@ -21,14 +25,16 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY backend/package*.json ./
 
 # Install only production dependencies
 RUN npm install --omit=dev
 
 # Copy only the compiled code from the builder stage
-# Based on tsconfig.json, outDir is ./dist
 COPY --from=builder /app/dist ./dist
+
+# Copy the data files into the production image as well
+COPY recipes.json plan.json ./
 
 EXPOSE 3000
 
