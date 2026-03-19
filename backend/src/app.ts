@@ -102,6 +102,17 @@ app.post('/api/ai/process', async (req, res) => {
     }
 });
 
+// Serve frontend static files from 'public' or 'dist'
+const frontendPath = path.join(__dirname, '../public');
+if (fs.existsSync(frontendPath)) {
+    app.use(express.static(frontendPath));
+    app.get('*', (req, res) => {
+        if (!req.path.startsWith('/api')) {
+            res.sendFile(path.join(frontendPath, 'index.html'));
+        }
+    });
+}
+
 app.listen(port, () => {
     console.log(`Backend running at http://localhost:${port}`);
 });

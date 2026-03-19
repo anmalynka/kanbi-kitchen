@@ -1,41 +1,35 @@
-# Build stage
-FROM node:18-alpine AS builder
-
-WORKDIR /app
-
-# Copy package files from backend directory
-COPY backend/package*.json ./
-
-# Install ALL dependencies (including dev)
+# Frontend Build Stage
+FROM node:18-alpine AS frontend-builder
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
 RUN npm install
+COPY frontend/ .
+RUN npm run build
 
-# Copy source code and tsconfig from backend directory
+# Backend Build Stage
+FROM node:18-alpine AS backend-builder
+WORKDIR /app/backend
+COPY backend/package*.json ./
+RUN npm install
 COPY backend/ .
+RUN npm run build
 
-# Copy recipes.json and plan.json from root directory
-COPY recipes.json* plan.json* ./
-
-# Run build using the script in package.json
-RUN npm run build && ls -la /app/dist
-
-# Production stage
+# Production Stage
 FROM node:18-alpine
-
 WORKDIR /app
 
-# Copy package files from backend
+# Copy backend dependencies
 COPY backend/package*.json ./
-
-# Install only production dependencies
 RUN npm install --omit=dev
 
-# Copy only the compiled code from the builder stage
-COPY --from=builder /app/dist ./dist
+# Copy compiled backend
+COPY --from=backend-builder /app/backend/dist ./dist
 
-# Copy recipes.json and plan.json if they exist
-COPY --from=builder /app/recipes.json* /app/plan.json* ./
+# Copy compiled frontend to 'public' folder for backend to serve
+COPY --from=frontend-builder /app/frontend/dist ./public
+
+# Copy data files
+COPY recipes.json* plan.json* ./
 
 EXPOSE 3000
-
-# Match package.json: "start": "node dist/app.js"
 CMD ["node", "dist/app.js"]
