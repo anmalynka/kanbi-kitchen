@@ -211,8 +211,21 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
                 </h3>
                 <div className="space-y-3">
                   {data.columns[day].items.map((item: Recipe) => (
-                    <div key={item.id} className="text-[13px] font-bold text-slate-800 bg-slate-50 p-4 rounded-xl border border-slate-200 leading-tight">
-                      {item.name}
+                    <div key={item.id} className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col gap-2">
+                      <div className="text-[13px] font-black text-slate-900 leading-tight border-b border-slate-200 pb-1.5">
+                        {item.name}
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[9px] font-black text-primary uppercase tracking-widest">Ingredients</span>
+                        <ul className="space-y-0.5">
+                          {item.ingredients?.map((ing, idx) => (
+                            <li key={idx} className="text-[10px] font-medium text-slate-600 flex items-start gap-1.5">
+                              <div className="size-1 rounded-full bg-slate-300 mt-1 shrink-0" />
+                              {ing}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   ))}
                   {data.columns[day].items.length === 0 && <span className="text-xs text-slate-300 italic">No meals scheduled</span>}
@@ -226,13 +239,13 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
              Ingredients
            </h2>
            <ul className="space-y-3">
-             {getShoppingList().map((ing, idx) => (
+             {getSmartShoppingList().map((ing, idx) => (
                <li key={idx} className="text-[13px] font-medium text-slate-600 flex items-start gap-3">
                  <div className="size-4 border-2 border-slate-300 rounded-md mt-0.5 flex-shrink-0"></div>
                  {ing}
                </li>
              ))}
-             {getShoppingList().length === 0 && <li className="text-sm text-slate-400 italic">Plan meals to see ingredients</li>}
+             {getSmartShoppingList().length === 0 && <li className="text-sm text-slate-400 italic">Plan meals to see ingredients</li>}
            </ul>
         </div>
       </div>

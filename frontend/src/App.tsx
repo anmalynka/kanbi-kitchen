@@ -14,6 +14,7 @@ interface DataState {
 
 function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [loading, setLoading] = useState(true);
 
   const [data, setData] = useState<DataState>({
     columns: {
@@ -28,6 +29,10 @@ function App() {
   });
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
     const fetchData = async () => {
       try {
         const [recipesRes, planRes] = await Promise.all([
@@ -47,6 +52,8 @@ function App() {
       }
     };
     fetchData();
+
+    return () => clearTimeout(timer);
   }, []);
 
   const onDragEnd = async (result: DropResult) => {
@@ -156,6 +163,19 @@ function App() {
     setCurrentDate(prev);
   };
 
+  if (loading) {
+    return (
+      <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background-light dark:bg-background-dark font-display">
+        <div className="w-[300px] h-[300px] mb-8 overflow-hidden rounded-3xl shadow-2xl animate-pulse">
+          <img src="/kanbi.png" alt="Kanbi Kitchen Logo" className="w-full h-full object-cover" />
+        </div>
+        <h1 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter animate-bounce">
+          Kanbi Kitchen Loading...
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="layout-container flex h-screen grow flex-col overflow-hidden bg-background-light dark:bg-background-dark font-display">
@@ -187,7 +207,6 @@ function App() {
 
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">
           <div className="flex gap-[24px]">
-            <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">Active Plan: Healthy Autumn</span>
             <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">Calories Target: 2,200/day</span>
           </div>
           <div className="flex gap-[16px] items-center">
