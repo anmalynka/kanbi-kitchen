@@ -3,8 +3,7 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# In this setup, we assume the context is the backend/ directory (standard for rootDir: backend)
-# Copy package files from the current directory
+# Copy package files
 COPY package*.json ./
 
 # Install ALL dependencies (including dev)
@@ -13,9 +12,8 @@ RUN npm install
 # Copy source code and tsconfig
 COPY . .
 
-# Run build and list contents of /app to debug
-# We expect /app/dist to be created
-RUN npm run build && ls -la /app/dist
+# Run build using the locally installed tsc
+RUN ./node_modules/.bin/tsc && ls -la dist
 
 # Production stage
 FROM node:18-alpine
@@ -31,10 +29,9 @@ RUN npm install --omit=dev
 # Copy only the compiled code from the builder stage
 COPY --from=builder /app/dist ./dist
 
-# Note: If recipes.json and plan.json are in the root of the project, 
-# and rootDir is "backend", they might be missing here. 
-# We'll expect them to be provided via environment or volume in production, 
-# or we can try to copy them if they are in the context.
+# Copy recipes.json and plan.json if they exist in the current context
+# This assumes context is "backend" or files were copied into it
+COPY recipes.json* plan.json* ./
 
 EXPOSE 3000
 
