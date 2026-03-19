@@ -21,10 +21,12 @@ services:
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: "dist"
-    envVars:
-      - key: VITE_API_URL
-        value: https://kanbi-kitchen-api.onrender.com # Update this after first deployment
     routes:
+      # Redirect /api/* to the backend service
+      - type: rewrite
+        source: "/api/*"
+        destination: "https://kanbi-kitchen-api.onrender.com/api/*"
+      # Standard SPA rewrite for other routes
       - type: rewrite
         source: "/*"
         destination: "/index.html"
