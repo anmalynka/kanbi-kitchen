@@ -156,25 +156,6 @@
       ]
     },
     {
-      "id": "d010",
-      "name": "Grilled Shrimp",
-      "category": "Seafood",
-      "prepTime": 15,
-      "macros": {
-        "calories": 200,
-        "protein": 15,
-        "carbs": 0,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fg - Shrimp",
-        "30\u202fml - Olive Oil",
-        "15\u202fml - Lemon Juice",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
-      ]
-    },
-    {
       "id": "d011",
       "name": "Sausage Soup",
       "category": "Side-dish",
@@ -330,7 +311,7 @@
     {
       "id": "d019",
       "name": "Taco Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 260,
@@ -344,44 +325,6 @@
         "50\u202fg - Tomato",
         "30\u202fg - Cheese",
         "15\u202fg - Salsa"
-      ]
-    },
-    {
-      "id": "d020",
-      "name": "Fish Tacos",
-      "category": "Seafood",
-      "prepTime": 25,
-      "macros": {
-        "calories": 310,
-        "protein": 20,
-        "carbs": 22,
-        "fat": 14
-      },
-      "ingredients": [
-        "200\u202fg - White Fish",
-        "2 - Corn Tortillas",
-        "50\u202fg - Cabbage",
-        "30\u202fg - Avocado",
-        "10\u202fg - Lime"
-      ]
-    },
-    {
-      "id": "d021",
-      "name": "Mushroom Risotto",
-      "category": "Side-dish",
-      "prepTime": 40,
-      "macros": {
-        "calories": 320,
-        "protein": 10,
-        "carbs": 55,
-        "fat": 12
-      },
-      "ingredients": [
-        "200\u202fg - Arborio Rice",
-        "150\u202fg - Mushrooms",
-        "200\u202fml - Vegetable Broth",
-        "50\u202fg - Parmesan",
-        "10\u202fg - Butter"
       ]
     },
     {
@@ -444,7 +387,7 @@
     {
       "id": "d025",
       "name": "Quinoa Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 260,
@@ -707,25 +650,6 @@
       ]
     },
     {
-      "id": "d039",
-      "name": "Vegetable Stir\u2011Fry Noodles",
-      "category": "Side-dish",
-      "prepTime": 20,
-      "macros": {
-        "calories": 240,
-        "protein": 8,
-        "carbs": 36,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fg - Noodles",
-        "150\u202fg - Mixed Veggies",
-        "15\u202fml - Soy Sauce",
-        "5\u202fg - Garlic",
-        "5\u202fg - Ginger"
-      ]
-    },
-    {
       "id": "d040",
       "name": "Miso Soup",
       "category": "Side-dish",
@@ -747,7 +671,7 @@
     {
       "id": "d041",
       "name": "Greek Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 190,
@@ -840,7 +764,7 @@
     {
       "id": "d046",
       "name": "Pesto Caprese Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 190,
@@ -897,7 +821,7 @@
     {
       "id": "d049",
       "name": "Fish Tacos",
-      "category": "Seafood",
+      "category": "Fish",
       "prepTime": 25,
       "macros": {
         "calories": 310,
@@ -1085,7 +1009,7 @@
     {
       "id": "d059",
       "name": "Couscous Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 260,
@@ -1198,7 +1122,7 @@
     {
       "id": "d065",
       "name": "Spinach Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 140,
@@ -1212,25 +1136,6 @@
         "10\u202fg - Feta",
         "5\u202fg - Olive Oil",
         "5\u202fg - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d066",
-      "name": "Chicken Caesar Wrap",
-      "category": "Side-dish",
-      "prepTime": 10,
-      "macros": {
-        "calories": 270,
-        "protein": 18,
-        "carbs": 22,
-        "fat": 10
-      },
-      "ingredients": [
-        "200\u202fg - Chicken",
-        "2 - Wrap",
-        "20\u202fg - Caesar Dressing",
-        "10\u202fg - Parmesan",
-        "5\u202fg - Croutons"
       ]
     },
     {
@@ -1293,7 +1198,7 @@
     {
       "id": "d070",
       "name": "Tuna Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 190,
@@ -1384,153 +1289,6 @@
       ]
     },
     {
-      "id": "d075",
-      "name": "Green Tea Latte",
-      "category": "Drink",
-      "prepTime": 10,
-      "macros": {
-        "calories": 120,
-        "protein": 2,
-        "carbs": 20,
-        "fat": 2
-      },
-      "ingredients": [
-        "200\u202fml - Green Tea",
-        "100\u202fml - Milk",
-        "10\u202fg - Sugar",
-        "5\u202fg - Honey"
-      ]
-    },
-    {
-      "id": "d076",
-      "name": "Hot Chocolate",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 140,
-        "protein": 3,
-        "carbs": 24,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Cocoa Powder",
-        "30\u202fg - Sugar",
-        "10\u202fg - Vanilla"
-      ]
-    },
-    {
-      "id": "d077",
-      "name": "Caf\u00e9 Latte",
-      "category": "Drink",
-      "prepTime": 10,
-      "macros": {
-        "calories": 140,
-        "protein": 4,
-        "carbs": 20,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Espresso",
-        "200\u202fml - Milk",
-        "10\u202fg - Sugar",
-        "5\u202fg - Vanilla"
-      ]
-    },
-    {
-      "id": "d078",
-      "name": "Coffee",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Coffee Beans"
-      ]
-    },
-    {
-      "id": "d079",
-      "name": "Espresso",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Espresso Beans"
-      ]
-    },
-    {
-      "id": "d080",
-      "name": "Tea",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Tea Leaves"
-      ]
-    },
-    {
-      "id": "d081",
-      "name": "Water",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 0,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water"
-      ]
-    },
-    {
-      "id": "d082",
-      "name": "Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d083",
-      "name": "Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 1,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
       "id": "d084",
       "name": "Lemonade",
       "category": "Drink",
@@ -1543,186 +1301,6 @@
       },
       "ingredients": [
         "200\u202fml - Lemonade"
-      ]
-    },
-    {
-      "id": "d085",
-      "name": "Coffee with Milk",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 140,
-        "protein": 4,
-        "carbs": 12,
-        "fat": 8
-      },
-      "ingredients": [
-        "200\u202fml - Coffee",
-        "200\u202fml - Milk"
-      ]
-    },
-    {
-      "id": "d086",
-      "name": "Chocolate Milk",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 210,
-        "protein": 6,
-        "carbs": 36,
-        "fat": 8
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Cocoa Powder",
-        "20\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d087",
-      "name": "Fruit Punch",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 140,
-        "protein": 1,
-        "carbs": 32,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Mixed Fruit Juice"
-      ]
-    },
-    {
-      "id": "d088",
-      "name": "Sparkling Water",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 0,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Sparkling Water"
-      ]
-    },
-    {
-      "id": "d089",
-      "name": "Energy Drink",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 26,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Energy Drink"
-      ]
-    },
-    {
-      "id": "d090",
-      "name": "Coconut Water",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 45,
-        "protein": 0,
-        "carbs": 10,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Coconut Water"
-      ]
-    },
-    {
-      "id": "d091",
-      "name": "Protein Shake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 250,
-        "protein": 30,
-        "carbs": 12,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "30\u202fg - Protein Powder",
-        "10\u202fg - Peanut Butter",
-        "5\u202fml - Honey"
-      ]
-    },
-    {
-      "id": "d092",
-      "name": "Chocolate Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 320,
-        "protein": 8,
-        "carbs": 48,
-        "fat": 8
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Chocolate Syrup",
-        "20\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d093",
-      "name": "Vanilla Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 210,
-        "protein": 4,
-        "carbs": 32,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Vanilla Syrup",
-        "10\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d094",
-      "name": "Strawberry Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 220,
-        "protein": 4,
-        "carbs": 34,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Strawberries",
-        "10\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d095",
-      "name": "Peanut Butter Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 250,
-        "protein": 6,
-        "carbs": 28,
-        "fat": 12
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Peanut Butter",
-        "20\u202fg - Sugar",
-        "10\u202fg - Vanilla"
       ]
     },
     {
@@ -1934,1451 +1512,9 @@
       ]
     },
     {
-      "id": "d107",
-      "name": "Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 210,
-        "protein": 3,
-        "carbs": 34,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Ice Cream",
-        "20\u202fg - Sugar",
-        "10\u202fg - Vanilla"
-      ]
-    },
-    {
-      "id": "d108",
-      "name": "Coffee",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Coffee Beans"
-      ]
-    },
-    {
-      "id": "d109",
-      "name": "Espresso",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Espresso Beans"
-      ]
-    },
-    {
-      "id": "d110",
-      "name": "Tea",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 5,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Water",
-        "30\u202fg - Tea Leaves"
-      ]
-    },
-    {
-      "id": "d111",
-      "name": "Soda",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 32,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Soda"
-      ]
-    },
-    {
-      "id": "d112",
-      "name": "Fruit Punch",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 140,
-        "protein": 0,
-        "carbs": 32,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Fruit Juice"
-      ]
-    },
-    {
-      "id": "d113",
-      "name": "Apple Juice",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d114",
-      "name": "Orange Juice",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 100,
-        "protein": 1,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d115",
-      "name": "Lemonade",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 90,
-        "protein": 0,
-        "carbs": 22,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemonade"
-      ]
-    },
-    {
-      "id": "d116",
-      "name": "Coffee with Milk",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 140,
-        "protein": 2,
-        "carbs": 20,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fml - Coffee",
-        "200\u202fml - Milk"
-      ]
-    },
-    {
-      "id": "d117",
-      "name": "Hot Chocolate",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 2,
-        "carbs": 20,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Cocoa Powder",
-        "20\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d118",
-      "name": "Margarita",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 12,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fml - Tequila",
-        "50\u202fml - Triple Sec",
-        "50\u202fml - Lime Juice",
-        "5\u202fg - Salt"
-      ]
-    },
-    {
-      "id": "d119",
-      "name": "Mojito",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 12,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Rum",
-        "50\u202fml - Lime Juice",
-        "10\u202fg - Sugar",
-        "10\u202fg - Mint"
-      ]
-    },
-    {
-      "id": "d120",
-      "name": "Martini",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 0,
-        "fat": 12
-      },
-      "ingredients": [
-        "200\u202fml - Gin",
-        "50\u202fml - Vermouth",
-        "5\u202fg - Olive"
-      ]
-    },
-    {
-      "id": "d121",
-      "name": "Sangria",
-      "category": "Drink",
-      "prepTime": 10,
-      "macros": {
-        "calories": 140,
-        "protein": 0,
-        "carbs": 20,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Red Wine",
-        "50\u202fml - Orange Juice",
-        "50\u202fg - Fruit",
-        "10\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d122",
-      "name": "Coca\u2011Cola",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 140,
-        "protein": 0,
-        "carbs": 36,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Coke"
-      ]
-    },
-    {
-      "id": "d123",
-      "name": "Sprite",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 32,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Sprite"
-      ]
-    },
-    {
-      "id": "d124",
-      "name": "Fanta",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 32,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Fanta"
-      ]
-    },
-    {
-      "id": "d125",
-      "name": "Orange Juice",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 100,
-        "protein": 1,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d126",
-      "name": "Apple Juice",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d127",
-      "name": "Mango Lassi",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 180,
-        "protein": 4,
-        "carbs": 30,
-        "fat": 1
-      },
-      "ingredients": [
-        "200\u202fg - Mango Pulp",
-        "150\u202fml - Yogurt",
-        "20\u202fml - Milk",
-        "10\u202fg - Honey",
-        "5\u202fg - Cardamom"
-      ]
-    },
-    {
-      "id": "d128",
-      "name": "Chocolate Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 210,
-        "protein": 4,
-        "carbs": 34,
-        "fat": 4
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Chocolate",
-        "20\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d129",
-      "name": "Vanilla Milkshake",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 200,
-        "protein": 4,
-        "carbs": 30,
-        "fat": 6
-      },
-      "ingredients": [
-        "200\u202fml - Milk",
-        "50\u202fg - Vanilla",
-        "20\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d130",
-      "name": "Coconut Water",
-      "category": "Drink",
-      "prepTime": 0,
-      "macros": {
-        "calories": 45,
-        "protein": 0,
-        "carbs": 10,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Coconut Water"
-      ]
-    },
-    {
-      "id": "d131",
-      "name": "Iced Coffee",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 2,
-        "carbs": 20,
-        "fat": 2
-      },
-      "ingredients": [
-        "200\u202fml - Coffee",
-        "50\u202fml - Milk",
-        "10\u202fg - Sugar"
-      ]
-    },
-    {
-      "id": "d132",
-      "name": "Iced Tea",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 80,
-        "protein": 0,
-        "carbs": 20,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tea",
-        "50\u202fg - Sugar",
-        "10\u202fg - Lemon"
-      ]
-    },
-    {
-      "id": "d133",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 1,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d134",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d135",
-      "name": "Fresh Watermelon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 70,
-        "protein": 0,
-        "carbs": 18,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Watermelon Juice"
-      ]
-    },
-    {
-      "id": "d136",
-      "name": "Fresh Pineapple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 80,
-        "protein": 0,
-        "carbs": 20,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pineapple Juice"
-      ]
-    },
-    {
-      "id": "d137",
-      "name": "Fresh Grapefruit Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 90,
-        "protein": 0,
-        "carbs": 22,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grapefruit Juice"
-      ]
-    },
-    {
-      "id": "d138",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d139",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d140",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
-      "id": "d141",
-      "name": "Fresh Carrot Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 35,
-        "protein": 0,
-        "carbs": 8,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Carrot Juice"
-      ]
-    },
-    {
-      "id": "d142",
-      "name": "Fresh Spinach Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Spinach Juice"
-      ]
-    },
-    {
-      "id": "d143",
-      "name": "Fresh Kale Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Kale Juice"
-      ]
-    },
-    {
-      "id": "d144",
-      "name": "Fresh Celery Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 10,
-        "protein": 0,
-        "carbs": 2,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Celery Juice"
-      ]
-    },
-    {
-      "id": "d145",
-      "name": "Fresh Beet Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 30,
-        "protein": 0,
-        "carbs": 7,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Beet Juice"
-      ]
-    },
-    {
-      "id": "d146",
-      "name": "Fresh Pumpkin Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 6,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pumpkin Juice"
-      ]
-    },
-    {
-      "id": "d147",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d148",
-      "name": "Fresh Grape Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grape Juice"
-      ]
-    },
-    {
-      "id": "d149",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d150",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d151",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d152",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
-      "id": "d153",
-      "name": "Fresh Carrot Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 35,
-        "protein": 0,
-        "carbs": 8,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Carrot Juice"
-      ]
-    },
-    {
-      "id": "d154",
-      "name": "Fresh Spinach Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Spinach Juice"
-      ]
-    },
-    {
-      "id": "d155",
-      "name": "Fresh Kale Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Kale Juice"
-      ]
-    },
-    {
-      "id": "d156",
-      "name": "Fresh Celery Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 10,
-        "protein": 0,
-        "carbs": 2,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Celery Juice"
-      ]
-    },
-    {
-      "id": "d157",
-      "name": "Fresh Beet Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 30,
-        "protein": 0,
-        "carbs": 7,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Beet Juice"
-      ]
-    },
-    {
-      "id": "d158",
-      "name": "Fresh Pumpkin Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 6,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pumpkin Juice"
-      ]
-    },
-    {
-      "id": "d159",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d160",
-      "name": "Fresh Grape Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grape Juice"
-      ]
-    },
-    {
-      "id": "d161",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d162",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d163",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d164",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
-      "id": "d165",
-      "name": "Fresh Carrot Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 35,
-        "protein": 0,
-        "carbs": 8,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Carrot Juice"
-      ]
-    },
-    {
-      "id": "d166",
-      "name": "Fresh Spinach Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Spinach Juice"
-      ]
-    },
-    {
-      "id": "d167",
-      "name": "Fresh Kale Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Kale Juice"
-      ]
-    },
-    {
-      "id": "d168",
-      "name": "Fresh Celery Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 10,
-        "protein": 0,
-        "carbs": 2,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Celery Juice"
-      ]
-    },
-    {
-      "id": "d169",
-      "name": "Fresh Beet Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 30,
-        "protein": 0,
-        "carbs": 7,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Beet Juice"
-      ]
-    },
-    {
-      "id": "d170",
-      "name": "Fresh Pumpkin Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 6,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pumpkin Juice"
-      ]
-    },
-    {
-      "id": "d171",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d172",
-      "name": "Fresh Grape Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grape Juice"
-      ]
-    },
-    {
-      "id": "d173",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d174",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d175",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d176",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
-      "id": "d177",
-      "name": "Fresh Carrot Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 35,
-        "protein": 0,
-        "carbs": 8,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Carrot Juice"
-      ]
-    },
-    {
-      "id": "d178",
-      "name": "Fresh Spinach Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Spinach Juice"
-      ]
-    },
-    {
-      "id": "d179",
-      "name": "Fresh Kale Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Kale Juice"
-      ]
-    },
-    {
-      "id": "d180",
-      "name": "Fresh Celery Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 10,
-        "protein": 0,
-        "carbs": 2,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Celery Juice"
-      ]
-    },
-    {
-      "id": "d181",
-      "name": "Fresh Beet Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 30,
-        "protein": 0,
-        "carbs": 7,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Beet Juice"
-      ]
-    },
-    {
-      "id": "d182",
-      "name": "Fresh Pumpkin Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 6,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pumpkin Juice"
-      ]
-    },
-    {
-      "id": "d183",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d184",
-      "name": "Fresh Grape Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grape Juice"
-      ]
-    },
-    {
-      "id": "d185",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d186",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d187",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d188",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
-      "id": "d189",
-      "name": "Fresh Carrot Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 35,
-        "protein": 0,
-        "carbs": 8,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Carrot Juice"
-      ]
-    },
-    {
-      "id": "d190",
-      "name": "Fresh Spinach Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Spinach Juice"
-      ]
-    },
-    {
-      "id": "d191",
-      "name": "Fresh Kale Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 15,
-        "protein": 0,
-        "carbs": 3,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Kale Juice"
-      ]
-    },
-    {
-      "id": "d192",
-      "name": "Fresh Celery Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 10,
-        "protein": 0,
-        "carbs": 2,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Celery Juice"
-      ]
-    },
-    {
-      "id": "d193",
-      "name": "Fresh Beet Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 30,
-        "protein": 0,
-        "carbs": 7,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Beet Juice"
-      ]
-    },
-    {
-      "id": "d194",
-      "name": "Fresh Pumpkin Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 6,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Pumpkin Juice"
-      ]
-    },
-    {
-      "id": "d195",
-      "name": "Fresh Apple Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 120,
-        "protein": 0,
-        "carbs": 28,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Apple Juice"
-      ]
-    },
-    {
-      "id": "d196",
-      "name": "Fresh Grape Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Grape Juice"
-      ]
-    },
-    {
-      "id": "d197",
-      "name": "Fresh Orange Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 110,
-        "protein": 0,
-        "carbs": 24,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Orange Juice"
-      ]
-    },
-    {
-      "id": "d198",
-      "name": "Fresh Lemon Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lemon Juice"
-      ]
-    },
-    {
-      "id": "d199",
-      "name": "Fresh Lime Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 20,
-        "protein": 0,
-        "carbs": 4,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Lime Juice"
-      ]
-    },
-    {
-      "id": "d200",
-      "name": "Fresh Tomato Juice",
-      "category": "Drink",
-      "prepTime": 5,
-      "macros": {
-        "calories": 25,
-        "protein": 0,
-        "carbs": 5,
-        "fat": 0
-      },
-      "ingredients": [
-        "200\u202fml - Tomato Juice"
-      ]
-    },
-    {
       "id": "d244",
       "name": "Penne Arrabbiata",
-      "category": "Side-dish",
+      "category": "Pasta",
       "prepTime": 20,
       "macros": {
         "calories": 380,
@@ -3416,7 +1552,7 @@
     {
       "id": "d246",
       "name": "Pesto Genovese Trofie",
-      "category": "Side-dish",
+      "category": "Pasta",
       "prepTime": 15,
       "macros": {
         "calories": 410,
@@ -3471,28 +1607,9 @@
       ]
     },
     {
-      "id": "d249",
-      "name": "Margherita Pizza",
-      "category": "Pastry",
-      "prepTime": 20,
-      "macros": {
-        "calories": 550,
-        "protein": 22,
-        "carbs": 75,
-        "fat": 18
-      },
-      "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "80\u202fg - Mozzarella",
-        "60\u202fg - Tomato Sauce",
-        "5\u202fg - Fresh Basil",
-        "10\u202fml - Olive Oil"
-      ]
-    },
-    {
       "id": "d250",
       "name": "Diavola Pizza",
-      "category": "Pastry",
+      "category": "Pizza",
       "prepTime": 20,
       "macros": {
         "calories": 610,
@@ -3511,7 +1628,7 @@
     {
       "id": "d251",
       "name": "Quattro Formaggi Pizza",
-      "category": "Pastry",
+      "category": "Pizza",
       "prepTime": 25,
       "macros": {
         "calories": 680,
@@ -3530,7 +1647,7 @@
     {
       "id": "d252",
       "name": "Vegetariana Pizza",
-      "category": "Pastry",
+      "category": "Pizza",
       "prepTime": 25,
       "macros": {
         "calories": 520,
@@ -3549,7 +1666,7 @@
     {
       "id": "d253",
       "name": "Prosciutto e Funghi Pizza",
-      "category": "Pastry",
+      "category": "Pizza",
       "prepTime": 20,
       "macros": {
         "calories": 590,
@@ -3663,7 +1780,7 @@
     {
       "id": "d259",
       "name": "Classic Caesar Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 310,
@@ -3682,7 +1799,7 @@
     {
       "id": "d260",
       "name": "Greek Horiatiki Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 240,
@@ -3701,7 +1818,7 @@
     {
       "id": "d261",
       "name": "Quinoa Tabbouleh",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 20,
       "macros": {
         "calories": 180,
@@ -3720,7 +1837,7 @@
     {
       "id": "d262",
       "name": "Caprese Salad with Pesto",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 280,
@@ -3739,7 +1856,7 @@
     {
       "id": "d263",
       "name": "Asian Sesame Slaw",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 20,
       "macros": {
         "calories": 150,
@@ -3758,7 +1875,7 @@
     {
       "id": "d264",
       "name": "Nicoise Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 25,
       "macros": {
         "calories": 290,
@@ -3777,7 +1894,7 @@
     {
       "id": "d265",
       "name": "Roasted Beet & Feta Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 210,
@@ -3796,7 +1913,7 @@
     {
       "id": "d266",
       "name": "Asian Pear & Walnut Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 185,
@@ -3815,7 +1932,7 @@
     {
       "id": "d267",
       "name": "Mexican Corn Salad (Esquites)",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 20,
       "macros": {
         "calories": 240,
@@ -3834,7 +1951,7 @@
     {
       "id": "d268",
       "name": "Watermelon & Mint Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 120,
@@ -3853,7 +1970,7 @@
     {
       "id": "d269",
       "name": "Waldorf Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 15,
       "macros": {
         "calories": 260,
@@ -3872,7 +1989,7 @@
     {
       "id": "d270",
       "name": "Israeli Couscous Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 20,
       "macros": {
         "calories": 280,
@@ -3891,7 +2008,7 @@
     {
       "id": "d271",
       "name": "Spinach & Strawberry Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 190,
@@ -3910,7 +2027,7 @@
     {
       "id": "d272",
       "name": "Classic Potato Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 30,
       "macros": {
         "calories": 320,
@@ -3926,10 +2043,11 @@
         "10\u202fg - Red Onion"
       ]
     },
+
     {
       "id": "d273",
       "name": "Cucumber Smashed Salad",
-      "category": "Side-dish",
+      "category": "Salad",
       "prepTime": 10,
       "macros": {
         "calories": 95,

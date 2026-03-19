@@ -1,6 +1,6 @@
 # Frontend Build Stage
 FROM node:18-alpine AS frontend-builder
-WORKDIR /app/frontend
+WORKDIR /app
 COPY frontend/package*.json ./
 RUN npm install
 COPY frontend/ .
@@ -8,7 +8,7 @@ RUN npm run build
 
 # Backend Build Stage
 FROM node:18-alpine AS backend-builder
-WORKDIR /app/backend
+WORKDIR /app
 COPY backend/package*.json ./
 RUN npm install
 COPY backend/ .
@@ -23,10 +23,10 @@ COPY backend/package*.json ./
 RUN npm install --omit=dev
 
 # Copy compiled backend
-COPY --from=backend-builder /app/backend/dist ./dist
+COPY --from=backend-builder /app/dist ./dist
 
 # Copy compiled frontend to 'public' folder for backend to serve
-COPY --from=frontend-builder /app/frontend/dist ./public
+COPY --from=frontend-builder /app/dist ./public
 
 # Copy data files
 COPY recipes.json* plan.json* ./

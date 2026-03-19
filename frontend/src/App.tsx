@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 import KanbanBoard from './components/KanbanBoard';
-import AISidebar from './components/AISidebar';
 import axios from 'axios';
 import { Recipe } from './types';
+
+interface DataState {
+  columns: {
+    bank: { id: string; title: string; items: Recipe[] };
+    [key: string]: { id: string; title: string; items: Recipe[]; day?: string };
+  };
+  columnOrder: string[];
+}
 
 function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  const getMonday = (d: Date) => {
-    d = new Date(d);
-    var day = d.getDay(),
-        diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
-    return new Date(d.setDate(diff));
-  }
-
-  const [data, setData] = useState({
+  const [data, setData] = useState<DataState>({
     columns: {
       'bank': { id: 'bank', title: 'Dish Bank', items: [] as Recipe[] },
       'mon': { id: 'mon', title: '14', day: 'Mon', items: [] as Recipe[] },
@@ -61,10 +61,10 @@ function App() {
 
     const startColumn = isSourceBank 
       ? data.columns.bank 
-      : data.columns[source.droppableId as keyof typeof data.columns];
-    const finishColumn = data.columns[destination.droppableId as keyof typeof data.columns];
+      : data.columns[source.droppableId];
+    const finishColumn = data.columns[destination.droppableId];
 
-    let newColumns;
+    let newColumns: DataState['columns'];
 
     if (startColumn === finishColumn && !isSourceBank) {
       const newItems = Array.from(startColumn.items);
@@ -103,6 +103,7 @@ function App() {
 
     setData({ ...data, columns: newColumns });
     
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     try {
       await axios.post('/api/plan', { columns: planColumns });
@@ -112,13 +113,14 @@ function App() {
   };
 
   const deleteMeal = async (columnId: string, index: number) => {
-    const col = data.columns[columnId as keyof typeof data.columns];
+    const col = data.columns[columnId];
     const newItems = Array.from(col.items);
     newItems.splice(index, 1);
     
     const newColumns = { ...data.columns, [columnId]: { ...col, items: newItems } };
     setData({ ...data, columns: newColumns });
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     await axios.post('/api/plan', { columns: planColumns });
   };
@@ -126,13 +128,14 @@ function App() {
   const clearPlan = async () => {
     const newColumns = { ...data.columns };
     ['mon', 'tue', 'wed', 'thu', 'fri'].forEach(day => {
-      newColumns[day as keyof typeof newColumns] = {
-        ...newColumns[day as keyof typeof newColumns],
+      newColumns[day] = {
+        ...newColumns[day],
         items: []
       };
     });
     
     setData({ ...data, columns: newColumns });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     try {
       await axios.post('/api/plan', { columns: planColumns });
@@ -156,7 +159,6 @@ function App() {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="layout-container flex h-screen grow flex-col overflow-hidden bg-background-light dark:bg-background-dark font-display">
-        {/* Header - Top Navigation Bar */}
         <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-[24px] pb-[13px] pt-[12px] sticky top-0 z-50">
           <div className="flex items-center gap-[16px]">
             <div className="size-[32px] overflow-hidden rounded-lg flex items-center justify-center">
@@ -170,12 +172,8 @@ function App() {
             <a className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-[14px] font-medium transition-colors" href="#">Inventory</a>
             <a className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-[14px] font-medium transition-colors" href="#">Recipes</a>
           </nav>
-          <div className="flex gap-[8px]">
-            {/* Action buttons removed */}
-          </div>
         </header>
 
-        {/* Main Content Area */}
         <div className="flex-1 flex overflow-hidden relative">
           <KanbanBoard 
             data={data} 
@@ -187,7 +185,6 @@ function App() {
           />
         </div>
 
-        {/* Footer - Bottom Status Bar */}
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">
           <div className="flex gap-[24px]">
             <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">Active Plan: Healthy Autumn</span>

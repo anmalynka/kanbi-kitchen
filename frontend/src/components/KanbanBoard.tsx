@@ -25,7 +25,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
   const getMonday = (d: Date) => {
     d = new Date(d);
     var day = d.getDay(),
-        diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+        diff = d.getDate() - day + (day === 0 ? -6 : 1); // adjust when day is sunday
     return new Date(d.setDate(diff));
   }
 
@@ -68,7 +68,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
       exportNode.style.display = 'flex';
       try {
         const canvas = await html2canvas(exportNode, {
-          backgroundColor: '#ffffff',
+          background: '#ffffff',
           scale: 2,
           useCORS: true,
           logging: false,
@@ -99,14 +99,14 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
           
           if (match) {
             const qty = parseFloat(match[1]);
-            const unit = match[2].trim();
+            const unitStr = match[2].trim();
             const name = match[3].trim();
-            const key = `${name.toLowerCase()}|${unit.toLowerCase()}`;
+            const key = `${name.toLowerCase()}|${unitStr.toLowerCase()}`;
             
             if (aggregated[key]) {
               aggregated[key].quantity += qty;
             } else {
-              aggregated[key] = { quantity: qty, unit: unit };
+              aggregated[key] = { quantity: qty, unit: unitStr };
             }
           } else {
             // Fallback for items without quantity pattern
@@ -120,7 +120,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
     });
 
     return Object.entries(aggregated).map(([key, val]) => {
-      const [name, unit] = key.split('|');
+      const [name] = key.split('|');
       const displayName = name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       if (val.quantity === 0) return displayName;
       return `${val.quantity}${val.unit ? ' ' + val.unit : ''} - ${displayName}`;
@@ -360,7 +360,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
 
         <div className="flex-1 grid grid-cols-5 gap-[16px] overflow-hidden">
           {['mon', 'tue', 'wed', 'thu', 'fri'].map((dayKey, idx) => {
-            const col = data.columns[dayKey as keyof typeof data.columns];
+            const col = data.columns[dayKey];
             const macros = calculateMacros(col.items || []);
             const caloriesPercent = Math.min((macros.calories / 2200) * 100, 100);
 

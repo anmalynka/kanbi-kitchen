@@ -5,22 +5,41 @@
       "title": "Monday",
       "items": [
         {
-          "id": "d035-127enagyp",
-          "name": "Apple Pie",
-          "category": "Dessert",
-          "prepTime": 60,
+          "id": "d027-hnywe9q6f",
+          "name": "Pesto Pasta",
+          "category": "Pasta",
+          "prepTime": 20,
           "macros": {
-            "calories": 420,
+            "calories": 410,
+            "protein": 12,
+            "carbs": 48,
+            "fat": 14
+          },
+          "ingredients": [
+            "200 g - Penne",
+            "50 g - Pesto",
+            "30 g - Parmesan",
+            "20 g - Olive Oil",
+            "5 g - Basil"
+          ]
+        },
+        {
+          "id": "d096-1nt4w2uyr",
+          "name": "Chocolate Chip Cookies",
+          "category": "Dessert",
+          "prepTime": 30,
+          "macros": {
+            "calories": 360,
             "protein": 4,
-            "carbs": 58,
+            "carbs": 44,
             "fat": 18
           },
           "ingredients": [
-            "200 g - Apples",
-            "200 g - Pie Crust",
-            "50 g - Sugar",
-            "10 g - Cinnamon",
-            "5 g - Butter"
+            "200 g - Flour",
+            "150 g - Chocolate Chips",
+            "100 g - Sugar",
+            "50 g - Butter",
+            "5 g - Baking Soda"
           ]
         }
       ]
@@ -30,41 +49,41 @@
       "title": "Tuesday",
       "items": [
         {
-          "id": "d035-m20nneh8u",
-          "name": "Apple Pie",
-          "category": "Dessert",
-          "prepTime": 60,
+          "id": "d054-vo604je5x",
+          "name": "Pasta Primavera",
+          "category": "Pasta",
+          "prepTime": 25,
           "macros": {
-            "calories": 420,
-            "protein": 4,
-            "carbs": 58,
-            "fat": 18
+            "calories": 400,
+            "protein": 12,
+            "carbs": 50,
+            "fat": 12
           },
           "ingredients": [
-            "200 g - Apples",
-            "200 g - Pie Crust",
-            "50 g - Sugar",
-            "10 g - Cinnamon",
-            "5 g - Butter"
+            "200 g - Pasta",
+            "150 g - Veggies",
+            "20 ml - Olive Oil",
+            "10 g - Garlic",
+            "5 g - Basil"
           ]
         },
         {
-          "id": "d035-0ly7nn0q3",
-          "name": "Apple Pie",
-          "category": "Dessert",
-          "prepTime": 60,
+          "id": "d029-7jxud7gso",
+          "name": "Margarita Pizza",
+          "category": "Pizza",
+          "prepTime": 25,
           "macros": {
-            "calories": 420,
-            "protein": 4,
-            "carbs": 58,
-            "fat": 18
+            "calories": 430,
+            "protein": 14,
+            "carbs": 48,
+            "fat": 16
           },
           "ingredients": [
-            "200 g - Apples",
-            "200 g - Pie Crust",
-            "50 g - Sugar",
-            "10 g - Cinnamon",
-            "5 g - Butter"
+            "200 g - Pizza Dough",
+            "100 g - Tomato Sauce",
+            "80 g - Mozzarella",
+            "10 g - Basil",
+            "5 g - Olive Oil"
           ]
         }
       ]
@@ -72,7 +91,27 @@
     "wed": {
       "id": "wed",
       "title": "Wednesday",
-      "items": []
+      "items": [
+        {
+          "id": "d015-lu0l67rvd",
+          "name": "Vegetable Stir‑Fry",
+          "category": "Side-dish",
+          "prepTime": 20,
+          "macros": {
+            "calories": 210,
+            "protein": 8,
+            "carbs": 22,
+            "fat": 10
+          },
+          "ingredients": [
+            "200 g - Mixed Vegetables",
+            "15 ml - Soy Sauce",
+            "10 g - Sesame Oil",
+            "5 g - Garlic",
+            "5 g - Ginger"
+          ]
+        }
+      ]
     },
     "thu": {
       "id": "thu",
