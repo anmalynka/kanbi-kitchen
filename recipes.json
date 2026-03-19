@@ -158,7 +158,7 @@
     {
       "id": "d011",
       "name": "Sausage Soup",
-      "category": "Side-dish",
+      "category": "Soup",
       "prepTime": 30,
       "macros": {
         "calories": 260,
@@ -349,7 +349,7 @@
     {
       "id": "d023",
       "name": "Lentil Soup",
-      "category": "Side-dish",
+      "category": "Soup",
       "prepTime": 35,
       "macros": {
         "calories": 240,
@@ -482,7 +482,7 @@
     {
       "id": "d030",
       "name": "Pumpkin Soup",
-      "category": "Side-dish",
+      "category": "Soup",
       "prepTime": 35,
       "macros": {
         "calories": 220,
@@ -652,7 +652,7 @@
     {
       "id": "d040",
       "name": "Miso Soup",
-      "category": "Side-dish",
+      "category": "Soup",
       "prepTime": 10,
       "macros": {
         "calories": 80,
@@ -2043,7 +2043,174 @@
         "10\u202fg - Red Onion"
       ]
     },
-
+  {
+    "id": "d274",
+    "name": "Pepperoni Pizza",
+    "category": "Pizza",
+    "prepTime": 25,
+    "macros": { "calories": 620, "protein": 28, "carbs": 74, "fat": 24 },
+    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "40 g - Pepperoni Slices", "60 g - Tomato Sauce", "10 ml - Olive Oil" ]
+  },
+  {
+    "id": "d275",
+    "name": "Hawaiian Pizza",
+    "category": "Pizza",
+    "prepTime": 25,
+    "macros": { "calories": 580, "protein": 22, "carbs": 78, "fat": 18 },
+    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "50 g - Cooked Ham", "50 g - Pineapple Chunks", "60 g - Tomato Sauce" ]
+  },
+  {
+    "id": "d276",
+    "name": "Truffle Mushroom Pizza",
+    "category": "Pizza",
+    "prepTime": 30,
+    "macros": { "calories": 640, "protein": 24, "carbs": 72, "fat": 28 },
+    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "100 g - Mixed Mushrooms", "10 ml - Truffle Oil", "10 g - Parmesan" ]
+  },
+  {
+    "id": "d277",
+    "name": "Potato Gnocchi with Sage Butter",
+    "category": "Pasta",
+    "prepTime": 20,
+    "macros": { "calories": 360, "protein": 10, "carbs": 55, "fat": 14 },
+    "ingredients": [ "200 g - Potato Gnocchi", "30 g - Butter", "5 g - Fresh Sage", "15 g - Parmesan", "5 g - Black Pepper" ]
+  },
+  {
+    "id": "d278",
+    "name": "Pastina in Brodo",
+    "category": "Pasta",
+    "prepTime": 15,
+    "macros": { "calories": 280, "protein": 12, "carbs": 45, "fat": 6 },
+    "ingredients": [ "100 g - Pastina", "250 ml - Chicken Broth", "20 g - Parmesan", "1 x - Whisked Egg", "5 g - Parsley" ]
+  },
+  {
+    "id": "d279",
+    "name": "Spinach and Ricotta Ravioli",
+    "category": "Pasta",
+    "prepTime": 30,
+    "macros": { "calories": 410, "protein": 18, "carbs": 50, "fat": 15 },
+    "ingredients": [ "200 g - Ravioli", "100 g - Marinara Sauce", "20 g - Parmesan", "10 ml - Olive Oil", "5 g - Basil" ]
+  },
+  {
+    "id": "d280",
+    "name": "Penne alla Vodka",
+    "category": "Pasta",
+    "prepTime": 25,
+    "macros": { "calories": 450, "protein": 14, "carbs": 62, "fat": 16 },
+    "ingredients": [ "100 g - Penne Pasta", "100 g - Tomato Puree", "50 ml - Heavy Cream", "20 ml - Vodka", "15 ml - Olive Oil" ]
+  },
+  {
+    "id": "d281",
+    "name": "Classic Tiramisu",
+    "category": "Dessert",
+    "prepTime": 40,
+    "macros": { "calories": 480, "protein": 8, "carbs": 42, "fat": 32 },
+    "ingredients": [ "100 g - Ladyfingers", "150 g - Mascarpone", "2 x - Espresso Shots", "30 g - Sugar", "5 g - Cocoa Powder" ]
+  },
+  {
+    "id": "d282",
+    "name": "Warm Apple Crumble",
+    "category": "Dessert",
+    "prepTime": 45,
+    "macros": { "calories": 320, "protein": 3, "carbs": 48, "fat": 14 },
+    "ingredients": [ "200 g - Apples", "50 g - Oats", "30 g - Flour", "30 g - Butter", "20 g - Brown Sugar" ]
+  },
+  {
+    "id": "d283",
+    "name": "Lemon Meringue Tart",
+    "category": "Dessert",
+    "prepTime": 60,
+    "macros": { "calories": 390, "protein": 5, "carbs": 55, "fat": 18 },
+    "ingredients": [ "100 g - Pastry Shell", "100 g - Lemon Curd", "2 x - Egg Whites", "40 g - Sugar", "5 ml - Lemon Juice" ]
+  },
+  {
+    "id": "d284",
+    "name": "New York Cheesecake",
+    "category": "Dessert",
+    "prepTime": 50,
+    "macros": { "calories": 450, "protein": 9, "carbs": 38, "fat": 30 },
+    "ingredients": [ "150 g - Cream Cheese", "50 g - Graham Cracker Crust", "30 g - Sugar", "1 x - Egg", "10 ml - Vanilla Extract" ]
+  },
+  {
+    "id": "d285",
+    "name": "Vanilla Bean Panna Cotta",
+    "category": "Dessert",
+    "prepTime": 20,
+    "macros": { "calories": 280, "protein": 4, "carbs": 24, "fat": 20 },
+    "ingredients": [ "150 ml - Heavy Cream", "30 g - Sugar", "5 g - Gelatin", "1 x - Vanilla Bean", "50 g - Berry Coulis" ]
+  },
+  {
+    "id": "d286",
+    "name": "Classic Minestrone",
+    "category": "Soup",
+    "prepTime": 40,
+    "macros": { "calories": 220, "protein": 8, "carbs": 35, "fat": 6 },
+    "ingredients": [ "50 g - Small Pasta", "100 g - Mixed Vegetables", "50 g - Cannellini Beans", "400 ml - Vegetable Broth", "20 g - Tomato Paste" ]
+  },
+  {
+    "id": "d287",
+    "name": "French Onion Soup",
+    "category": "Soup",
+    "prepTime": 50,
+    "macros": { "calories": 310, "protein": 12, "carbs": 28, "fat": 18 },
+    "ingredients": [ "200 g - Sliced Onions", "400 ml - Beef Stock", "1 x - Slice Baguette", "40 g - Gruyere Cheese", "20 g - Butter" ]
+  },
+  {
+    "id": "d288",
+    "name": "Spanish Gazpacho",
+    "category": "Soup",
+    "prepTime": 15,
+    "macros": { "calories": 150, "protein": 3, "carbs": 18, "fat": 8 },
+    "ingredients": [ "200 g - Ripe Tomatoes", "50 g - Cucumber", "30 g - Bell Pepper", "20 ml - Sherry Vinegar", "15 ml - Olive Oil" ]
+  },
+  {
+    "id": "d289",
+    "name": "Beef Wellington Bites",
+    "category": "Meat",
+    "prepTime": 50,
+    "macros": { "calories": 420, "protein": 24, "carbs": 18, "fat": 28 },
+    "ingredients": [ "150 g - Beef Tenderloin", "50 g - Puff Pastry", "30 g - Mushroom Duxelles", "10 g - Prosciutto", "1 x - Egg Wash" ]
+  },
+  {
+    "id": "d290",
+    "name": "Crispy Falafel Wrap",
+    "category": "Bakery",
+    "prepTime": 25,
+    "macros": { "calories": 380, "protein": 14, "carbs": 55, "fat": 12 },
+    "ingredients": [ "1 x - Pita Bread", "4 x - Falafel Balls", "30 g - Hummus", "50 g - Pickled Cabbage", "20 ml - Tahini Sauce" ]
+  },
+  {
+    "id": "d291",
+    "name": "Pan-Fried Scallops",
+    "category": "Seafood",
+    "prepTime": 15,
+    "macros": { "calories": 180, "protein": 20, "carbs": 5, "fat": 9 },
+    "ingredients": [ "150 g - Scallops", "15 g - Butter", "10 ml - Lemon Juice", "5 g - Garlic", "5 g - Parsley" ]
+  },
+  {
+    "id": "d292",
+    "name": "Sesame Ahi Tuna Salad",
+    "category": "Salad",
+    "prepTime": 20,
+    "macros": { "calories": 240, "protein": 32, "carbs": 10, "fat": 8 },
+    "ingredients": [ "150 g - Ahi Tuna", "20 g - Sesame Seeds", "100 g - Mixed Greens", "15 ml - Soy Ginger Dressing", "30 g - Edamame" ]
+  },
+  {
+    "id": "d293",
+    "name": "Classic Sushi Rolls (Maki)",
+    "category": "Seafood",
+    "prepTime": 45,
+    "macros": { "calories": 310, "protein": 12, "carbs": 58, "fat": 4 },
+    "ingredients": [ "100 g - Sushi Rice", "1 x - Nori Sheet", "50 g - Fresh Salmon", "30 g - Cucumber", "15 ml - Rice Vinegar" ]
+  },
+  {
+    "id": "d294",
+    "name": "Grilled Halloumi & Quinoa Salad",
+    "category": "Salad",
+    "prepTime": 20,
+    "macros": { "calories": 340, "protein": 18, "carbs": 22, "fat": 20 },
+    "ingredients": [ "100 g - Halloumi Cheese", "100 g - Cooked Quinoa", "50 g - Cherry Tomatoes", "30 g - Cucumber", "15 ml - Lemon Vinaigrette" ]
+  }, 
     {
       "id": "d273",
       "name": "Cucumber Smashed Salad",

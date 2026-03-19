@@ -93,6 +93,25 @@
       "title": "Wednesday",
       "items": [
         {
+          "id": "d011-kfilp1g11",
+          "name": "Sausage Soup",
+          "category": "Soup",
+          "prepTime": 30,
+          "macros": {
+            "calories": 260,
+            "protein": 12,
+            "carbs": 30,
+            "fat": 14
+          },
+          "ingredients": [
+            "200 g - Sausage",
+            "200 g - Potato",
+            "200 ml - Chicken Broth",
+            "30 ml - Milk",
+            "15 g - Salt"
+          ]
+        },
+        {
           "id": "d015-lu0l67rvd",
           "name": "Vegetable Stir‑Fry",
           "category": "Side-dish",

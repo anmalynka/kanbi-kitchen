@@ -72,7 +72,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
           scale: 2,
           useCORS: true,
           logging: false,
-        });
+        } as any);
         const image = canvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.href = image;
