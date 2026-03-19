@@ -1,0 +1,28 @@
+services:
+  # 1. Backend Service (Express API)
+  - type: web
+    name: kanbi-kitchen-api
+    runtime: node
+    buildCommand: "cd backend && npm install && npm run build"
+    startCommand: "cd backend && npm start"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      # - key: OPENAI_API_KEY  # Add this via Render Dashboard for security
+      #   sync: false
+
+  # 2. Frontend Service (Vite Static Site)
+  - type: static
+    name: kanbi-kitchen-ui
+    runtime: static
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: "./frontend/dist"
+    envVars:
+      - key: VITE_API_URL
+        value: https://kanbi-kitchen-api.onrender.com # Update this after first deployment
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"

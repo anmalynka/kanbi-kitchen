@@ -1,0 +1,8 @@
+{
+  "name": "kanbi-kitchen-poc",
+  "version": "1.0.0",
+  "description": "Weekly Meal Planner POC",
+  "scripts": {
+    "serve-recipes": "json-server --watch recipes.json --port 3001"
+  }
+}
