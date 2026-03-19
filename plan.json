@@ -3,12 +3,71 @@
     "mon": {
       "id": "mon",
       "title": "Monday",
-      "items": []
+      "items": [
+        {
+          "id": "d035-127enagyp",
+          "name": "Apple Pie",
+          "category": "Dessert",
+          "prepTime": 60,
+          "macros": {
+            "calories": 420,
+            "protein": 4,
+            "carbs": 58,
+            "fat": 18
+          },
+          "ingredients": [
+            "200 g - Apples",
+            "200 g - Pie Crust",
+            "50 g - Sugar",
+            "10 g - Cinnamon",
+            "5 g - Butter"
+          ]
+        }
+      ]
     },
     "tue": {
       "id": "tue",
       "title": "Tuesday",
-      "items": []
+      "items": [
+        {
+          "id": "d035-m20nneh8u",
+          "name": "Apple Pie",
+          "category": "Dessert",
+          "prepTime": 60,
+          "macros": {
+            "calories": 420,
+            "protein": 4,
+            "carbs": 58,
+            "fat": 18
+          },
+          "ingredients": [
+            "200 g - Apples",
+            "200 g - Pie Crust",
+            "50 g - Sugar",
+            "10 g - Cinnamon",
+            "5 g - Butter"
+          ]
+        },
+        {
+          "id": "d035-0ly7nn0q3",
+          "name": "Apple Pie",
+          "category": "Dessert",
+          "prepTime": 60,
+          "macros": {
+            "calories": 420,
+            "protein": 4,
+            "carbs": 58,
+            "fat": 18
+          },
+          "ingredients": [
+            "200 g - Apples",
+            "200 g - Pie Crust",
+            "50 g - Sugar",
+            "10 g - Cinnamon",
+            "5 g - Butter"
+          ]
+        }
+      ]
     },
     "wed": {
       "id": "wed",

@@ -3,25 +3,28 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package files from backend directory
+COPY backend/package*.json ./
 
 # Install ALL dependencies (including dev)
 RUN npm install
 
-# Copy source code and tsconfig
-COPY . .
+# Copy source code and tsconfig from backend directory
+COPY backend/ .
 
-# Run build using the locally installed tsc
-RUN ./node_modules/.bin/tsc && ls -la dist
+# Copy recipes.json and plan.json from root directory
+COPY recipes.json* plan.json* ./
+
+# Run build using the script in package.json
+RUN npm run build && ls -la /app/dist
 
 # Production stage
 FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package files from backend
+COPY backend/package*.json ./
 
 # Install only production dependencies
 RUN npm install --omit=dev
@@ -29,9 +32,8 @@ RUN npm install --omit=dev
 # Copy only the compiled code from the builder stage
 COPY --from=builder /app/dist ./dist
 
-# Copy recipes.json and plan.json if they exist in the current context
-# This assumes context is "backend" or files were copied into it
-COPY recipes.json* plan.json* ./
+# Copy recipes.json and plan.json if they exist
+COPY --from=builder /app/recipes.json* /app/plan.json* ./
 
 EXPOSE 3000
 
