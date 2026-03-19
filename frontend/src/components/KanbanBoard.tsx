@@ -11,9 +11,10 @@ interface KanbanBoardProps {
   currentDate: Date;
   onNextWeek: () => void;
   onPrevWeek: () => void;
+  calorieTarget: number;
 }
 
-const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, currentDate, onNextWeek, onPrevWeek }) => {
+const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, currentDate, onNextWeek, onPrevWeek, calorieTarget }) => {
   const planRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -361,34 +362,34 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
            </div>
         </div>
 
-        <div className="flex-1 grid grid-cols-5 gap-[16px] overflow-hidden">
+        <div className="flex-1 grid grid-cols-5 gap-[8px] overflow-hidden">
           {['mon', 'tue', 'wed', 'thu', 'fri'].map((dayKey, idx) => {
             const col = data.columns[dayKey];
             const macros = calculateMacros(col.items || []);
-            const caloriesPercent = Math.min((macros.calories / 2200) * 100, 100);
+            const caloriesPercent = Math.min((macros.calories / calorieTarget) * 100, 100);
 
             return (
-              <div key={col.id} className="flex flex-col gap-[16px] h-full relative">
-                <div className={`text-center pb-[10px] border-b-2 ${dayKey === 'mon' ? 'border-primary' : 'border-transparent'} shrink-0`}>
-                  <p className="text-[12px] font-bold text-slate-400 uppercase leading-[16px] mb-1">{getColumnDayFull(idx)} ({getColumnDate(idx)})</p>
+              <div key={col.id} className="flex flex-col gap-[8px] h-full bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-[8px] relative border border-slate-200/50 dark:border-slate-700/50">
+                <div className={`text-center pb-[4px] border-b-2 ${dayKey === 'mon' ? 'border-primary' : 'border-transparent'} shrink-0`}>
+                  <p className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase leading-[14px] mb-1">{getColumnDayFull(idx)} ({getColumnDate(idx)})</p>
                 </div>
 
                 {/* Macro Progress - Now at the Top */}
                 <div className="shrink-0">
-                  <div className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2.5 rounded-xl w-full shadow-sm">
+                  <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-xl w-full shadow-sm">
                     {/* Top Row: Status and Total Calories */}
-                    <div className="flex justify-between items-center mb-3">
+                    <div className="flex justify-between items-center mb-2">
                       <div className="flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[14px] text-emerald-600 font-bold">auto_awesome</span>
-                        <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Daily Macros</span>
+                        <span className="material-symbols-outlined text-[12px] text-emerald-600 font-bold">auto_awesome</span>
+                        <span className="text-[9px] font-bold text-emerald-600 uppercase tracking-tight">Macros</span>
                       </div>
-                      <span className="text-[10px] font-medium text-slate-500 dark:text-slate-400">
+                      <span className="text-[9px] font-medium text-slate-500 dark:text-slate-400">
                         {macros.calories} kkal
                       </span>
                     </div>
 
                     {/* Middle Row: Progress Bars */}
-                    <div className="flex gap-1 h-[6px] w-full rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 mb-3">
+                    <div className="flex gap-1 h-[4px] w-full rounded-full overflow-hidden bg-slate-100 dark:bg-slate-700 mb-2">
                       {macros.calories > 0 ? (
                         <>
                           <div 
@@ -405,33 +406,30 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
                           />
                         </>
                       ) : (
-                        <div className="h-full w-full bg-slate-200 dark:bg-slate-700" />
+                        <div className="h-full w-full bg-slate-100 dark:bg-slate-700" />
                       )}
                     </div>
 
                     {/* Bottom Row: Macro Percentages */}
                     <div className="flex justify-between items-center">
-                      <span className="text-[9px] font-bold text-slate-400 uppercase">
-                        P: {macros.calories > 0 ? Math.round((macros.protein * 4 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%
-                      </span>
-                      <span className="text-[9px] font-bold text-slate-400 uppercase">
-                        C: {macros.calories > 0 ? Math.round((macros.carbs * 4 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%
-                      </span>
-                      <span className="text-[9px] font-bold text-slate-400 uppercase">
-                        F: {macros.calories > 0 ? Math.round((macros.fat * 9 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%
-                      </span>
+                      <span className="text-[8px] font-bold text-slate-400 uppercase">P: {macros.calories > 0 ? Math.round((macros.protein * 4 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%</span>
+                      <span className="text-[8px] font-bold text-slate-400 uppercase">C: {macros.calories > 0 ? Math.round((macros.carbs * 4 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%</span>
+                      <span className="text-[8px] font-bold text-slate-400 uppercase">F: {macros.calories > 0 ? Math.round((macros.fat * 9 / (macros.protein * 4 + macros.carbs * 4 + macros.fat * 9)) * 100) : 0}%</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Scrollable Meal List */}
-                <div className="flex-1 overflow-y-auto min-h-0">
+                <div 
+                  className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 pr-1 custom-scrollbar"
+                  style={{ maxHeight: '100%' }}
+                >
                   <Droppable droppableId={col.id}>
                     {(provided, snapshot) => (
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
-                        className={`flex flex-col pr-[4px] transition-colors pb-4 ${snapshot.isDraggingOver ? 'bg-primary/5 rounded-xl' : ''}`}
+                        className={`flex flex-col gap-2 min-h-[100%] transition-colors pb-4 ${snapshot.isDraggingOver ? 'bg-primary/5 rounded-xl' : ''}`}
                       >
                         {col.items?.map((recipe: Recipe, index: number) => (
                           <RecipeCard key={recipe.id} recipe={recipe} index={index} onDoubleClick={() => deleteMeal(col.id, index)} />
@@ -439,9 +437,9 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
                         {provided.placeholder}
                         
                         {/* Always show a "Drop here" area at the end */}
-                        <div className="border-2 border-slate-200 dark:border-slate-800 border-dashed rounded-xl p-[18px] flex flex-col items-center justify-center text-slate-400 hover:border-primary/50 hover:bg-primary/5 transition-all min-h-[80px]">
-                           <span className="material-symbols-outlined text-[20px] mb-1">add_circle</span>
-                           <span className="text-[10px] uppercase font-normal leading-[15px]">Drop here</span>
+                        <div className="border-2 border-slate-300 dark:border-slate-700 border-dashed rounded-xl p-[14px] flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:border-primary/50 hover:bg-primary/5 transition-all min-h-[80px] shrink-0">
+                           <span className="material-symbols-outlined text-[18px] mb-1">add_circle</span>
+                           <span className="text-[9px] uppercase font-bold leading-[12px]">Drop here</span>
                         </div>
                       </div>
                     )}

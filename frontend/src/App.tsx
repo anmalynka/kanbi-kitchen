@@ -15,6 +15,9 @@ interface DataState {
 function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
+  const [calorieTarget, setCalorieTarget] = useState(2200);
+  const [isCalorieModalOpen, setIsCalorieModalOpen] = useState(false);
+  const [tempCalorie, setTempCalorie] = useState(calorieTarget.toString());
 
   const [data, setData] = useState<DataState>({
     columns: {
@@ -163,6 +166,14 @@ function App() {
     setCurrentDate(prev);
   };
 
+  const handleSaveCalorieTarget = () => {
+    const value = parseInt(tempCalorie);
+    if (!isNaN(value) && value > 0) {
+      setCalorieTarget(value);
+      setIsCalorieModalOpen(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background-light dark:bg-background-dark font-display">
@@ -179,6 +190,56 @@ function App() {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="layout-container flex h-screen grow flex-col overflow-hidden bg-background-light dark:bg-background-dark font-display">
+        {/* Calorie Modal */}
+        {isCalorieModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+            <div className="bg-white dark:bg-slate-900 w-full max-w-sm rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+              <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
+                <div>
+                  <h2 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Set Calorie Target</h2>
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Daily energy goal</p>
+                </div>
+                <button onClick={() => setIsCalorieModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                  <span className="material-symbols-outlined">close</span>
+                </button>
+              </div>
+              <div className="p-6 space-y-6">
+                <div className="flex justify-between gap-2">
+                  {[1200, 1600, 2200].map((val) => (
+                    <button
+                      key={val}
+                      onClick={() => setTempCalorie(val.toString())}
+                      className={`flex-1 py-2 rounded-xl text-xs font-bold uppercase transition-all border ${
+                        tempCalorie === val.toString()
+                          ? 'bg-primary text-white border-primary'
+                          : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-primary'
+                      }`}
+                    >
+                      {val}
+                    </button>
+                  ))}
+                </div>
+                <div className="relative">
+                  <input
+                    type="number"
+                    value={tempCalorie}
+                    onChange={(e) => setTempCalorie(e.target.value)}
+                    className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-lg font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all pr-12"
+                    placeholder="Enter value..."
+                  />
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 uppercase">kcal</span>
+                </div>
+                <button
+                  onClick={handleSaveCalorieTarget}
+                  className="w-full bg-primary text-white font-black uppercase text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
+                >
+                  Save Target
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-[24px] pb-[13px] pt-[12px] sticky top-0 z-50">
           <div className="flex items-center gap-[16px]">
             <div className="size-[32px] overflow-hidden rounded-lg flex items-center justify-center">
@@ -202,12 +263,24 @@ function App() {
             currentDate={currentDate}
             onNextWeek={nextWeek}
             onPrevWeek={prevWeek}
+            calorieTarget={calorieTarget}
           />
         </div>
 
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">
           <div className="flex gap-[24px]">
-            <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">Calories Target: 2,200/day</span>
+            <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] flex items-center gap-2">
+              Calories Target: {calorieTarget.toLocaleString()}/day
+              <button 
+                onClick={() => {
+                  setTempCalorie(calorieTarget.toString());
+                  setIsCalorieModalOpen(true);
+                }}
+                className="hover:text-primary transition-colors flex items-center"
+              >
+                <span className="material-symbols-outlined text-[14px]">edit</span>
+              </button>
+            </span>
           </div>
           <div className="flex gap-[16px] items-center">
             <span className="flex items-center gap-[4px]">

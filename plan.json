@@ -5,41 +5,40 @@
       "title": "Monday",
       "items": [
         {
-          "id": "d027-hnywe9q6f",
-          "name": "Pesto Pasta",
-          "category": "Pasta",
-          "prepTime": 20,
+          "id": "d061-or1s7qi28",
+          "name": "Lentil Curry",
+          "category": "Side-dish",
+          "prepTime": 35,
           "macros": {
-            "calories": 410,
+            "calories": 250,
             "protein": 12,
-            "carbs": 48,
-            "fat": 14
+            "carbs": 38,
+            "fat": 6
           },
           "ingredients": [
-            "200 g - Penne",
-            "50 g - Pesto",
-            "30 g - Parmesan",
-            "20 g - Olive Oil",
-            "5 g - Basil"
+            "200 g - Lentils",
+            "200 ml - Coconut Milk",
+            "20 g - Curry Paste",
+            "50 g - Veggies",
+            "10 g - Ginger"
           ]
         },
         {
-          "id": "d096-1nt4w2uyr",
-          "name": "Chocolate Chip Cookies",
-          "category": "Dessert",
-          "prepTime": 30,
+          "id": "d042-bo55dxe1q",
+          "name": "Roasted Brussels Sprouts",
+          "category": "Side-dish",
+          "prepTime": 25,
           "macros": {
-            "calories": 360,
-            "protein": 4,
-            "carbs": 44,
-            "fat": 18
+            "calories": 210,
+            "protein": 5,
+            "carbs": 18,
+            "fat": 12
           },
           "ingredients": [
-            "200 g - Flour",
-            "150 g - Chocolate Chips",
-            "100 g - Sugar",
-            "50 g - Butter",
-            "5 g - Baking Soda"
+            "200 g - Brussels Sprouts",
+            "15 ml - Olive Oil",
+            "5 g - Salt",
+            "5 g - Pepper"
           ]
         }
       ]
@@ -49,70 +48,65 @@
       "title": "Tuesday",
       "items": [
         {
-          "id": "d054-vo604je5x",
-          "name": "Pasta Primavera",
-          "category": "Pasta",
+          "id": "d005-gb43czcw0",
+          "name": "Vegetarian Chili",
+          "category": "Side-dish",
+          "prepTime": 30,
+          "macros": {
+            "calories": 250,
+            "protein": 12,
+            "carbs": 32,
+            "fat": 8
+          },
+          "ingredients": [
+            "200 g - Beans",
+            "200 g - Rice",
+            "200 ml - Tomato Sauce",
+            "50 ml - Water",
+            "15 g - Salt",
+            "15 g - Pepper"
+          ]
+        },
+        {
+          "id": "d290-puacg6wxg",
+          "name": "Crispy Falafel Wrap",
+          "category": "Bakery",
           "prepTime": 25,
           "macros": {
-            "calories": 400,
-            "protein": 12,
-            "carbs": 50,
+            "calories": 380,
+            "protein": 14,
+            "carbs": 55,
             "fat": 12
           },
           "ingredients": [
-            "200 g - Pasta",
-            "150 g - Veggies",
-            "20 ml - Olive Oil",
-            "10 g - Garlic",
-            "5 g - Basil"
+            "1 x - Pita Bread",
+            "4 x - Falafel Balls",
+            "30 g - Hummus",
+            "50 g - Pickled Cabbage",
+            "20 ml - Tahini Sauce"
           ]
         },
         {
-          "id": "d029-7jxud7gso",
-          "name": "Margarita Pizza",
-          "category": "Pizza",
-          "prepTime": 25,
+          "id": "d035-dv1k73gmz",
+          "name": "Apple Pie",
+          "category": "Dessert",
+          "prepTime": 60,
           "macros": {
-            "calories": 430,
-            "protein": 14,
-            "carbs": 48,
-            "fat": 16
+            "calories": 420,
+            "protein": 4,
+            "carbs": 58,
+            "fat": 18
           },
           "ingredients": [
-            "200 g - Pizza Dough",
-            "100 g - Tomato Sauce",
-            "80 g - Mozzarella",
-            "10 g - Basil",
-            "5 g - Olive Oil"
-          ]
-        }
-      ]
-    },
-    "wed": {
-      "id": "wed",
-      "title": "Wednesday",
-      "items": [
-        {
-          "id": "d011-kfilp1g11",
-          "name": "Sausage Soup",
-          "category": "Soup",
-          "prepTime": 30,
-          "macros": {
-            "calories": 260,
-            "protein": 12,
-            "carbs": 30,
-            "fat": 14
-          },
-          "ingredients": [
-            "200 g - Sausage",
-            "200 g - Potato",
-            "200 ml - Chicken Broth",
-            "30 ml - Milk",
-            "15 g - Salt"
+            "200 g - Apples",
+            "200 g - Pie Crust",
+            "50 g - Sugar",
+            "10 g - Cinnamon",
+            "5 g - Butter"
           ]
         },
         {
-          "id": "d015-lu0l67rvd",
+          "id": "d015-17h3wb8bd",
           "name": "Vegetable Stir‑Fry",
           "category": "Side-dish",
           "prepTime": 20,
@@ -129,8 +123,106 @@
             "5 g - Garlic",
             "5 g - Ginger"
           ]
+        },
+        {
+          "id": "d290-6yrnsgw3j",
+          "name": "Crispy Falafel Wrap",
+          "category": "Bakery",
+          "prepTime": 25,
+          "macros": {
+            "calories": 380,
+            "protein": 14,
+            "carbs": 55,
+            "fat": 12
+          },
+          "ingredients": [
+            "1 x - Pita Bread",
+            "4 x - Falafel Balls",
+            "30 g - Hummus",
+            "50 g - Pickled Cabbage",
+            "20 ml - Tahini Sauce"
+          ]
+        },
+        {
+          "id": "d290-ggv80mytb",
+          "name": "Crispy Falafel Wrap",
+          "category": "Bakery",
+          "prepTime": 25,
+          "macros": {
+            "calories": 380,
+            "protein": 14,
+            "carbs": 55,
+            "fat": 12
+          },
+          "ingredients": [
+            "1 x - Pita Bread",
+            "4 x - Falafel Balls",
+            "30 g - Hummus",
+            "50 g - Pickled Cabbage",
+            "20 ml - Tahini Sauce"
+          ]
+        },
+        {
+          "id": "d064-od36pdu5d",
+          "name": "Greek Yogurt Parfait",
+          "category": "Dessert",
+          "prepTime": 5,
+          "macros": {
+            "calories": 190,
+            "protein": 8,
+            "carbs": 22,
+            "fat": 6
+          },
+          "ingredients": [
+            "200 g - Yogurt",
+            "50 g - Granola",
+            "50 g - Berries",
+            "10 g - Honey"
+          ]
+        },
+        {
+          "id": "d064-0sqc420r4",
+          "name": "Greek Yogurt Parfait",
+          "category": "Dessert",
+          "prepTime": 5,
+          "macros": {
+            "calories": 190,
+            "protein": 8,
+            "carbs": 22,
+            "fat": 6
+          },
+          "ingredients": [
+            "200 g - Yogurt",
+            "50 g - Granola",
+            "50 g - Berries",
+            "10 g - Honey"
+          ]
+        },
+        {
+          "id": "d035-18rv2qh70",
+          "name": "Apple Pie",
+          "category": "Dessert",
+          "prepTime": 60,
+          "macros": {
+            "calories": 420,
+            "protein": 4,
+            "carbs": 58,
+            "fat": 18
+          },
+          "ingredients": [
+            "200 g - Apples",
+            "200 g - Pie Crust",
+            "50 g - Sugar",
+            "10 g - Cinnamon",
+            "5 g - Butter"
+          ]
         }
       ]
+    },
+    "wed": {
+      "id": "wed",
+      "title": "Wednesday",
+      "items": []
     },
     "thu": {
       "id": "thu",
