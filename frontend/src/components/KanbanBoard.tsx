@@ -133,16 +133,6 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ data, deleteMeal, clearPlan, 
     alert('Grocery list copied to clipboard!');
   };
 
-  const getShoppingList = () => {
-    const ingredients = new Set<string>();
-    ['mon', 'tue', 'wed', 'thu', 'fri'].forEach(day => {
-      data.columns[day].items.forEach((item: Recipe) => {
-        item.ingredients?.forEach(ing => ingredients.add(ing));
-      });
-    });
-    return Array.from(ingredients).sort();
-  };
-
   return (
     <main className="flex flex-1 overflow-hidden h-[calc(100vh-65px-40px)]">
       {/* Grocery Modal */}
