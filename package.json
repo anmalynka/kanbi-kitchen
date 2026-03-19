@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Weekly Meal Planner POC",
   "scripts": {
-    "serve-recipes": "json-server --watch recipes.json --port 3001"
+    "serve-recipes": "json-server --watch recipes.json --port 3001",
+    "build": "echo 'Root build not needed'"
   }
 }
