@@ -12,8 +12,15 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
-const recipesPath = path_1.default.join(__dirname, '../../recipes.json');
-const planPath = path_1.default.join(__dirname, '../../plan.json');
+// Resolve paths to handle both local dev and Docker production
+// In Docker, files are in the same dir as package.json
+// In local dev, they are in the root
+const recipesPath = fs_1.default.existsSync(path_1.default.join(__dirname, '../../recipes.json'))
+    ? path_1.default.join(__dirname, '../../recipes.json')
+    : path_1.default.join(process.cwd(), './recipes.json');
+const planPath = fs_1.default.existsSync(path_1.default.join(__dirname, '../../plan.json'))
+    ? path_1.default.join(__dirname, '../../plan.json')
+    : path_1.default.join(process.cwd(), './plan.json');
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 const openai = process.env.OPENAI_API_KEY ? new openai_1.default({ apiKey: process.env.OPENAI_API_KEY }) : null;
