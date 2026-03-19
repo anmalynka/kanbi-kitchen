@@ -3,8 +3,9 @@ services:
   - type: web
     name: kanbi-kitchen-api
     runtime: node
-    buildCommand: "cd backend && npm install && npm run build"
-    startCommand: "cd backend && npm start"
+    rootDir: backend
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
     envVars:
       - key: PORT
         value: 10000
@@ -17,8 +18,9 @@ services:
   - type: static
     name: kanbi-kitchen-ui
     runtime: static
-    buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: "./frontend/dist"
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "dist"
     envVars:
       - key: VITE_API_URL
         value: https://kanbi-kitchen-api.onrender.com # Update this after first deployment
