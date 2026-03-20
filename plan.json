@@ -1,80 +1,159 @@
 {
-  "columns": {
-    "mon": {
-      "id": "mon",
-      "title": "Monday",
-      "items": [
-        {
-          "id": "d063-w5tddfhb2",
-          "name": "Vegetable Lasagna",
-          "category": "Side-dish",
-          "prepTime": 55,
-          "macros": {
-            "calories": 410,
-            "protein": 14,
-            "carbs": 48,
-            "fat": 18
+  "plans": {
+    "legacy": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": [
+          {
+            "id": "d063-w5tddfhb2",
+            "name": "Vegetable Lasagna",
+            "category": "Side-dish",
+            "prepTime": 55,
+            "macros": {
+              "calories": 410,
+              "protein": 14,
+              "carbs": 48,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Lasagna Noodles",
+              "150 g - Veggies",
+              "100 g - Ricotta",
+              "50 g - Mozzarella",
+              "10 g - Tomato Sauce"
+            ]
           },
-          "ingredients": [
-            "200 g - Lasagna Noodles",
-            "150 g - Veggies",
-            "100 g - Ricotta",
-            "50 g - Mozzarella",
-            "10 g - Tomato Sauce"
-          ]
-        },
-        {
-          "id": "d016-ma4m7cbbl",
-          "name": "Lemon Pepper Shrimp",
-          "category": "Seafood",
-          "prepTime": 18,
-          "macros": {
-            "calories": 240,
-            "protein": 18,
-            "carbs": 2,
-            "fat": 14
-          },
-          "ingredients": [
-            "200 g - Shrimp",
-            "10 g - Lemon Zest",
-            "15 ml - Lemon Juice",
-            "10 g - Black Pepper",
-            "10 ml - Olive Oil"
-          ]
-        }
-      ]
+          {
+            "id": "d016-ma4m7cbbl",
+            "name": "Lemon Pepper Shrimp",
+            "category": "Seafood",
+            "prepTime": 18,
+            "macros": {
+              "calories": 240,
+              "protein": 18,
+              "carbs": 2,
+              "fat": 14
+            },
+            "ingredients": [
+              "200 g - Shrimp",
+              "10 g - Lemon Zest",
+              "15 ml - Lemon Juice",
+              "10 g - Black Pepper",
+              "10 ml - Olive Oil"
+            ]
+          }
+        ]
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": []
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "day": "Sat",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "day": "Sun",
+        "items": []
+      }
     },
-    "tue": {
-      "id": "tue",
-      "title": "Tuesday",
-      "items": []
-    },
-    "wed": {
-      "id": "wed",
-      "title": "Wednesday",
-      "items": []
-    },
-    "thu": {
-      "id": "thu",
-      "title": "Thursday",
-      "items": []
-    },
-    "fri": {
-      "id": "fri",
-      "title": "Friday",
-      "items": []
-    },
-    "sat": {
-      "id": "sat",
-      "title": "Saturday",
-      "day": "Sat",
-      "items": []
-    },
-    "sun": {
-      "id": "sun",
-      "title": "Sunday",
-      "day": "Sun",
-      "items": []
+    "2026-03-16": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": [
+          {
+            "id": "d034-kf9mlubb7",
+            "name": "Chocolate Brownie",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 350,
+              "protein": 6,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Dark Chocolate",
+              "150 g - Butter",
+              "100 g - Sugar",
+              "30 g - Flour",
+              "5 g - Baking Powder"
+            ]
+          }
+        ]
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": [
+          {
+            "id": "d035-ctio5td5e",
+            "name": "Apple Pie",
+            "category": "Dessert",
+            "prepTime": 60,
+            "macros": {
+              "calories": 420,
+              "protein": 4,
+              "carbs": 58,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Apples",
+              "200 g - Pie Crust",
+              "50 g - Sugar",
+              "10 g - Cinnamon",
+              "5 g - Butter"
+            ]
+          }
+        ]
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
     }
   }
 }

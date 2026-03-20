@@ -20,6 +20,16 @@ function App() {
   const [tempCalorie, setTempCalorie] = useState(calorieTarget.toString());
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
+  const getWeekId = (date: Date) => {
+    const d = new Date(date);
+    const day = d.getDay();
+    const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(d.setDate(diff));
+    return monday.toISOString().split('T')[0]; // YYYY-MM-DD
+  };
+
+  const weekId = getWeekId(currentDate);
+
   const [viewMode, setViewMode] = useState<5 | 7>(5);
   const [data, setData] = useState<DataState>({
     columns: {
@@ -35,6 +45,7 @@ function App() {
     columnOrder: ['bank', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
   });
 
+  // Initial load for recipes
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1280);
     window.addEventListener('resize', handleResize);
@@ -43,32 +54,46 @@ function App() {
       setLoading(false);
     }, 2000);
 
-    const fetchData = async () => {
+    const fetchRecipes = async () => {
       try {
-        const [recipesRes, planRes] = await Promise.all([
-          axios.get('/api/recipes'),
-          axios.get('/api/plan')
-        ]);
-        
+        const res = await axios.get('/api/recipes');
         setData(prev => ({
           ...prev,
           columns: {
             ...prev.columns,
-            ...planRes.data.columns,
-            bank: { id: 'bank', title: 'Dish Bank', items: recipesRes.data }
+            bank: { id: 'bank', title: 'Dish Bank', items: res.data }
           }
         }));
       } catch (err) {
-        console.error("Error fetching data:", err);
+        console.error("Error fetching recipes:", err);
       }
     };
-    fetchData();
+    fetchRecipes();
 
     return () => {
       window.removeEventListener('resize', handleResize);
       clearTimeout(timer);
     };
   }, []);
+
+  // Load plan when week changes
+  useEffect(() => {
+    const fetchPlan = async () => {
+      try {
+        const res = await axios.get(`/api/plan?week=${weekId}`);
+        setData(prev => ({
+          ...prev,
+          columns: {
+            ...prev.columns,
+            ...res.data.columns,
+          }
+        }));
+      } catch (err) {
+        console.error("Error fetching plan:", err);
+      }
+    };
+    fetchPlan();
+  }, [weekId]);
 
   const onDragEnd = async (result: DropResult) => {
     const { destination, source } = result;
@@ -125,7 +150,7 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     try {
-      await axios.post('/api/plan', { columns: planColumns });
+      await axios.post(`/api/plan?week=${weekId}`, { columns: planColumns });
     } catch (err) {
       console.error("Error saving plan:", err);
     }
@@ -146,7 +171,7 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     try {
-      await axios.post('/api/plan', { columns: planColumns });
+      await axios.post(`/api/plan?week=${weekId}`, { columns: planColumns });
     } catch (err) {
       console.error("Error saving plan:", err);
     }
@@ -163,7 +188,11 @@ function App() {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
-    await axios.post('/api/plan', { columns: planColumns });
+    try {
+      await axios.post(`/api/plan?week=${weekId}`, { columns: planColumns });
+    } catch (err) {
+      console.error("Error saving plan:", err);
+    }
   };
 
   const clearPlan = async () => {
@@ -181,7 +210,7 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { bank, ...planColumns } = newColumns;
     try {
-      await axios.post('/api/plan', { columns: planColumns });
+      await axios.post(`/api/plan?week=${weekId}`, { columns: planColumns });
     } catch (err) {
       console.error("Error clearing plan:", err);
     }

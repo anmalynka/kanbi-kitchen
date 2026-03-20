@@ -27,28 +27,32 @@ app.use(express.json());
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
 // Helper to read/write plan
-const getPlan = () => {
-    const defaultPlan = {
-        columns: {
-            mon: { id: 'mon', title: 'Monday', items: [] },
-            tue: { id: 'tue', title: 'Tuesday', items: [] },
-            wed: { id: 'wed', title: 'Wednesday', items: [] },
-            thu: { id: 'thu', title: 'Thursday', items: [] },
-            fri: { id: 'fri', title: 'Friday', items: [] },
-            sat: { id: 'sat', title: 'Saturday', items: [] },
-            sun: { id: 'sun', title: 'Sunday', items: [] }
-        }
-    };
-    if (!fs.existsSync(planPath)) return defaultPlan;
+const getPlans = () => {
+    if (!fs.existsSync(planPath)) return {};
     try {
-        return JSON.parse(fs.readFileSync(planPath, 'utf8'));
+        const data = JSON.parse(fs.readFileSync(planPath, 'utf8'));
+        // Support migration from single plan to multi-week
+        if (data.columns && !data.plans) {
+            return { "legacy": data.columns };
+        }
+        return data.plans || {};
     } catch (e) {
-        return defaultPlan;
+        return {};
     }
 };
 
-const savePlan = (plan: any) => {
-    fs.writeFileSync(planPath, JSON.stringify(plan, null, 2));
+const getDefaultColumns = () => ({
+    mon: { id: 'mon', title: 'Monday', items: [] },
+    tue: { id: 'tue', title: 'Tuesday', items: [] },
+    wed: { id: 'wed', title: 'Wednesday', items: [] },
+    thu: { id: 'thu', title: 'Thursday', items: [] },
+    fri: { id: 'fri', title: 'Friday', items: [] },
+    sat: { id: 'sat', title: 'Saturday', items: [] },
+    sun: { id: 'sun', title: 'Sunday', items: [] }
+});
+
+const savePlans = (plans: any) => {
+    fs.writeFileSync(planPath, JSON.stringify({ plans }, null, 2));
 };
 
 // 1. Get Recipes (from recipes.json)
@@ -59,11 +63,17 @@ app.get('/api/recipes', (req, res) => {
 
 // 2. Get/Update Weekly Plan
 app.get('/api/plan', (req, res) => {
-    res.json(getPlan());
+    const weekId = req.query.week as string || 'legacy';
+    const plans = getPlans();
+    res.json({ columns: plans[weekId] || getDefaultColumns() });
 });
 
 app.post('/api/plan', (req, res) => {
-    savePlan(req.body);
+    const weekId = req.query.week as string || 'legacy';
+    const { columns } = req.body;
+    const plans = getPlans();
+    plans[weekId] = columns;
+    savePlans(plans);
     res.json({ message: 'Plan saved successfully' });
 });
 
