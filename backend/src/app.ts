@@ -4,10 +4,13 @@ import fs from 'fs';
 import path from 'path';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
+
+// Load env vars from both local and root (for various dev setups)
+dotenv.config();
+dotenv.config({ path: path.join(__dirname, '../../.env') });
+
 import rateLimit from 'express-rate-limit';
 import { estimateNutritionGemini } from './services/gemini.service';
-
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,15 +25,24 @@ const aiLimiter = rateLimit({
 });
 
 // Resolve paths to handle both local dev and Docker production
-// In Docker, files are in the same dir as package.json
-// In local dev, they are in the root
-const recipesPath = fs.existsSync(path.join(__dirname, '../../recipes.json')) 
-    ? path.join(__dirname, '../../recipes.json')
-    : path.join(process.cwd(), './recipes.json');
+const getFilePath = (fileName: string) => {
+    const paths = [
+        path.join(__dirname, `../../${fileName}`),
+        path.join(process.cwd(), `../${fileName}`),
+        path.join(process.cwd(), `./${fileName}`),
+        path.join(__dirname, `../${fileName}`)
+    ];
+    for (const p of paths) {
+        if (fs.existsSync(p)) return p;
+    }
+    return path.join(process.cwd(), fileName); // Fallback
+};
 
-const planPath = fs.existsSync(path.join(__dirname, '../../plan.json'))
-    ? path.join(__dirname, '../../plan.json')
-    : path.join(process.cwd(), './plan.json');
+const recipesPath = getFilePath('recipes.json');
+const planPath = getFilePath('plan.json');
+
+console.log('Using recipesPath:', recipesPath);
+console.log('Using planPath:', planPath);
 
 app.use(cors());
 app.use(express.json({ limit: '100kb' }));
@@ -46,6 +58,7 @@ const sanitizeString = (str: any, maxLength = 100) => {
 const validateRecipe = (recipe: any) => {
     if (!recipe || typeof recipe !== 'object') return null;
     return {
+        id: recipe.id ? sanitizeString(recipe.id, 50) : undefined,
         name: sanitizeString(recipe.name, 50) || 'Untitled Recipe',
         category: sanitizeString(recipe.category, 30) || 'Other',
         prepTime: typeof recipe.prepTime === 'number' ? Math.max(0, Math.min(recipe.prepTime, 1440)) : 15,
@@ -61,17 +74,28 @@ const validateRecipe = (recipe: any) => {
     };
 };
 
+const areMacrosZero = (recipe: any) => {
+    if (!recipe.macros) return true;
+    return recipe.macros.calories === 0 && 
+           recipe.macros.protein === 0 && 
+           recipe.macros.carbs === 0 && 
+           recipe.macros.fat === 0;
+};
+
 // Helper to read/write plan
 const getPlans = () => {
     if (!fs.existsSync(planPath)) return {};
     try {
-        const data = JSON.parse(fs.readFileSync(planPath, 'utf8'));
+        const fileContent = fs.readFileSync(planPath, 'utf8');
+        if (!fileContent.trim()) return {};
+        const data = JSON.parse(fileContent);
         // Support migration from single plan to multi-week
         if (data.columns && !data.plans) {
             return { "legacy": data.columns };
         }
         return data.plans || {};
     } catch (e) {
+        console.error('Error reading plans:', e);
         return {};
     }
 };
@@ -87,19 +111,38 @@ const getDefaultColumns = () => ({
 });
 
 const savePlans = (plans: any) => {
-    fs.writeFileSync(planPath, JSON.stringify({ plans }, null, 2));
+    try {
+        fs.writeFileSync(planPath, JSON.stringify({ plans }, null, 2));
+    } catch (e) {
+        console.error('Error saving plans:', e);
+    }
 };
 
 // 1. Get Recipes (from recipes.json)
 app.get('/api/recipes', (req, res) => {
-    const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
-    res.json(data.recipes);
+    try {
+        if (!fs.existsSync(recipesPath)) {
+            console.warn('recipes.json not found, returning empty list');
+            return res.json([]);
+        }
+        const fileContent = fs.readFileSync(recipesPath, 'utf8');
+        if (!fileContent.trim()) return res.json([]);
+        const data = JSON.parse(fileContent);
+        res.json(data.recipes || []);
+    } catch (err) {
+        console.error('Error in GET /api/recipes:', err);
+        res.status(500).json({ error: 'Failed to fetch recipes' });
+    }
 });
 
 app.post('/api/recipes', (req, res) => {
     try {
         const validatedRecipe = validateRecipe(req.body);
         if (!validatedRecipe) return res.status(400).json({ error: 'Invalid recipe data' });
+
+        if (areMacrosZero(validatedRecipe)) {
+            return res.status(400).json({ error: 'Nutritional information is required' });
+        }
 
         const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
         
@@ -127,6 +170,61 @@ app.post('/api/recipes', (req, res) => {
     } catch (err) {
         console.error("Error saving recipe:", err);
         res.status(500).json({ error: 'Failed to save recipe' });
+    }
+});
+
+app.put('/api/recipes/:id', (req, res) => {
+    try {
+        const { id } = req.params;
+        const validatedRecipe = validateRecipe(req.body);
+        if (!validatedRecipe) return res.status(400).json({ error: 'Invalid recipe data' });
+
+        if (areMacrosZero(validatedRecipe)) {
+            return res.status(400).json({ error: 'Nutritional information is required' });
+        }
+
+        const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
+        const index = data.recipes.findIndex((r: any) => r.id === id);
+        
+        if (index === -1) {
+            return res.status(404).json({ error: 'Recipe not found' });
+        }
+
+        data.recipes[index] = {
+            ...validatedRecipe,
+            id // keep original ID
+        };
+        
+        fs.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
+        
+        console.log(`Successfully updated recipe ${id}: ${data.recipes[index].name}`);
+        res.json(data.recipes[index]);
+    } catch (err) {
+        console.error("Error updating recipe:", err);
+        res.status(500).json({ error: 'Failed to update recipe' });
+    }
+});
+
+app.delete('/api/recipes/:id', (req, res) => {
+    try {
+        const { id } = req.params;
+        const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
+        const index = data.recipes.findIndex((r: any) => r.id === id);
+        
+        if (index === -1) {
+            return res.status(404).json({ error: 'Recipe not found' });
+        }
+
+        const deletedName = data.recipes[index].name;
+        data.recipes.splice(index, 1);
+        
+        fs.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
+        
+        console.log(`Successfully deleted recipe ${id}: ${deletedName}`);
+        res.json({ message: 'Recipe deleted successfully', id });
+    } catch (err) {
+        console.error("Error deleting recipe:", err);
+        res.status(500).json({ error: 'Failed to delete recipe' });
     }
 });
 
@@ -205,9 +303,19 @@ app.post('/api/ai/estimate', aiLimiter, async (req, res) => {
     }
 
     try {
+        if (!process.env.GEMINI_API_KEY) {
+            console.log("No GEMINI_API_KEY found, returning mock nutrition data");
+            return res.json({
+                calories: 450,
+                protein: 25,
+                carbs: 50,
+                fat: 15
+            });
+        }
+
         const result = await estimateNutritionGemini(recipeName, safeIngredients);
         if (!result) {
-             return res.status(500).json({ error: 'Failed to estimate nutrition' });
+             return res.status(500).json({ error: 'Failed to estimate nutrition from AI' });
         }
         res.json(result);
     } catch (err) {

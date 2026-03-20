@@ -84,12 +84,12 @@
         "title": "Monday",
         "items": [
           {
-            "id": "d034-kf9mlubb7",
+            "id": "d034-yr1xe7dpe",
             "name": "Chocolate Brownie",
             "category": "Dessert",
             "prepTime": 30,
             "macros": {
-              "calories": 350,
+              "calories": 362,
               "protein": 6,
               "carbs": 44,
               "fat": 18
@@ -107,46 +107,7 @@
       "tue": {
         "id": "tue",
         "title": "Tuesday",
-        "items": [
-          {
-            "id": "d035-ctio5td5e",
-            "name": "Apple Pie",
-            "category": "Dessert",
-            "prepTime": 60,
-            "macros": {
-              "calories": 420,
-              "protein": 4,
-              "carbs": 58,
-              "fat": 18
-            },
-            "ingredients": [
-              "200 g - Apples",
-              "200 g - Pie Crust",
-              "50 g - Sugar",
-              "10 g - Cinnamon",
-              "5 g - Butter"
-            ]
-          },
-          {
-            "id": "d035-kype9erk2",
-            "name": "Apple Pie",
-            "category": "Dessert",
-            "prepTime": 60,
-            "macros": {
-              "calories": 420,
-              "protein": 4,
-              "carbs": 58,
-              "fat": 18
-            },
-            "ingredients": [
-              "200 g - Apples",
-              "200 g - Pie Crust",
-              "50 g - Sugar",
-              "10 g - Cinnamon",
-              "5 g - Butter"
-            ]
-          }
-        ]
+        "items": []
       },
       "wed": {
         "id": "wed",
@@ -156,27 +117,7 @@
       "thu": {
         "id": "thu",
         "title": "Thursday",
-        "items": [
-          {
-            "id": "d071-hfh1tai16",
-            "name": "Cheesecake",
-            "category": "Dessert",
-            "prepTime": 45,
-            "macros": {
-              "calories": 450,
-              "protein": 6,
-              "carbs": 48,
-              "fat": 24
-            },
-            "ingredients": [
-              "200 g - Cream Cheese",
-              "100 g - Sugar",
-              "50 g - Eggs",
-              "20 g - Sour Cream",
-              "10 g - Vanilla"
-            ]
-          }
-        ]
+        "items": []
       },
       "fri": {
         "id": "fri",
@@ -198,14 +139,26 @@
       "mon": {
         "id": "mon",
         "title": "Monday",
-        "items": []
-      },
-      "tue": {
-        "id": "tue",
-        "title": "Tuesday",
         "items": [
           {
-            "id": "d034-cvp0136q2",
+            "name": "Crispy Falafel Wrap",
+            "category": "Bakery",
+            "prepTime": 25,
+            "macros": {
+              "calories": 380,
+              "protein": 14,
+              "carbs": 55,
+              "fat": 12
+            },
+            "ingredients": [
+              "1 x - Pita Bread",
+              "4 x - Falafel Balls",
+              "30 g - Hummus",
+              "50 g - Pickled Cabbage",
+              "20 ml - Tahini Sauce"
+            ]
+          },
+          {
             "name": "Chocolate Brownie",
             "category": "Dessert",
             "prepTime": 30,
@@ -224,7 +177,101 @@
             ]
           },
           {
-            "id": "d035-8z286f7jn",
+            "name": "Cheesecake",
+            "category": "Dessert",
+            "prepTime": 45,
+            "macros": {
+              "calories": 450,
+              "protein": 6,
+              "carbs": 48,
+              "fat": 24
+            },
+            "ingredients": [
+              "200 g - Cream Cheese",
+              "100 g - Sugar",
+              "50 g - Eggs",
+              "20 g - Sour Cream",
+              "10 g - Vanilla"
+            ]
+          },
+          {
+            "name": "Greek Yogurt Parfait",
+            "category": "Dessert",
+            "prepTime": 5,
+            "macros": {
+              "calories": 190,
+              "protein": 8,
+              "carbs": 22,
+              "fat": 6
+            },
+            "ingredients": [
+              "200 g - Yogurt",
+              "50 g - Granola",
+              "50 g - Berries",
+              "10 g - Honey"
+            ]
+          }
+        ]
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": [
+          {
+            "name": "Crispy Falafel Wrap",
+            "category": "Bakery",
+            "prepTime": 25,
+            "macros": {
+              "calories": 380,
+              "protein": 14,
+              "carbs": 55,
+              "fat": 12
+            },
+            "ingredients": [
+              "1 x - Pita Bread",
+              "4 x - Falafel Balls",
+              "30 g - Hummus",
+              "50 g - Pickled Cabbage",
+              "20 ml - Tahini Sauce"
+            ]
+          },
+          {
+            "name": "Chocolate Brownie",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 350,
+              "protein": 6,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Dark Chocolate",
+              "150 g - Butter",
+              "100 g - Sugar",
+              "30 g - Flour",
+              "5 g - Baking Powder"
+            ]
+          },
+          {
+            "name": "Chocolate Brownie",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 350,
+              "protein": 6,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Dark Chocolate",
+              "150 g - Butter",
+              "100 g - Sugar",
+              "30 g - Flour",
+              "5 g - Baking Powder"
+            ]
+          },
+          {
             "name": "Apple Pie",
             "category": "Dessert",
             "prepTime": 60,
@@ -332,6 +379,207 @@
         "id": "mon",
         "title": "Monday",
         "items": []
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": []
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
+    },
+    "2026-10-26": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": [
+          {
+            "name": "Herb‑Crusted Roast Chicken",
+            "category": "Meat",
+            "prepTime": 10,
+            "macros": {
+              "calories": 190,
+              "protein": 20,
+              "carbs": 4,
+              "fat": 15
+            },
+            "ingredients": [
+              "200 g - Chicken",
+              "50 g - Olive Oil",
+              "5 g - Dried Herbs",
+              "15 g - Salt",
+              "15 g - Pepper"
+            ]
+          },
+          {
+            "name": "Baked Salmon",
+            "category": "Fish",
+            "prepTime": 20,
+            "macros": {
+              "calories": 220,
+              "protein": 20,
+              "carbs": 2,
+              "fat": 12
+            },
+            "ingredients": [
+              "200 g - Salmon Fillet",
+              "15 ml - Olive Oil",
+              "15 g - Salt",
+              "15 g - Pepper"
+            ]
+          },
+          {
+            "name": "Apple Pie",
+            "category": "Dessert",
+            "prepTime": 60,
+            "macros": {
+              "calories": 420,
+              "protein": 4,
+              "carbs": 58,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Apples",
+              "200 g - Pie Crust",
+              "50 g - Sugar",
+              "10 g - Cinnamon",
+              "5 g - Butter"
+            ]
+          },
+          {
+            "name": "Chocolate Chip Cookies",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 360,
+              "protein": 4,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Flour",
+              "150 g - Chocolate Chips",
+              "100 g - Sugar",
+              "50 g - Butter",
+              "5 g - Baking Soda"
+            ]
+          },
+          {
+            "name": "Pancakes",
+            "category": "Dessert",
+            "prepTime": 15,
+            "macros": {
+              "calories": 200,
+              "protein": 6,
+              "carbs": 32,
+              "fat": 6
+            },
+            "ingredients": [
+              "200 g - Flour",
+              "50 g - Sugar",
+              "50 ml - Milk",
+              "30 g - Baking Powder",
+              "10 ml - Vanilla"
+            ]
+          }
+        ]
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": []
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
+    },
+    "2026-10-19": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": [
+          {
+            "name": "Chocolate Brownie",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 350,
+              "protein": 6,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Dark Chocolate",
+              "150 g - Butter",
+              "100 g - Sugar",
+              "30 g - Flour",
+              "5 g - Baking Powder"
+            ]
+          },
+          {
+            "name": "Apple Pie",
+            "category": "Dessert",
+            "prepTime": 60,
+            "macros": {
+              "calories": 420,
+              "protein": 4,
+              "carbs": 58,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Apples",
+              "200 g - Pie Crust",
+              "50 g - Sugar",
+              "10 g - Cinnamon",
+              "5 g - Butter"
+            ]
+          }
+        ]
       },
       "tue": {
         "id": "tue",

@@ -13,6 +13,7 @@ services:
       - SUPABASE_URL=${SUPABASE_URL}
       - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     volumes:
       - .:/app-data # Optional: if you want to sync recipes/plan locally
     depends_on:

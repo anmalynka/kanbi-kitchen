@@ -17,7 +17,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, index, onDoubleClick })
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           onDoubleClick={onDoubleClick}
-          className={`group cursor-grab active:cursor-grabbing p-[13px] rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary flex items-center gap-[12px] mb-3 ${
+          className={`group cursor-grab active:cursor-grabbing p-[13px] rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary flex items-center gap-[12px] ${
             snapshot.isDragging ? 'shadow-lg border-primary/50 z-50' : 'transition-all'
           }`}
           style={{
@@ -29,16 +29,16 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, index, onDoubleClick })
               {recipe.name}
             </p>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5">
-              <span className="text-[11px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">
+              <span className="text-[12px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">
                 {recipe.macros?.calories || 0} kcal
               </span>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400">
+              <span className="text-[12px] text-slate-600 dark:text-slate-400">
                 P: <span className="font-medium text-slate-700 dark:text-slate-300">{recipe.macros?.protein}g</span>
               </span>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400">
+              <span className="text-[12px] text-slate-600 dark:text-slate-400">
                 C: <span className="font-medium text-slate-700 dark:text-slate-300">{recipe.macros?.carbs}g</span>
               </span>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400">
+              <span className="text-[12px] text-slate-600 dark:text-slate-400">
                 F: <span className="font-medium text-slate-700 dark:text-slate-300">{recipe.macros?.fat}g</span>
               </span>
             </div>

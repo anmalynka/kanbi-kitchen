@@ -256,13 +256,73 @@ function App() {
     }));
   };
 
+  const updateRecipe = (updatedRecipe: Recipe) => {
+    setData(prev => {
+      // Update in bank
+      const newBankItems = prev.columns.bank.items.map(r => 
+        r.id === updatedRecipe.id ? updatedRecipe : r
+      );
+
+      // Update in all other columns (plan)
+      const newColumns = { ...prev.columns };
+      Object.keys(newColumns).forEach(colId => {
+        if (colId !== 'bank') {
+          newColumns[colId] = {
+            ...newColumns[colId],
+            items: newColumns[colId].items.map(r => {
+              // Plan items have unique IDs like "id-random", so we check if the base ID matches
+              if (r.id?.startsWith(updatedRecipe.id + '-')) {
+                return { ...updatedRecipe, id: r.id };
+              }
+              return r;
+            })
+          };
+        }
+      });
+
+      return {
+        ...prev,
+        columns: {
+          ...newColumns,
+          bank: { ...prev.columns.bank, items: newBankItems }
+        }
+      };
+    });
+  };
+
+  const deleteRecipeFromBank = (recipeId: string) => {
+    setData(prev => {
+      // Remove from bank
+      const newBankItems = prev.columns.bank.items.filter(r => r.id !== recipeId);
+
+      // Remove from all other columns (plan)
+      const newColumns = { ...prev.columns };
+      Object.keys(newColumns).forEach(colId => {
+        if (colId !== 'bank') {
+          newColumns[colId] = {
+            ...newColumns[colId],
+            items: newColumns[colId].items.filter(r => !r.id?.startsWith(recipeId + '-'))
+          };
+        }
+      });
+
+      return {
+        ...prev,
+        columns: {
+          ...newColumns,
+          bank: { ...prev.columns.bank, items: newBankItems }
+        }
+      };
+    });
+  };
+
   if (loading) {
     return (
       <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background-light dark:bg-background-dark font-display">
         <div className="w-[300px] h-[300px] mb-8 overflow-hidden rounded-3xl shadow-2xl animate-pulse">
           <img src="/kanbi.png" alt="Kanbi Kitchen Logo" className="w-full h-full object-cover" />
         </div>
-        <h1 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter animate-bounce text-center px-4">
+        <h1 className="text-2xl font-black text-slate-900 dark:text-white tracking-tighter animate-bounce text-center px-4">
           Kanbi Kitchen Loading...
         </h1>
       </div>
@@ -279,7 +339,7 @@ function App() {
               <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
                 <div>
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Set Calorie Target</h2>
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Daily energy goal</p>
+                  <p className="text-xs text-slate-500 font-bold tracking-widest mt-1">Daily energy goal</p>
                 </div>
                 <button onClick={() => setIsCalorieModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                   <span className="material-symbols-outlined">close</span>
@@ -291,7 +351,7 @@ function App() {
                     <button
                       key={val}
                       onClick={() => setTempCalorie(val.toString())}
-                      className={`flex-1 py-2 rounded-xl text-xs font-bold uppercase transition-all border ${
+                      className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all border ${
                         tempCalorie === val.toString()
                           ? 'bg-primary text-white border-primary'
                           : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-primary'
@@ -309,11 +369,11 @@ function App() {
                     className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-lg font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all pr-12"
                     placeholder="Enter value..."
                   />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 uppercase">kcal</span>
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kcal</span>
                 </div>
                 <button
                   onClick={handleSaveCalorieTarget}
-                  className="w-full bg-primary text-white font-bold uppercase text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
+                  className="w-full bg-primary text-white font-bold text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
                 >
                   Save Target
                 </button>
@@ -408,13 +468,15 @@ function App() {
             <RecipesPage 
               recipes={data.columns.bank.items} 
               onAddRecipe={addRecipe}
+              onUpdateRecipe={updateRecipe}
+              onDeleteRecipe={deleteRecipeFromBank}
             />
           )}
         </div>
 
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">
           <div className="flex gap-[24px]">
-            <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] flex items-center gap-2">
+            <span className="text-[10px] font-semibold text-slate-500 tracking-[1px] flex items-center gap-2">
               <span className="hidden sm:inline">Calories Target:</span> {calorieTarget.toLocaleString()}/day
               <button 
                 onClick={() => {
@@ -428,7 +490,7 @@ function App() {
             </span>
           </div>
           <div className="flex gap-[16px] items-center">
-             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Kanbi Kitchen v1.0</span>
+             <span className="text-[10px] font-bold text-slate-400 tracking-widest">Kanbi Kitchen v1.0</span>
           </div>
         </footer>      </div>
     </DragDropContext>
