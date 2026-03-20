@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": "d001",
-      "name": "Herb\u2011Crusted Roast Chicken",
+      "name": "Herb‑Crusted Roast Chicken",
       "category": "Meat",
       "prepTime": 10,
       "macros": {
@@ -12,11 +12,11 @@
         "fat": 15
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "50\u202fg - Olive Oil",
-        "5\u202fg - Dried Herbs",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Chicken",
+        "50 g - Olive Oil",
+        "5 g - Dried Herbs",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -31,10 +31,10 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Salmon Fillet",
-        "15\u202fml - Olive Oil",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Salmon Fillet",
+        "15 ml - Olive Oil",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -49,16 +49,16 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Chicken Breast",
+        "200 g - Chicken Breast",
         "2 - Tortillas",
-        "50\u202fg - Cheddar",
-        "30\u202fg - Salsa",
-        "30\u202fg - Guacamole"
+        "50 g - Cheddar",
+        "30 g - Salsa",
+        "30 g - Guacamole"
       ]
     },
     {
       "id": "d004",
-      "name": "Saut\u00e9ed Shrimp",
+      "name": "Sautéed Shrimp",
       "category": "Seafood",
       "prepTime": 15,
       "macros": {
@@ -68,13 +68,13 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "30\u202fml - Olive Oil",
-        "15\u202fml - Lemon Juice",
-        "15\u202fg - Capers",
-        "15\u202fg - Garlic",
-        "5\u202fg - Parsley",
-        "15\u202fg - Salt"
+        "200 g - Shrimp",
+        "30 ml - Olive Oil",
+        "15 ml - Lemon Juice",
+        "15 g - Capers",
+        "15 g - Garlic",
+        "5 g - Parsley",
+        "15 g - Salt"
       ]
     },
     {
@@ -89,12 +89,12 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Beans",
-        "200\u202fg - Rice",
-        "200\u202fml - Tomato Sauce",
-        "50\u202fml - Water",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Beans",
+        "200 g - Rice",
+        "200 ml - Tomato Sauce",
+        "50 ml - Water",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -109,12 +109,12 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "200\u202fg - Rice",
-        "200\u202fml - Tomato Sauce",
-        "50\u202fml - Water",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Chicken",
+        "200 g - Rice",
+        "200 ml - Tomato Sauce",
+        "50 ml - Water",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -129,11 +129,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "30\u202fml - Olive Oil",
-        "15\u202fml - Lemon Juice",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Chicken",
+        "30 ml - Olive Oil",
+        "15 ml - Lemon Juice",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -148,11 +148,11 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "30\u202fml - Olive Oil",
-        "15\u202fml - Lemon Juice",
-        "15\u202fg - Salt",
-        "15\u202fg - Pepper"
+        "200 g - Shrimp",
+        "30 ml - Olive Oil",
+        "15 ml - Lemon Juice",
+        "15 g - Salt",
+        "15 g - Pepper"
       ]
     },
     {
@@ -167,11 +167,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Sausage",
-        "200\u202fg - Potato",
-        "200\u202fml - Chicken Broth",
-        "30\u202fml - Milk",
-        "15\u202fg - Salt"
+        "200 g - Sausage",
+        "200 g - Potato",
+        "200 ml - Chicken Broth",
+        "30 ml - Milk",
+        "15 g - Salt"
       ]
     },
     {
@@ -186,11 +186,11 @@
         "fat": 32
       },
       "ingredients": [
-        "250\u202fg - Duck Breast",
-        "20\u202fg - Salt",
-        "5\u202fg - Pepper",
-        "10\u202fg - Olive Oil",
-        "15\u202fg - Thyme"
+        "250 g - Duck Breast",
+        "20 g - Salt",
+        "5 g - Pepper",
+        "10 g - Olive Oil",
+        "15 g - Thyme"
       ]
     },
     {
@@ -205,12 +205,12 @@
         "fat": 34
       },
       "ingredients": [
-        "300\u202fg - Beef Sirloin",
-        "100\u202fg - Mushrooms",
-        "100\u202fml - Sour Cream",
-        "50\u202fml - Beef Broth",
-        "10\u202fg - Onion",
-        "10\u202fg - Garlic"
+        "300 g - Beef Sirloin",
+        "100 g - Mushrooms",
+        "100 ml - Sour Cream",
+        "50 ml - Beef Broth",
+        "10 g - Onion",
+        "10 g - Garlic"
       ]
     },
     {
@@ -225,16 +225,16 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Cod Fillet",
-        "20\u202fg - Miso Paste",
-        "10\u202fg - Honey",
-        "10\u202fml - Rice Vinegar",
-        "5\u202fg - Ginger"
+        "200 g - Cod Fillet",
+        "20 g - Miso Paste",
+        "10 g - Honey",
+        "10 ml - Rice Vinegar",
+        "5 g - Ginger"
       ]
     },
     {
       "id": "d015",
-      "name": "Vegetable Stir\u2011Fry",
+      "name": "Vegetable Stir‑Fry",
       "category": "Side-dish",
       "prepTime": 20,
       "macros": {
@@ -244,11 +244,11 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Mixed Vegetables",
-        "15\u202fml - Soy Sauce",
-        "10\u202fg - Sesame Oil",
-        "5\u202fg - Garlic",
-        "5\u202fg - Ginger"
+        "200 g - Mixed Vegetables",
+        "15 ml - Soy Sauce",
+        "10 g - Sesame Oil",
+        "5 g - Garlic",
+        "5 g - Ginger"
       ]
     },
     {
@@ -263,11 +263,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "10\u202fg - Lemon Zest",
-        "15\u202fml - Lemon Juice",
-        "10\u202fg - Black Pepper",
-        "10\u202fml - Olive Oil"
+        "200 g - Shrimp",
+        "10 g - Lemon Zest",
+        "15 ml - Lemon Juice",
+        "10 g - Black Pepper",
+        "10 ml - Olive Oil"
       ]
     },
     {
@@ -282,11 +282,11 @@
         "fat": 30
       },
       "ingredients": [
-        "400\u202fg - Pork Shoulder",
-        "20\u202fg - Lime",
-        "15\u202fg - Chipotle Peppers",
-        "10\u202fg - Cumin",
-        "5\u202fg - Salt"
+        "400 g - Pork Shoulder",
+        "20 g - Lime",
+        "15 g - Chipotle Peppers",
+        "10 g - Cumin",
+        "5 g - Salt"
       ]
     },
     {
@@ -301,11 +301,11 @@
         "fat": 24
       },
       "ingredients": [
-        "250\u202fg - Chicken Thighs",
-        "20\u202fg - Capers",
-        "15\u202fg - Lemon",
-        "10\u202fg - Butter",
-        "5\u202fg - Parsley"
+        "250 g - Chicken Thighs",
+        "20 g - Capers",
+        "15 g - Lemon",
+        "10 g - Butter",
+        "5 g - Parsley"
       ]
     },
     {
@@ -320,11 +320,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Ground Beef",
-        "100\u202fg - Lettuce",
-        "50\u202fg - Tomato",
-        "30\u202fg - Cheese",
-        "15\u202fg - Salsa"
+        "200 g - Ground Beef",
+        "100 g - Lettuce",
+        "50 g - Tomato",
+        "30 g - Cheese",
+        "15 g - Salsa"
       ]
     },
     {
@@ -339,11 +339,11 @@
         "fat": 28
       },
       "ingredients": [
-        "500\u202fg - Turkey Breast",
-        "20\u202fg - Rosemary",
-        "15\u202fg - Thyme",
-        "10\u202fml - Olive Oil",
-        "10\u202fg - Salt"
+        "500 g - Turkey Breast",
+        "20 g - Rosemary",
+        "15 g - Thyme",
+        "10 ml - Olive Oil",
+        "10 g - Salt"
       ]
     },
     {
@@ -358,11 +358,11 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Lentils",
-        "100\u202fg - Carrot",
-        "50\u202fg - Celery",
-        "200\u202fml - Vegetable Broth",
-        "10\u202fg - Onion"
+        "200 g - Lentils",
+        "100 g - Carrot",
+        "50 g - Celery",
+        "200 ml - Vegetable Broth",
+        "10 g - Onion"
       ]
     },
     {
@@ -377,11 +377,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "200\u202fg - Rice",
-        "150\u202fg - Peas",
-        "50\u202fg - Bell Pepper",
-        "200\u202fml - Saffron Broth"
+        "200 g - Shrimp",
+        "200 g - Rice",
+        "150 g - Peas",
+        "50 g - Bell Pepper",
+        "200 ml - Saffron Broth"
       ]
     },
     {
@@ -396,11 +396,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Quinoa",
-        "100\u202fg - Cucumber",
-        "50\u202fg - Tomato",
-        "20\u202fg - Feta",
-        "10\u202fml - Lemon Juice"
+        "200 g - Quinoa",
+        "100 g - Cucumber",
+        "50 g - Tomato",
+        "20 g - Feta",
+        "10 ml - Lemon Juice"
       ]
     },
     {
@@ -415,11 +415,11 @@
         "fat": 16
       },
       "ingredients": [
-        "300\u202fg - Ground Turkey",
-        "200\u202fg - Kidney Beans",
-        "100\u202fg - Tomato Sauce",
-        "20\u202fg - Chili Powder",
-        "10\u202fg - Onion"
+        "300 g - Ground Turkey",
+        "200 g - Kidney Beans",
+        "100 g - Tomato Sauce",
+        "20 g - Chili Powder",
+        "10 g - Onion"
       ]
     },
     {
@@ -434,11 +434,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Penne",
-        "50\u202fg - Pesto",
-        "30\u202fg - Parmesan",
-        "20\u202fg - Olive Oil",
-        "5\u202fg - Basil"
+        "200 g - Penne",
+        "50 g - Pesto",
+        "30 g - Parmesan",
+        "20 g - Olive Oil",
+        "5 g - Basil"
       ]
     },
     {
@@ -453,11 +453,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "200\u202fg - Linguine",
-        "15\u202fml - Olive Oil",
-        "10\u202fg - Garlic",
-        "5\u202fg - Red Pepper Flakes"
+        "200 g - Shrimp",
+        "200 g - Linguine",
+        "15 ml - Olive Oil",
+        "10 g - Garlic",
+        "5 g - Red Pepper Flakes"
       ]
     },
     {
@@ -472,11 +472,11 @@
         "fat": 16
       },
       "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "100\u202fg - Tomato Sauce",
-        "80\u202fg - Mozzarella",
-        "10\u202fg - Basil",
-        "5\u202fg - Olive Oil"
+        "200 g - Pizza Dough",
+        "100 g - Tomato Sauce",
+        "80 g - Mozzarella",
+        "10 g - Basil",
+        "5 g - Olive Oil"
       ]
     },
     {
@@ -491,11 +491,11 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Pumpkin",
-        "200\u202fml - Coconut Milk",
-        "50\u202fml - Chicken Broth",
-        "10\u202fg - Ginger",
-        "5\u202fg - Salt"
+        "200 g - Pumpkin",
+        "200 ml - Coconut Milk",
+        "50 ml - Chicken Broth",
+        "10 g - Ginger",
+        "5 g - Salt"
       ]
     },
     {
@@ -510,11 +510,11 @@
         "fat": 18
       },
       "ingredients": [
-        "300\u202fg - Chicken",
+        "300 g - Chicken",
         "6 - Corn Tortillas",
-        "100\u202fg - Enchilada Sauce",
-        "50\u202fg - Cheese",
-        "10\u202fg - Onion"
+        "100 g - Enchilada Sauce",
+        "50 g - Cheese",
+        "10 g - Onion"
       ]
     },
     {
@@ -529,10 +529,10 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Mixed Veggies",
-        "15\u202fml - Olive Oil",
-        "5\u202fg - Salt",
-        "5\u202fg - Pepper"
+        "200 g - Mixed Veggies",
+        "15 ml - Olive Oil",
+        "5 g - Salt",
+        "5 g - Pepper"
       ]
     },
     {
@@ -547,11 +547,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Ground Beef",
+        "200 g - Ground Beef",
         "4 - Corn Tortillas",
-        "50\u202fg - Lettuce",
-        "30\u202fg - Cheese",
-        "10\u202fg - Salsa"
+        "50 g - Lettuce",
+        "30 g - Cheese",
+        "10 g - Salsa"
       ]
     },
     {
@@ -566,11 +566,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Dark Chocolate",
-        "150\u202fg - Butter",
-        "100\u202fg - Sugar",
-        "30\u202fg - Flour",
-        "5\u202fg - Baking Powder"
+        "200 g - Dark Chocolate",
+        "150 g - Butter",
+        "100 g - Sugar",
+        "30 g - Flour",
+        "5 g - Baking Powder"
       ]
     },
     {
@@ -585,11 +585,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Apples",
-        "200\u202fg - Pie Crust",
-        "50\u202fg - Sugar",
-        "10\u202fg - Cinnamon",
-        "5\u202fg - Butter"
+        "200 g - Apples",
+        "200 g - Pie Crust",
+        "50 g - Sugar",
+        "10 g - Cinnamon",
+        "5 g - Butter"
       ]
     },
     {
@@ -604,11 +604,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Cauliflower Rice",
-        "100\u202fg - Mixed Veggies",
-        "10\u202fml - Soy Sauce",
-        "5\u202fg - Sesame Oil",
-        "5\u202fg - Green Onion"
+        "200 g - Cauliflower Rice",
+        "100 g - Mixed Veggies",
+        "10 ml - Soy Sauce",
+        "5 g - Sesame Oil",
+        "5 g - Green Onion"
       ]
     },
     {
@@ -624,10 +624,10 @@
       },
       "ingredients": [
         "4 - Bell Peppers",
-        "200\u202fg - Ground Beef",
-        "100\u202fg - Rice",
-        "50\u202fg - Tomato Sauce",
-        "10\u202fg - Onion"
+        "200 g - Ground Beef",
+        "100 g - Rice",
+        "50 g - Tomato Sauce",
+        "10 g - Onion"
       ]
     },
     {
@@ -642,11 +642,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "200\u202fml - Coconut Milk",
-        "30\u202fg - Green Curry Paste",
-        "50\u202fg - Veggies",
-        "10\u202fg - Basil"
+        "200 g - Chicken",
+        "200 ml - Coconut Milk",
+        "30 g - Green Curry Paste",
+        "50 g - Veggies",
+        "10 g - Basil"
       ]
     },
     {
@@ -661,11 +661,11 @@
         "fat": 4
       },
       "ingredients": [
-        "200\u202fml - Water",
-        "20\u202fg - Miso Paste",
-        "50\u202fg - Tofu",
-        "10\u202fg - Green Onion",
-        "5\u202fg - Seaweed"
+        "200 ml - Water",
+        "20 g - Miso Paste",
+        "50 g - Tofu",
+        "10 g - Green Onion",
+        "5 g - Seaweed"
       ]
     },
     {
@@ -680,11 +680,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Lettuce",
-        "100\u202fg - Cucumber",
-        "50\u202fg - Tomato",
-        "30\u202fg - Feta",
-        "10\u202fg - Olives"
+        "200 g - Lettuce",
+        "100 g - Cucumber",
+        "50 g - Tomato",
+        "30 g - Feta",
+        "10 g - Olives"
       ]
     },
     {
@@ -699,10 +699,10 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Brussels Sprouts",
-        "15\u202fml - Olive Oil",
-        "5\u202fg - Salt",
-        "5\u202fg - Pepper"
+        "200 g - Brussels Sprouts",
+        "15 ml - Olive Oil",
+        "5 g - Salt",
+        "5 g - Pepper"
       ]
     },
     {
@@ -717,11 +717,11 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Chicken",
+        "200 g - Chicken",
         "2 - Wrap",
-        "20\u202fg - Caesar Dressing",
-        "10\u202fg - Parmesan",
-        "5\u202fg - Croutons"
+        "20 g - Caesar Dressing",
+        "10 g - Parmesan",
+        "5 g - Croutons"
       ]
     },
     {
@@ -736,10 +736,10 @@
         "fat": 8
       },
       "ingredients": [
-        "50\u202fg - Cherry Tomatoes",
-        "50\u202fg - Mozzarella",
-        "10\u202fg - Basil",
-        "5\u202fml - Balsamic"
+        "50 g - Cherry Tomatoes",
+        "50 g - Mozzarella",
+        "10 g - Basil",
+        "5 ml - Balsamic"
       ]
     },
     {
@@ -754,11 +754,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Tuna",
-        "50\u202fg - Olives",
-        "50\u202fg - Green Beans",
-        "50\u202fg - Potato",
-        "10\u202fg - Egg"
+        "200 g - Tuna",
+        "50 g - Olives",
+        "50 g - Green Beans",
+        "50 g - Potato",
+        "10 g - Egg"
       ]
     },
     {
@@ -773,11 +773,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - Tomato",
-        "200\u202fg - Mozzarella",
-        "30\u202fg - Pesto",
-        "10\u202fg - Basil",
-        "5\u202fml - Olive Oil"
+        "200 g - Tomato",
+        "200 g - Mozzarella",
+        "30 g - Pesto",
+        "10 g - Basil",
+        "5 ml - Olive Oil"
       ]
     },
     {
@@ -792,11 +792,11 @@
         "fat": 20
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "200\u202fml - Coconut Milk",
-        "20\u202fg - Curry Paste",
-        "50\u202fg - Veggies",
-        "10\u202fg - Ginger"
+        "200 g - Chicken",
+        "200 ml - Coconut Milk",
+        "20 g - Curry Paste",
+        "50 g - Veggies",
+        "10 g - Ginger"
       ]
     },
     {
@@ -811,11 +811,11 @@
         "fat": 16
       },
       "ingredients": [
-        "200\u202fg - Shrimp",
-        "15\u202fml - Olive Oil",
-        "10\u202fg - Garlic",
-        "10\u202fg - Lemon",
-        "5\u202fg - Parsley"
+        "200 g - Shrimp",
+        "15 ml - Olive Oil",
+        "10 g - Garlic",
+        "10 g - Lemon",
+        "5 g - Parsley"
       ]
     },
     {
@@ -830,11 +830,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - White Fish",
+        "200 g - White Fish",
         "2 - Corn Tortillas",
-        "50\u202fg - Cabbage",
-        "30\u202fg - Avocado",
-        "10\u202fg - Lime"
+        "50 g - Cabbage",
+        "30 g - Avocado",
+        "10 g - Lime"
       ]
     },
     {
@@ -849,11 +849,11 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Rice",
-        "100\u202fg - Pineapple",
-        "50\u202fg - Veggies",
-        "10\u202fml - Soy Sauce",
-        "5\u202fg - Sesame Oil"
+        "200 g - Rice",
+        "100 g - Pineapple",
+        "50 g - Veggies",
+        "10 ml - Soy Sauce",
+        "5 g - Sesame Oil"
       ]
     },
     {
@@ -868,16 +868,16 @@
         "fat": 34
       },
       "ingredients": [
-        "300\u202fg - Ground Beef",
-        "50\u202fg - Onion",
-        "10\u202fg - Garlic",
-        "5\u202fg - Salt",
-        "5\u202fg - Pepper"
+        "300 g - Ground Beef",
+        "50 g - Onion",
+        "10 g - Garlic",
+        "5 g - Salt",
+        "5 g - Pepper"
       ]
     },
     {
       "id": "d052",
-      "name": "Vegetable Stir\u2011Fry",
+      "name": "Vegetable Stir‑Fry",
       "category": "Side-dish",
       "prepTime": 20,
       "macros": {
@@ -887,10 +887,10 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Mixed Veggies",
-        "15\u202fml - Soy Sauce",
-        "5\u202fg - Garlic",
-        "5\u202fg - Ginger"
+        "200 g - Mixed Veggies",
+        "15 ml - Soy Sauce",
+        "5 g - Garlic",
+        "5 g - Ginger"
       ]
     },
     {
@@ -905,11 +905,11 @@
         "fat": 20
       },
       "ingredients": [
-        "300\u202fg - Chicken",
-        "200\u202fml - Yogurt",
-        "30\u202fg - Tikka Masala",
-        "10\u202fg - Ginger",
-        "5\u202fg - Garlic"
+        "300 g - Chicken",
+        "200 ml - Yogurt",
+        "30 g - Tikka Masala",
+        "10 g - Ginger",
+        "5 g - Garlic"
       ]
     },
     {
@@ -924,11 +924,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Pasta",
-        "150\u202fg - Veggies",
-        "20\u202fml - Olive Oil",
-        "10\u202fg - Garlic",
-        "5\u202fg - Basil"
+        "200 g - Pasta",
+        "150 g - Veggies",
+        "20 ml - Olive Oil",
+        "10 g - Garlic",
+        "5 g - Basil"
       ]
     },
     {
@@ -943,11 +943,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Eggplant",
-        "200\u202fg - Mozzarella",
-        "50\u202fg - Parmesan",
-        "10\u202fg - Basil",
-        "5\u202fml - Tomato Sauce"
+        "200 g - Eggplant",
+        "200 g - Mozzarella",
+        "50 g - Parmesan",
+        "10 g - Basil",
+        "5 ml - Tomato Sauce"
       ]
     },
     {
@@ -962,11 +962,11 @@
         "fat": 32
       },
       "ingredients": [
-        "500\u202fg - Brisket",
-        "20\u202fg - Brown Sugar",
-        "15\u202fg - Salt",
-        "10\u202fg - Pepper",
-        "5\u202fml - Mustard"
+        "500 g - Brisket",
+        "20 g - Brown Sugar",
+        "15 g - Salt",
+        "10 g - Pepper",
+        "5 ml - Mustard"
       ]
     },
     {
@@ -981,10 +981,10 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Mixed Veggies",
-        "15\u202fml - Olive Oil",
-        "5\u202fg - Salt",
-        "5\u202fg - Pepper"
+        "200 g - Mixed Veggies",
+        "15 ml - Olive Oil",
+        "5 g - Salt",
+        "5 g - Pepper"
       ]
     },
     {
@@ -999,11 +999,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Arborio Rice",
-        "150\u202fg - Mushrooms",
-        "200\u202fml - Vegetable Broth",
-        "50\u202fg - Parmesan",
-        "10\u202fg - Butter"
+        "200 g - Arborio Rice",
+        "150 g - Mushrooms",
+        "200 ml - Vegetable Broth",
+        "50 g - Parmesan",
+        "10 g - Butter"
       ]
     },
     {
@@ -1018,11 +1018,11 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Couscous",
-        "50\u202fg - Tomato",
-        "50\u202fg - Cucumber",
-        "10\u202fg - Lemon Juice",
-        "5\u202fg - Olive Oil"
+        "200 g - Couscous",
+        "50 g - Tomato",
+        "50 g - Cucumber",
+        "10 g - Lemon Juice",
+        "5 g - Olive Oil"
       ]
     },
     {
@@ -1037,11 +1037,11 @@
         "fat": 14
       },
       "ingredients": [
-        "200\u202fg - White Fish",
-        "100\u202fg - Batter",
-        "200\u202fg - Fries",
-        "10\u202fg - Salt",
-        "5\u202fg - Pepper"
+        "200 g - White Fish",
+        "100 g - Batter",
+        "200 g - Fries",
+        "10 g - Salt",
+        "5 g - Pepper"
       ]
     },
     {
@@ -1056,11 +1056,11 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Lentils",
-        "200\u202fml - Coconut Milk",
-        "20\u202fg - Curry Paste",
-        "50\u202fg - Veggies",
-        "10\u202fg - Ginger"
+        "200 g - Lentils",
+        "200 ml - Coconut Milk",
+        "20 g - Curry Paste",
+        "50 g - Veggies",
+        "10 g - Ginger"
       ]
     },
     {
@@ -1075,11 +1075,11 @@
         "fat": 22
       },
       "ingredients": [
-        "200\u202fg - Chicken",
-        "200\u202fml - Cream",
-        "100\u202fg - Parmesan",
-        "10\u202fg - Butter",
-        "5\u202fg - Garlic"
+        "200 g - Chicken",
+        "200 ml - Cream",
+        "100 g - Parmesan",
+        "10 g - Butter",
+        "5 g - Garlic"
       ]
     },
     {
@@ -1094,11 +1094,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Lasagna Noodles",
-        "150\u202fg - Veggies",
-        "100\u202fg - Ricotta",
-        "50\u202fg - Mozzarella",
-        "10\u202fg - Tomato Sauce"
+        "200 g - Lasagna Noodles",
+        "150 g - Veggies",
+        "100 g - Ricotta",
+        "50 g - Mozzarella",
+        "10 g - Tomato Sauce"
       ]
     },
     {
@@ -1113,10 +1113,10 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Yogurt",
-        "50\u202fg - Granola",
-        "50\u202fg - Berries",
-        "10\u202fg - Honey"
+        "200 g - Yogurt",
+        "50 g - Granola",
+        "50 g - Berries",
+        "10 g - Honey"
       ]
     },
     {
@@ -1131,11 +1131,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Spinach",
-        "50\u202fg - Cherry Tomatoes",
-        "10\u202fg - Feta",
-        "5\u202fg - Olive Oil",
-        "5\u202fg - Lemon Juice"
+        "200 g - Spinach",
+        "50 g - Cherry Tomatoes",
+        "10 g - Feta",
+        "5 g - Olive Oil",
+        "5 g - Lemon Juice"
       ]
     },
     {
@@ -1150,11 +1150,11 @@
         "fat": 22
       },
       "ingredients": [
-        "300\u202fg - Steak",
-        "100\u202fg - Bell Pepper",
-        "50\u202fg - Onion",
-        "10\u202fg - Taco Seasoning",
-        "5\u202fg - Olive Oil"
+        "300 g - Steak",
+        "100 g - Bell Pepper",
+        "50 g - Onion",
+        "10 g - Taco Seasoning",
+        "5 g - Olive Oil"
       ]
     },
     {
@@ -1169,11 +1169,11 @@
         "fat": 10
       },
       "ingredients": [
-        "200\u202fg - Veggie Patty",
+        "200 g - Veggie Patty",
         "2 - Buns",
-        "10\u202fg - Lettuce",
-        "5\u202fg - Tomato",
-        "5\u202fg - Mayo"
+        "10 g - Lettuce",
+        "5 g - Tomato",
+        "5 g - Mayo"
       ]
     },
     {
@@ -1188,11 +1188,11 @@
         "fat": 14
       },
       "ingredients": [
-        "300\u202fg - Chicken",
-        "50\u202fg - Breadcrumbs",
-        "10\u202fg - Parmesan",
-        "5\u202fg - Garlic Powder",
-        "5\u202fg - Salt"
+        "300 g - Chicken",
+        "50 g - Breadcrumbs",
+        "10 g - Parmesan",
+        "5 g - Garlic Powder",
+        "5 g - Salt"
       ]
     },
     {
@@ -1207,11 +1207,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Tuna",
-        "50\u202fg - Mayo",
-        "10\u202fg - Celery",
-        "5\u202fg - Onion",
-        "5\u202fg - Lemon Juice"
+        "200 g - Tuna",
+        "50 g - Mayo",
+        "10 g - Celery",
+        "5 g - Onion",
+        "5 g - Lemon Juice"
       ]
     },
     {
@@ -1226,11 +1226,11 @@
         "fat": 24
       },
       "ingredients": [
-        "200\u202fg - Cream Cheese",
-        "100\u202fg - Sugar",
-        "50\u202fg - Eggs",
-        "20\u202fg - Sour Cream",
-        "10\u202fg - Vanilla"
+        "200 g - Cream Cheese",
+        "100 g - Sugar",
+        "50 g - Eggs",
+        "20 g - Sour Cream",
+        "10 g - Vanilla"
       ]
     },
     {
@@ -1245,11 +1245,11 @@
         "fat": 22
       },
       "ingredients": [
-        "200\u202fg - Dark Chocolate",
-        "200\u202fml - Cream",
-        "20\u202fg - Sugar",
-        "5\u202fg - Vanilla",
-        "5\u202fg - Salt"
+        "200 g - Dark Chocolate",
+        "200 ml - Cream",
+        "20 g - Sugar",
+        "5 g - Vanilla",
+        "5 g - Salt"
       ]
     },
     {
@@ -1264,10 +1264,10 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Sugar",
-        "20\u202fg - Vanilla",
-        "10\u202fg - Butter"
+        "200 ml - Milk",
+        "100 g - Sugar",
+        "20 g - Vanilla",
+        "10 g - Butter"
       ]
     },
     {
@@ -1282,10 +1282,10 @@
         "fat": 2
       },
       "ingredients": [
-        "200\u202fg - Strawberries",
-        "200\u202fml - Yogurt",
-        "10\u202fg - Honey",
-        "10\u202fml - Orange Juice"
+        "200 g - Strawberries",
+        "200 ml - Yogurt",
+        "10 g - Honey",
+        "10 ml - Orange Juice"
       ]
     },
     {
@@ -1300,7 +1300,7 @@
         "fat": 0
       },
       "ingredients": [
-        "200\u202fml - Lemonade"
+        "200 ml - Lemonade"
       ]
     },
     {
@@ -1315,11 +1315,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "150\u202fg - Chocolate Chips",
-        "100\u202fg - Sugar",
-        "50\u202fg - Butter",
-        "5\u202fg - Baking Soda"
+        "200 g - Flour",
+        "150 g - Chocolate Chips",
+        "100 g - Sugar",
+        "50 g - Butter",
+        "5 g - Baking Soda"
       ]
     },
     {
@@ -1334,11 +1334,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Oats",
-        "150\u202fg - Chocolate Chips",
-        "100\u202fg - Sugar",
-        "50\u202fg - Butter",
-        "5\u202fg - Baking Powder"
+        "200 g - Oats",
+        "150 g - Chocolate Chips",
+        "100 g - Sugar",
+        "50 g - Butter",
+        "5 g - Baking Powder"
       ]
     },
     {
@@ -1353,11 +1353,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Bread Flour",
-        "100\u202fg - Bananas",
-        "50\u202fg - Sugar",
-        "30\u202fg - Butter",
-        "5\u202fg - Baking Soda"
+        "200 g - Bread Flour",
+        "100 g - Bananas",
+        "50 g - Sugar",
+        "30 g - Butter",
+        "5 g - Baking Soda"
       ]
     },
     {
@@ -1372,11 +1372,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Dark Chocolate",
-        "150\u202fg - Butter",
-        "100\u202fg - Sugar",
-        "30\u202fg - Flour",
-        "5\u202fg - Baking Powder"
+        "200 g - Dark Chocolate",
+        "150 g - Butter",
+        "100 g - Sugar",
+        "30 g - Flour",
+        "5 g - Baking Powder"
       ]
     },
     {
@@ -1391,11 +1391,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "100\u202fg - Sugar",
-        "50\u202fg - Baking Powder",
-        "50\u202fg - Butter",
-        "100\u202fml - Milk"
+        "200 g - Flour",
+        "100 g - Sugar",
+        "50 g - Baking Powder",
+        "50 g - Butter",
+        "100 ml - Milk"
       ]
     },
     {
@@ -1410,11 +1410,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "150\u202fg - Sugar",
-        "50\u202fg - Butter",
-        "50\u202fg - Eggs",
-        "10\u202fml - Vanilla"
+        "200 g - Flour",
+        "150 g - Sugar",
+        "50 g - Butter",
+        "50 g - Eggs",
+        "10 ml - Vanilla"
       ]
     },
     {
@@ -1429,11 +1429,11 @@
         "fat": 6
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "50\u202fg - Sugar",
-        "50\u202fml - Milk",
-        "30\u202fg - Baking Powder",
-        "10\u202fml - Vanilla"
+        "200 g - Flour",
+        "50 g - Sugar",
+        "50 ml - Milk",
+        "30 g - Baking Powder",
+        "10 ml - Vanilla"
       ]
     },
     {
@@ -1448,11 +1448,11 @@
         "fat": 8
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "100\u202fg - Sugar",
-        "50\u202fg - Butter",
-        "50\u202fml - Milk",
-        "5\u202fml - Lemon Juice"
+        "200 g - Flour",
+        "100 g - Sugar",
+        "50 g - Butter",
+        "50 ml - Milk",
+        "5 ml - Lemon Juice"
       ]
     },
     {
@@ -1467,11 +1467,11 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Flour",
-        "100\u202fg - Sugar",
-        "50\u202fml - Milk",
-        "30\u202fg - Butter",
-        "5\u202fg - Yeast"
+        "200 g - Flour",
+        "100 g - Sugar",
+        "50 ml - Milk",
+        "30 g - Butter",
+        "5 g - Yeast"
       ]
     },
     {
@@ -1486,11 +1486,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Pie Crust",
-        "200\u202fg - Filling",
-        "50\u202fg - Sugar",
-        "10\u202fg - Cinnamon",
-        "5\u202fg - Butter"
+        "200 g - Pie Crust",
+        "200 g - Filling",
+        "50 g - Sugar",
+        "10 g - Cinnamon",
+        "5 g - Butter"
       ]
     },
     {
@@ -1505,10 +1505,10 @@
         "fat": 2
       },
       "ingredients": [
-        "200\u202fml - Milk",
-        "100\u202fg - Fruit",
-        "10\u202fg - Honey",
-        "5\u202fg - Vanilla"
+        "200 ml - Milk",
+        "100 g - Fruit",
+        "10 g - Honey",
+        "5 g - Vanilla"
       ]
     },
     {
@@ -1523,11 +1523,11 @@
         "fat": 8
       },
       "ingredients": [
-        "100\u202fg - Penne Pasta",
-        "150\u202fg - Tomato Puree",
-        "10\u202fg - Garlic",
-        "5\u202fg - Chili Flakes",
-        "15\u202fml - Olive Oil"
+        "100 g - Penne Pasta",
+        "150 g - Tomato Puree",
+        "10 g - Garlic",
+        "5 g - Chili Flakes",
+        "15 ml - Olive Oil"
       ]
     },
     {
@@ -1542,11 +1542,11 @@
         "fat": 16
       },
       "ingredients": [
-        "100\u202fg - Fettuccine",
-        "100\u202fg - Mushrooms",
-        "50\u202fml - Heavy Cream",
-        "20\u202fg - Parmesan",
-        "10\u202fg - Butter"
+        "100 g - Fettuccine",
+        "100 g - Mushrooms",
+        "50 ml - Heavy Cream",
+        "20 g - Parmesan",
+        "10 g - Butter"
       ]
     },
     {
@@ -1561,11 +1561,11 @@
         "fat": 18
       },
       "ingredients": [
-        "100\u202fg - Trofie Pasta",
-        "40\u202fg - Basil Pesto",
-        "15\u202fg - Pine Nuts",
-        "20\u202fg - Parmesan",
-        "10\u202fml - Olive Oil"
+        "100 g - Trofie Pasta",
+        "40 g - Basil Pesto",
+        "15 g - Pine Nuts",
+        "20 g - Parmesan",
+        "10 ml - Olive Oil"
       ]
     },
     {
@@ -1580,11 +1580,11 @@
         "fat": 12
       },
       "ingredients": [
-        "100\u202fg - Spaghetti",
-        "15\u202fg - Garlic",
-        "20\u202fml - Olive Oil",
-        "5\u202fg - Parsley",
-        "2\u202fg - Red Pepper Flakes"
+        "100 g - Spaghetti",
+        "15 g - Garlic",
+        "20 ml - Olive Oil",
+        "5 g - Parsley",
+        "2 g - Red Pepper Flakes"
       ]
     },
     {
@@ -1599,11 +1599,11 @@
         "fat": 11
       },
       "ingredients": [
-        "100\u202fg - Rigatoni",
-        "100\u202fg - Eggplant",
-        "150\u202fg - Tomato Sauce",
-        "30\u202fg - Ricotta Salata",
-        "10\u202fml - Olive Oil"
+        "100 g - Rigatoni",
+        "100 g - Eggplant",
+        "150 g - Tomato Sauce",
+        "30 g - Ricotta Salata",
+        "10 ml - Olive Oil"
       ]
     },
     {
@@ -1618,11 +1618,11 @@
         "fat": 24
       },
       "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "80\u202fg - Mozzarella",
-        "40\u202fg - Spicy Salami",
-        "60\u202fg - Tomato Sauce",
-        "5\u202fg - Chili Oil"
+        "200 g - Pizza Dough",
+        "80 g - Mozzarella",
+        "40 g - Spicy Salami",
+        "60 g - Tomato Sauce",
+        "5 g - Chili Oil"
       ]
     },
     {
@@ -1637,11 +1637,11 @@
         "fat": 32
       },
       "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "40\u202fg - Mozzarella",
-        "30\u202fg - Gorgonzola",
-        "30\u202fg - Parmesan",
-        "30\u202fg - Fontina"
+        "200 g - Pizza Dough",
+        "40 g - Mozzarella",
+        "30 g - Gorgonzola",
+        "30 g - Parmesan",
+        "30 g - Fontina"
       ]
     },
     {
@@ -1656,11 +1656,11 @@
         "fat": 15
       },
       "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "60\u202fg - Zucchini",
-        "60\u202fg - Bell Peppers",
-        "60\u202fg - Tomato Sauce",
-        "50\u202fg - Mozzarella"
+        "200 g - Pizza Dough",
+        "60 g - Zucchini",
+        "60 g - Bell Peppers",
+        "60 g - Tomato Sauce",
+        "50 g - Mozzarella"
       ]
     },
     {
@@ -1675,11 +1675,11 @@
         "fat": 20
       },
       "ingredients": [
-        "200\u202fg - Pizza Dough",
-        "80\u202fg - Mozzarella",
-        "50\u202fg - Cooked Ham",
-        "50\u202fg - Mushrooms",
-        "60\u202fg - Tomato Sauce"
+        "200 g - Pizza Dough",
+        "80 g - Mozzarella",
+        "50 g - Cooked Ham",
+        "50 g - Mushrooms",
+        "60 g - Tomato Sauce"
       ]
     },
     {
@@ -1694,11 +1694,11 @@
         "fat": 14
       },
       "ingredients": [
-        "180\u202fg - Black Cod Fillet",
-        "20\u202fg - White Miso Paste",
-        "15\u202fml - Mirin",
-        "10\u202fml - Sake",
-        "5\u202fg - Ginger"
+        "180 g - Black Cod Fillet",
+        "20 g - White Miso Paste",
+        "15 ml - Mirin",
+        "10 ml - Sake",
+        "5 g - Ginger"
       ]
     },
     {
@@ -1713,11 +1713,11 @@
         "fat": 12
       },
       "ingredients": [
-        "200\u202fg - Sea Bass Fillet",
-        "15\u202fml - Olive Oil",
-        "10\u202fg - Butter",
-        "5\u202fg - Thyme",
-        "5\u202fg - Sea Salt"
+        "200 g - Sea Bass Fillet",
+        "15 ml - Olive Oil",
+        "10 g - Butter",
+        "5 g - Thyme",
+        "5 g - Sea Salt"
       ]
     },
     {
@@ -1732,11 +1732,11 @@
         "fat": 14
       },
       "ingredients": [
-        "300\u202fg - Whole Sea Bream",
-        "100\u202fg - Cherry Tomatoes",
-        "30\u202fg - Black Olives",
-        "10\u202fg - Capers",
-        "15\u202fml - Olive Oil"
+        "300 g - Whole Sea Bream",
+        "100 g - Cherry Tomatoes",
+        "30 g - Black Olives",
+        "10 g - Capers",
+        "15 ml - Olive Oil"
       ]
     },
     {
@@ -1751,11 +1751,11 @@
         "fat": 8
       },
       "ingredients": [
-        "150\u202fg - Fresh Tuna Loin",
-        "15\u202fg - Sesame Seeds",
-        "20\u202fml - Soy Sauce",
-        "10\u202fml - Lime Juice",
-        "5\u202fml - Sesame Oil"
+        "150 g - Fresh Tuna Loin",
+        "15 g - Sesame Seeds",
+        "20 ml - Soy Sauce",
+        "10 ml - Lime Juice",
+        "5 ml - Sesame Oil"
       ]
     },
     {
@@ -1770,11 +1770,11 @@
         "fat": 11
       },
       "ingredients": [
-        "200\u202fg - Trout Fillet",
-        "20\u202fg - Scallions",
-        "15\u202fg - Fresh Ginger",
-        "10\u202fml - Light Soy Sauce",
-        "5\u202fml - Rice Wine"
+        "200 g - Trout Fillet",
+        "20 g - Scallions",
+        "15 g - Fresh Ginger",
+        "10 ml - Light Soy Sauce",
+        "5 ml - Rice Wine"
       ]
     },
     {
@@ -1789,11 +1789,11 @@
         "fat": 25
       },
       "ingredients": [
-        "150\u202fg - Romaine Lettuce",
-        "30\u202fg - Croutons",
-        "20\u202fg - Parmesan Shavings",
-        "40\u202fml - Caesar Dressing",
-        "5\u202fg - Anchovy Paste"
+        "150 g - Romaine Lettuce",
+        "30 g - Croutons",
+        "20 g - Parmesan Shavings",
+        "40 ml - Caesar Dressing",
+        "5 g - Anchovy Paste"
       ]
     },
     {
@@ -1808,11 +1808,11 @@
         "fat": 19
       },
       "ingredients": [
-        "100\u202fg - Cucumber",
-        "100\u202fg - Tomatoes",
-        "50\u202fg - Feta Cheese",
-        "30\u202fg - Kalamata Olives",
-        "20\u202fml - Extra Virgin Olive Oil"
+        "100 g - Cucumber",
+        "100 g - Tomatoes",
+        "50 g - Feta Cheese",
+        "30 g - Kalamata Olives",
+        "20 ml - Extra Virgin Olive Oil"
       ]
     },
     {
@@ -1827,11 +1827,11 @@
         "fat": 9
       },
       "ingredients": [
-        "100\u202fg - Cooked Quinoa",
-        "50\u202fg - Flat Leaf Parsley",
-        "30\u202fg - Mint Leaves",
-        "50\u202fg - Diced Tomatoes",
-        "15\u202fml - Lemon Juice"
+        "100 g - Cooked Quinoa",
+        "50 g - Flat Leaf Parsley",
+        "30 g - Mint Leaves",
+        "50 g - Diced Tomatoes",
+        "15 ml - Lemon Juice"
       ]
     },
     {
@@ -1846,11 +1846,11 @@
         "fat": 22
       },
       "ingredients": [
-        "125\u202fg - Buffalo Mozzarella",
-        "150\u202fg - Heirloom Tomatoes",
-        "20\u202fg - Fresh Basil",
-        "15\u202fml - Basil Pesto",
-        "5\u202fml - Balsamic Glaze"
+        "125 g - Buffalo Mozzarella",
+        "150 g - Heirloom Tomatoes",
+        "20 g - Fresh Basil",
+        "15 ml - Basil Pesto",
+        "5 ml - Balsamic Glaze"
       ]
     },
     {
@@ -1865,11 +1865,11 @@
         "fat": 10
       },
       "ingredients": [
-        "100\u202fg - Red Cabbage",
-        "50\u202fg - Shredded Carrots",
-        "20\u202fml - Rice Vinegar",
-        "10\u202fml - Sesame Oil",
-        "10\u202fg - Toasted Sesame Seeds"
+        "100 g - Red Cabbage",
+        "50 g - Shredded Carrots",
+        "20 ml - Rice Vinegar",
+        "10 ml - Sesame Oil",
+        "10 g - Toasted Sesame Seeds"
       ]
     },
     {
@@ -1884,11 +1884,11 @@
         "fat": 16
       },
       "ingredients": [
-        "100\u202fg - Canned Tuna",
-        "50\u202fg - Green Beans",
-        "50\u202fg - Boiled Egg",
-        "30\u202fg - Black Olives",
-        "20\u202fml - Vinaigrette"
+        "100 g - Canned Tuna",
+        "50 g - Green Beans",
+        "50 g - Boiled Egg",
+        "30 g - Black Olives",
+        "20 ml - Vinaigrette"
       ]
     },
     {
@@ -1903,11 +1903,11 @@
         "fat": 12
       },
       "ingredients": [
-        "150\u202fg - Roasted Beets",
-        "40\u202fg - Feta Cheese",
-        "20\u202fg - Walnuts",
-        "50\u202fg - Arugula",
-        "15\u202fml - Balsamic Glaze"
+        "150 g - Roasted Beets",
+        "40 g - Feta Cheese",
+        "20 g - Walnuts",
+        "50 g - Arugula",
+        "15 ml - Balsamic Glaze"
       ]
     },
     {
@@ -1922,11 +1922,11 @@
         "fat": 10
       },
       "ingredients": [
-        "100\u202fg - Asian Pear",
-        "30\u202fg - Walnuts",
-        "80\u202fg - Mixed Greens",
-        "10\u202fml - Maple Vinaigrette",
-        "5\u202fg - Blue Cheese"
+        "100 g - Asian Pear",
+        "30 g - Walnuts",
+        "80 g - Mixed Greens",
+        "10 ml - Maple Vinaigrette",
+        "5 g - Blue Cheese"
       ]
     },
     {
@@ -1941,11 +1941,11 @@
         "fat": 14
       },
       "ingredients": [
-        "150\u202fg - Corn Kernels",
-        "20\u202fg - Cotija Cheese",
-        "15\u202fg - Mayonnaise",
-        "5\u202fg - Chili Powder",
-        "10\u202fml - Lime Juice"
+        "150 g - Corn Kernels",
+        "20 g - Cotija Cheese",
+        "15 g - Mayonnaise",
+        "5 g - Chili Powder",
+        "10 ml - Lime Juice"
       ]
     },
     {
@@ -1960,11 +1960,11 @@
         "fat": 7
       },
       "ingredients": [
-        "200\u202fg - Watermelon Cubes",
-        "30\u202fg - Feta Cheese",
-        "5\u202fg - Fresh Mint",
-        "10\u202fml - Lime Juice",
-        "5\u202fml - Olive Oil"
+        "200 g - Watermelon Cubes",
+        "30 g - Feta Cheese",
+        "5 g - Fresh Mint",
+        "10 ml - Lime Juice",
+        "5 ml - Olive Oil"
       ]
     },
     {
@@ -1979,11 +1979,11 @@
         "fat": 20
       },
       "ingredients": [
-        "100\u202fg - Apples",
-        "50\u202fg - Celery",
-        "30\u202fg - Walnuts",
-        "20\u202fg - Grapes",
-        "20\u202fg - Mayonnaise"
+        "100 g - Apples",
+        "50 g - Celery",
+        "30 g - Walnuts",
+        "20 g - Grapes",
+        "20 g - Mayonnaise"
       ]
     },
     {
@@ -1998,11 +1998,11 @@
         "fat": 9
       },
       "ingredients": [
-        "100\u202fg - Pearl Couscous",
-        "30\u202fg - Cucumber",
-        "30\u202fg - Bell Pepper",
-        "10\u202fg - Parsley",
-        "15\u202fml - Lemon Dressing"
+        "100 g - Pearl Couscous",
+        "30 g - Cucumber",
+        "30 g - Bell Pepper",
+        "10 g - Parsley",
+        "15 ml - Lemon Dressing"
       ]
     },
     {
@@ -2017,11 +2017,11 @@
         "fat": 13
       },
       "ingredients": [
-        "100\u202fg - Baby Spinach",
-        "60\u202fg - Strawberries",
-        "20\u202fg - Goat Cheese",
-        "15\u202fg - Almond Flakes",
-        "15\u202fml - Poppyseed Dressing"
+        "100 g - Baby Spinach",
+        "60 g - Strawberries",
+        "20 g - Goat Cheese",
+        "15 g - Almond Flakes",
+        "15 ml - Poppyseed Dressing"
       ]
     },
     {
@@ -2036,285 +2036,659 @@
         "fat": 18
       },
       "ingredients": [
-        "200\u202fg - Boiled Potatoes",
-        "30\u202fg - Mayonnaise",
-        "10\u202fg - Mustard",
-        "20\u202fg - Pickles",
-        "10\u202fg - Red Onion"
+        "200 g - Boiled Potatoes",
+        "30 g - Mayonnaise",
+        "10 g - Mustard",
+        "20 g - Pickles",
+        "10 g - Red Onion"
       ]
     },
-  {
-    "id": "d274",
-    "name": "Pepperoni Pizza",
-    "category": "Pizza",
-    "prepTime": 25,
-    "macros": { "calories": 620, "protein": 28, "carbs": 74, "fat": 24 },
-    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "40 g - Pepperoni Slices", "60 g - Tomato Sauce", "10 ml - Olive Oil" ]
-  },
-  {
-    "id": "d275",
-    "name": "Hawaiian Pizza",
-    "category": "Pizza",
-    "prepTime": 25,
-    "macros": { "calories": 580, "protein": 22, "carbs": 78, "fat": 18 },
-    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "50 g - Cooked Ham", "50 g - Pineapple Chunks", "60 g - Tomato Sauce" ]
-  },
-  {
-    "id": "d276",
-    "name": "Truffle Mushroom Pizza",
-    "category": "Pizza",
-    "prepTime": 30,
-    "macros": { "calories": 640, "protein": 24, "carbs": 72, "fat": 28 },
-    "ingredients": [ "200 g - Pizza Dough", "80 g - Mozzarella", "100 g - Mixed Mushrooms", "10 ml - Truffle Oil", "10 g - Parmesan" ]
-  },
-  {
-    "id": "d277",
-    "name": "Potato Gnocchi with Sage Butter",
-    "category": "Pasta",
-    "prepTime": 20,
-    "macros": { "calories": 360, "protein": 10, "carbs": 55, "fat": 14 },
-    "ingredients": [ "200 g - Potato Gnocchi", "30 g - Butter", "5 g - Fresh Sage", "15 g - Parmesan", "5 g - Black Pepper" ]
-  },
-  {
-    "id": "d278",
-    "name": "Pastina in Brodo",
-    "category": "Pasta",
-    "prepTime": 15,
-    "macros": { "calories": 280, "protein": 12, "carbs": 45, "fat": 6 },
-    "ingredients": [ "100 g - Pastina", "250 ml - Chicken Broth", "20 g - Parmesan", "1 x - Whisked Egg", "5 g - Parsley" ]
-  },
-  {
-    "id": "d279",
-    "name": "Spinach and Ricotta Ravioli",
-    "category": "Pasta",
-    "prepTime": 30,
-    "macros": { "calories": 410, "protein": 18, "carbs": 50, "fat": 15 },
-    "ingredients": [ "200 g - Ravioli", "100 g - Marinara Sauce", "20 g - Parmesan", "10 ml - Olive Oil", "5 g - Basil" ]
-  },
-  {
-    "id": "d280",
-    "name": "Penne alla Vodka",
-    "category": "Pasta",
-    "prepTime": 25,
-    "macros": { "calories": 450, "protein": 14, "carbs": 62, "fat": 16 },
-    "ingredients": [ "100 g - Penne Pasta", "100 g - Tomato Puree", "50 ml - Heavy Cream", "20 ml - Vodka", "15 ml - Olive Oil" ]
-  },
-  {
-    "id": "d281",
-    "name": "Classic Tiramisu",
-    "category": "Dessert",
-    "prepTime": 40,
-    "macros": { "calories": 480, "protein": 8, "carbs": 42, "fat": 32 },
-    "ingredients": [ "100 g - Ladyfingers", "150 g - Mascarpone", "2 x - Espresso Shots", "30 g - Sugar", "5 g - Cocoa Powder" ]
-  },
-  {
-    "id": "d282",
-    "name": "Warm Apple Crumble",
-    "category": "Dessert",
-    "prepTime": 45,
-    "macros": { "calories": 320, "protein": 3, "carbs": 48, "fat": 14 },
-    "ingredients": [ "200 g - Apples", "50 g - Oats", "30 g - Flour", "30 g - Butter", "20 g - Brown Sugar" ]
-  },
-  {
-    "id": "d283",
-    "name": "Lemon Meringue Tart",
-    "category": "Dessert",
-    "prepTime": 60,
-    "macros": { "calories": 390, "protein": 5, "carbs": 55, "fat": 18 },
-    "ingredients": [ "100 g - Pastry Shell", "100 g - Lemon Curd", "2 x - Egg Whites", "40 g - Sugar", "5 ml - Lemon Juice" ]
-  },
-  {
-    "id": "d284",
-    "name": "New York Cheesecake",
-    "category": "Dessert",
-    "prepTime": 50,
-    "macros": { "calories": 450, "protein": 9, "carbs": 38, "fat": 30 },
-    "ingredients": [ "150 g - Cream Cheese", "50 g - Graham Cracker Crust", "30 g - Sugar", "1 x - Egg", "10 ml - Vanilla Extract" ]
-  },
-  {
-    "id": "d285",
-    "name": "Vanilla Bean Panna Cotta",
-    "category": "Dessert",
-    "prepTime": 20,
-    "macros": { "calories": 280, "protein": 4, "carbs": 24, "fat": 20 },
-    "ingredients": [ "150 ml - Heavy Cream", "30 g - Sugar", "5 g - Gelatin", "1 x - Vanilla Bean", "50 g - Berry Coulis" ]
-  },
-  {
-    "id": "d286",
-    "name": "Classic Minestrone",
-    "category": "Soup",
-    "prepTime": 40,
-    "macros": { "calories": 220, "protein": 8, "carbs": 35, "fat": 6 },
-    "ingredients": [ "50 g - Small Pasta", "100 g - Mixed Vegetables", "50 g - Cannellini Beans", "400 ml - Vegetable Broth", "20 g - Tomato Paste" ]
-  },
-  {
-    "id": "d287",
-    "name": "French Onion Soup",
-    "category": "Soup",
-    "prepTime": 50,
-    "macros": { "calories": 310, "protein": 12, "carbs": 28, "fat": 18 },
-    "ingredients": [ "200 g - Sliced Onions", "400 ml - Beef Stock", "1 x - Slice Baguette", "40 g - Gruyere Cheese", "20 g - Butter" ]
-  },
-  {
-    "id": "d288",
-    "name": "Spanish Gazpacho",
-    "category": "Soup",
-    "prepTime": 15,
-    "macros": { "calories": 150, "protein": 3, "carbs": 18, "fat": 8 },
-    "ingredients": [ "200 g - Ripe Tomatoes", "50 g - Cucumber", "30 g - Bell Pepper", "20 ml - Sherry Vinegar", "15 ml - Olive Oil" ]
-  },
-  {
-    "id": "d289",
-    "name": "Beef Wellington Bites",
-    "category": "Meat",
-    "prepTime": 50,
-    "macros": { "calories": 420, "protein": 24, "carbs": 18, "fat": 28 },
-    "ingredients": [ "150 g - Beef Tenderloin", "50 g - Puff Pastry", "30 g - Mushroom Duxelles", "10 g - Prosciutto", "1 x - Egg Wash" ]
-  },
-  {
-    "id": "d290",
-    "name": "Crispy Falafel Wrap",
-    "category": "Bakery",
-    "prepTime": 25,
-    "macros": { "calories": 380, "protein": 14, "carbs": 55, "fat": 12 },
-    "ingredients": [ "1 x - Pita Bread", "4 x - Falafel Balls", "30 g - Hummus", "50 g - Pickled Cabbage", "20 ml - Tahini Sauce" ]
-  },
-  {
-    "id": "d291",
-    "name": "Pan-Fried Scallops",
-    "category": "Seafood",
-    "prepTime": 15,
-    "macros": { "calories": 180, "protein": 20, "carbs": 5, "fat": 9 },
-    "ingredients": [ "150 g - Scallops", "15 g - Butter", "10 ml - Lemon Juice", "5 g - Garlic", "5 g - Parsley" ]
-  },
-  {
-    "id": "d292",
-    "name": "Sesame Ahi Tuna Salad",
-    "category": "Salad",
-    "prepTime": 20,
-    "macros": { "calories": 240, "protein": 32, "carbs": 10, "fat": 8 },
-    "ingredients": [ "150 g - Ahi Tuna", "20 g - Sesame Seeds", "100 g - Mixed Greens", "15 ml - Soy Ginger Dressing", "30 g - Edamame" ]
-  },
-  {
-    "id": "d293",
-    "name": "Classic Sushi Rolls (Maki)",
-    "category": "Seafood",
-    "prepTime": 45,
-    "macros": { "calories": 310, "protein": 12, "carbs": 58, "fat": 4 },
-    "ingredients": [ "100 g - Sushi Rice", "1 x - Nori Sheet", "50 g - Fresh Salmon", "30 g - Cucumber", "15 ml - Rice Vinegar" ]
-  },
-  {
-    "id": "d294",
-    "name": "Grilled Halloumi & Quinoa Salad",
-    "category": "Salad",
-    "prepTime": 20,
-    "macros": { "calories": 340, "protein": 18, "carbs": 22, "fat": 20 },
-    "ingredients": [ "100 g - Halloumi Cheese", "100 g - Cooked Quinoa", "50 g - Cherry Tomatoes", "30 g - Cucumber", "15 ml - Lemon Vinaigrette" ]
-  }, 
-  {
-    "id": "d295",
-    "name": "Garlic Herb Roasted Potatoes",
-    "category": "Side-dish",
-    "prepTime": 15,
-    "macros": { "calories": 210, "protein": 3, "carbs": 32, "fat": 8 },
-    "ingredients": [ "300 g - Baby Potatoes", "30 ml - Olive Oil", "10 g - Garlic", "5 g - Fresh Rosemary", "5 g - Salt" ]
-  },
-  {
-    "id": "d296",
-    "name": "Creamy Mashed Potatoes with Chives",
-    "category": "Side-dish",
-    "prepTime": 25,
-    "macros": { "calories": 250, "protein": 4, "carbs": 38, "fat": 10 },
-    "ingredients": [ "300 g - Yukon Gold Potatoes", "30 ml - Milk", "15 g - Butter", "10 g - Fresh Chives", "5 g - Salt" ]
-  },
-  {
-    "id": "d297",
-    "name": "Crispy Parmesan Potato Wedges",
-    "category": "Side-dish",
-    "prepTime": 20,
-    "macros": { "calories": 280, "protein": 6, "carbs": 42, "fat": 12 },
-    "ingredients": [ "300 g - Russet Potatoes", "30 g - Parmesan", "20 ml - Olive Oil", "5 g - Paprika", "5 g - Garlic Powder" ]
-  },
-  {
-    "id": "d298",
-    "name": "Classic Potato Gratin",
-    "category": "Side-dish",
-    "prepTime": 50,
-    "macros": { "calories": 340, "protein": 8, "carbs": 36, "fat": 20 },
-    "ingredients": [ "300 g - Sliced Potatoes", "100 ml - Heavy Cream", "50 g - Gruyere Cheese", "5 g - Nutmeg", "10 g - Garlic" ]
-  },
-  {
-    "id": "d299",
-    "name": "Swedish Hasselback Potatoes",
-    "category": "Side-dish",
-    "prepTime": 45,
-    "macros": { "calories": 230, "protein": 4, "carbs": 40, "fat": 7 },
-    "ingredients": [ "300 g - Medium Potatoes", "20 g - Butter", "10 g - Breadcrumbs", "5 g - Salt", "5 g - Paprika" ]
-  },
-  {
-    "id": "d300",
-    "name": "Velvety Roasted Pumpkin Soup",
-    "category": "Soup",
-    "prepTime": 40,
-    "macros": { "calories": 180, "protein": 3, "carbs": 24, "fat": 9 },
-    "ingredients": [ "400 g - Pumpkin", "200 ml - Vegetable Stock", "50 ml - Coconut Cream", "10 g - Ginger", "10 g - Onions" ]
-  },
-  {
-    "id": "d301",
-    "name": "Creamy Pumpkin Risotto",
-    "category": "Pasta",
-    "prepTime": 35,
-    "macros": { "calories": 420, "protein": 9, "carbs": 65, "fat": 14 },
-    "ingredients": [ "100 g - Arborio Rice", "150 g - Pumpkin Puree", "500 ml - Vegetable Broth", "30 g - Parmesan", "20 g - Shallots" ]
-  },
-  {
-    "id": "d302",
-    "name": "Baked Honey-Glazed Pumpkin",
-    "category": "Side-dish",
-    "prepTime": 30,
-    "macros": { "calories": 150, "protein": 2, "carbs": 28, "fat": 5 },
-    "ingredients": [ "300 g - Pumpkin Wedges", "20 ml - Honey", "15 ml - Olive Oil", "5 g - Cinnamon", "50 g - Toasted Seeds" ]
-  },
-  {
-    "id": "d303",
-    "name": "Spiced Chickpea Curry",
-    "category": "Meat",
-    "prepTime": 30,
-    "macros": { "calories": 310, "protein": 12, "carbs": 45, "fat": 10 },
-    "ingredients": [ "200 g - Chickpeas", "200 ml - Tomato Puree", "100 ml - Coconut Milk", "10 g - Curry Powder", "5 g - Turmeric" ]
-  },
-  {
-    "id": "d304",
-    "name": "Hearty Lentil & Kale Stew",
-    "category": "Soup",
-    "prepTime": 45,
-    "macros": { "calories": 260, "protein": 15, "carbs": 40, "fat": 6 },
-    "ingredients": [ "150 g - Green Lentils", "50 g - Kale", "400 ml - Vegetable Stock", "50 g - Carrots", "20 g - Celery" ]
-  },
-  {
-    "id": "d305",
-    "name": "Tofu & Broccoli Stir-fry",
-    "category": "Side-dish",
-    "prepTime": 20,
-    "macros": { "calories": 280, "protein": 22, "carbs": 12, "fat": 18 },
-    "ingredients": [ "200 g - Firm Tofu", "150 g - Broccoli", "20 ml - Soy Sauce", "10 ml - Sesame Oil", "5 g - Ginger" ]
-  },
-  {
-    "id": "d306",
-    "name": "Mediterranean Vegan Buddha Bowl",
-    "category": "Salad",
-    "prepTime": 25,
-    "macros": { "calories": 420, "protein": 14, "carbs": 55, "fat": 18 },
-    "ingredients": [ "100 g - Quinoa", "50 g - Hummus", "50 g - Cucumber", "50 g - Cherry Tomatoes", "10 ml - Tahini Sauce" ]
-  },
-  {
-    "id": "d307",
-    "name": "Roasted Cauliflower Tacos (Vegan)",
-    "category": "Side-dish",
-    "prepTime": 30,
-    "macros": { "calories": 350, "protein": 8, "carbs": 48, "fat": 14 },
-    "ingredients": [ "3 x - Corn Tortillas", "200 g - Roasted Cauliflower", "30 g - Pickled Red Onions", "20 g - Avocado Crema", "10 ml - Lime Juice" ]
-  },
+    {
+      "id": "d274",
+      "name": "Pepperoni Pizza",
+      "category": "Pizza",
+      "prepTime": 25,
+      "macros": {
+        "calories": 620,
+        "protein": 28,
+        "carbs": 74,
+        "fat": 24
+      },
+      "ingredients": [
+        "200 g - Pizza Dough",
+        "80 g - Mozzarella",
+        "40 g - Pepperoni Slices",
+        "60 g - Tomato Sauce",
+        "10 ml - Olive Oil"
+      ]
+    },
+    {
+      "id": "d275",
+      "name": "Hawaiian Pizza",
+      "category": "Pizza",
+      "prepTime": 25,
+      "macros": {
+        "calories": 580,
+        "protein": 22,
+        "carbs": 78,
+        "fat": 18
+      },
+      "ingredients": [
+        "200 g - Pizza Dough",
+        "80 g - Mozzarella",
+        "50 g - Cooked Ham",
+        "50 g - Pineapple Chunks",
+        "60 g - Tomato Sauce"
+      ]
+    },
+    {
+      "id": "d276",
+      "name": "Truffle Mushroom Pizza",
+      "category": "Pizza",
+      "prepTime": 30,
+      "macros": {
+        "calories": 640,
+        "protein": 24,
+        "carbs": 72,
+        "fat": 28
+      },
+      "ingredients": [
+        "200 g - Pizza Dough",
+        "80 g - Mozzarella",
+        "100 g - Mixed Mushrooms",
+        "10 ml - Truffle Oil",
+        "10 g - Parmesan"
+      ]
+    },
+    {
+      "id": "d277",
+      "name": "Potato Gnocchi with Sage Butter",
+      "category": "Pasta",
+      "prepTime": 20,
+      "macros": {
+        "calories": 360,
+        "protein": 10,
+        "carbs": 55,
+        "fat": 14
+      },
+      "ingredients": [
+        "200 g - Potato Gnocchi",
+        "30 g - Butter",
+        "5 g - Fresh Sage",
+        "15 g - Parmesan",
+        "5 g - Black Pepper"
+      ]
+    },
+    {
+      "id": "d278",
+      "name": "Pastina in Brodo",
+      "category": "Pasta",
+      "prepTime": 15,
+      "macros": {
+        "calories": 280,
+        "protein": 12,
+        "carbs": 45,
+        "fat": 6
+      },
+      "ingredients": [
+        "100 g - Pastina",
+        "250 ml - Chicken Broth",
+        "20 g - Parmesan",
+        "1 x - Whisked Egg",
+        "5 g - Parsley"
+      ]
+    },
+    {
+      "id": "d279",
+      "name": "Spinach and Ricotta Ravioli",
+      "category": "Pasta",
+      "prepTime": 30,
+      "macros": {
+        "calories": 410,
+        "protein": 18,
+        "carbs": 50,
+        "fat": 15
+      },
+      "ingredients": [
+        "200 g - Ravioli",
+        "100 g - Marinara Sauce",
+        "20 g - Parmesan",
+        "10 ml - Olive Oil",
+        "5 g - Basil"
+      ]
+    },
+    {
+      "id": "d280",
+      "name": "Penne alla Vodka",
+      "category": "Pasta",
+      "prepTime": 25,
+      "macros": {
+        "calories": 450,
+        "protein": 14,
+        "carbs": 62,
+        "fat": 16
+      },
+      "ingredients": [
+        "100 g - Penne Pasta",
+        "100 g - Tomato Puree",
+        "50 ml - Heavy Cream",
+        "20 ml - Vodka",
+        "15 ml - Olive Oil"
+      ]
+    },
+    {
+      "id": "d281",
+      "name": "Classic Tiramisu",
+      "category": "Dessert",
+      "prepTime": 40,
+      "macros": {
+        "calories": 480,
+        "protein": 8,
+        "carbs": 42,
+        "fat": 32
+      },
+      "ingredients": [
+        "100 g - Ladyfingers",
+        "150 g - Mascarpone",
+        "2 x - Espresso Shots",
+        "30 g - Sugar",
+        "5 g - Cocoa Powder"
+      ]
+    },
+    {
+      "id": "d282",
+      "name": "Warm Apple Crumble",
+      "category": "Dessert",
+      "prepTime": 45,
+      "macros": {
+        "calories": 320,
+        "protein": 3,
+        "carbs": 48,
+        "fat": 14
+      },
+      "ingredients": [
+        "200 g - Apples",
+        "50 g - Oats",
+        "30 g - Flour",
+        "30 g - Butter",
+        "20 g - Brown Sugar"
+      ]
+    },
+    {
+      "id": "d283",
+      "name": "Lemon Meringue Tart",
+      "category": "Dessert",
+      "prepTime": 60,
+      "macros": {
+        "calories": 390,
+        "protein": 5,
+        "carbs": 55,
+        "fat": 18
+      },
+      "ingredients": [
+        "100 g - Pastry Shell",
+        "100 g - Lemon Curd",
+        "2 x - Egg Whites",
+        "40 g - Sugar",
+        "5 ml - Lemon Juice"
+      ]
+    },
+    {
+      "id": "d284",
+      "name": "New York Cheesecake",
+      "category": "Dessert",
+      "prepTime": 50,
+      "macros": {
+        "calories": 450,
+        "protein": 9,
+        "carbs": 38,
+        "fat": 30
+      },
+      "ingredients": [
+        "150 g - Cream Cheese",
+        "50 g - Graham Cracker Crust",
+        "30 g - Sugar",
+        "1 x - Egg",
+        "10 ml - Vanilla Extract"
+      ]
+    },
+    {
+      "id": "d285",
+      "name": "Vanilla Bean Panna Cotta",
+      "category": "Dessert",
+      "prepTime": 20,
+      "macros": {
+        "calories": 280,
+        "protein": 4,
+        "carbs": 24,
+        "fat": 20
+      },
+      "ingredients": [
+        "150 ml - Heavy Cream",
+        "30 g - Sugar",
+        "5 g - Gelatin",
+        "1 x - Vanilla Bean",
+        "50 g - Berry Coulis"
+      ]
+    },
+    {
+      "id": "d286",
+      "name": "Classic Minestrone",
+      "category": "Soup",
+      "prepTime": 40,
+      "macros": {
+        "calories": 220,
+        "protein": 8,
+        "carbs": 35,
+        "fat": 6
+      },
+      "ingredients": [
+        "50 g - Small Pasta",
+        "100 g - Mixed Vegetables",
+        "50 g - Cannellini Beans",
+        "400 ml - Vegetable Broth",
+        "20 g - Tomato Paste"
+      ]
+    },
+    {
+      "id": "d287",
+      "name": "French Onion Soup",
+      "category": "Soup",
+      "prepTime": 50,
+      "macros": {
+        "calories": 310,
+        "protein": 12,
+        "carbs": 28,
+        "fat": 18
+      },
+      "ingredients": [
+        "200 g - Sliced Onions",
+        "400 ml - Beef Stock",
+        "1 x - Slice Baguette",
+        "40 g - Gruyere Cheese",
+        "20 g - Butter"
+      ]
+    },
+    {
+      "id": "d288",
+      "name": "Spanish Gazpacho",
+      "category": "Soup",
+      "prepTime": 15,
+      "macros": {
+        "calories": 150,
+        "protein": 3,
+        "carbs": 18,
+        "fat": 8
+      },
+      "ingredients": [
+        "200 g - Ripe Tomatoes",
+        "50 g - Cucumber",
+        "30 g - Bell Pepper",
+        "20 ml - Sherry Vinegar",
+        "15 ml - Olive Oil"
+      ]
+    },
+    {
+      "id": "d289",
+      "name": "Beef Wellington Bites",
+      "category": "Meat",
+      "prepTime": 50,
+      "macros": {
+        "calories": 420,
+        "protein": 24,
+        "carbs": 18,
+        "fat": 28
+      },
+      "ingredients": [
+        "150 g - Beef Tenderloin",
+        "50 g - Puff Pastry",
+        "30 g - Mushroom Duxelles",
+        "10 g - Prosciutto",
+        "1 x - Egg Wash"
+      ]
+    },
+    {
+      "id": "d290",
+      "name": "Crispy Falafel Wrap",
+      "category": "Bakery",
+      "prepTime": 25,
+      "macros": {
+        "calories": 380,
+        "protein": 14,
+        "carbs": 55,
+        "fat": 12
+      },
+      "ingredients": [
+        "1 x - Pita Bread",
+        "4 x - Falafel Balls",
+        "30 g - Hummus",
+        "50 g - Pickled Cabbage",
+        "20 ml - Tahini Sauce"
+      ]
+    },
+    {
+      "id": "d291",
+      "name": "Pan-Fried Scallops",
+      "category": "Seafood",
+      "prepTime": 15,
+      "macros": {
+        "calories": 180,
+        "protein": 20,
+        "carbs": 5,
+        "fat": 9
+      },
+      "ingredients": [
+        "150 g - Scallops",
+        "15 g - Butter",
+        "10 ml - Lemon Juice",
+        "5 g - Garlic",
+        "5 g - Parsley"
+      ]
+    },
+    {
+      "id": "d292",
+      "name": "Sesame Ahi Tuna Salad",
+      "category": "Salad",
+      "prepTime": 20,
+      "macros": {
+        "calories": 240,
+        "protein": 32,
+        "carbs": 10,
+        "fat": 8
+      },
+      "ingredients": [
+        "150 g - Ahi Tuna",
+        "20 g - Sesame Seeds",
+        "100 g - Mixed Greens",
+        "15 ml - Soy Ginger Dressing",
+        "30 g - Edamame"
+      ]
+    },
+    {
+      "id": "d293",
+      "name": "Classic Sushi Rolls (Maki)",
+      "category": "Seafood",
+      "prepTime": 45,
+      "macros": {
+        "calories": 310,
+        "protein": 12,
+        "carbs": 58,
+        "fat": 4
+      },
+      "ingredients": [
+        "100 g - Sushi Rice",
+        "1 x - Nori Sheet",
+        "50 g - Fresh Salmon",
+        "30 g - Cucumber",
+        "15 ml - Rice Vinegar"
+      ]
+    },
+    {
+      "id": "d294",
+      "name": "Grilled Halloumi & Quinoa Salad",
+      "category": "Salad",
+      "prepTime": 20,
+      "macros": {
+        "calories": 340,
+        "protein": 18,
+        "carbs": 22,
+        "fat": 20
+      },
+      "ingredients": [
+        "100 g - Halloumi Cheese",
+        "100 g - Cooked Quinoa",
+        "50 g - Cherry Tomatoes",
+        "30 g - Cucumber",
+        "15 ml - Lemon Vinaigrette"
+      ]
+    },
+    {
+      "id": "d295",
+      "name": "Garlic Herb Roasted Potatoes",
+      "category": "Side-dish",
+      "prepTime": 15,
+      "macros": {
+        "calories": 210,
+        "protein": 3,
+        "carbs": 32,
+        "fat": 8
+      },
+      "ingredients": [
+        "300 g - Baby Potatoes",
+        "30 ml - Olive Oil",
+        "10 g - Garlic",
+        "5 g - Fresh Rosemary",
+        "5 g - Salt"
+      ]
+    },
+    {
+      "id": "d296",
+      "name": "Creamy Mashed Potatoes with Chives",
+      "category": "Side-dish",
+      "prepTime": 25,
+      "macros": {
+        "calories": 250,
+        "protein": 4,
+        "carbs": 38,
+        "fat": 10
+      },
+      "ingredients": [
+        "300 g - Yukon Gold Potatoes",
+        "30 ml - Milk",
+        "15 g - Butter",
+        "10 g - Fresh Chives",
+        "5 g - Salt"
+      ]
+    },
+    {
+      "id": "d297",
+      "name": "Crispy Parmesan Potato Wedges",
+      "category": "Side-dish",
+      "prepTime": 20,
+      "macros": {
+        "calories": 280,
+        "protein": 6,
+        "carbs": 42,
+        "fat": 12
+      },
+      "ingredients": [
+        "300 g - Russet Potatoes",
+        "30 g - Parmesan",
+        "20 ml - Olive Oil",
+        "5 g - Paprika",
+        "5 g - Garlic Powder"
+      ]
+    },
+    {
+      "id": "d298",
+      "name": "Classic Potato Gratin",
+      "category": "Side-dish",
+      "prepTime": 50,
+      "macros": {
+        "calories": 340,
+        "protein": 8,
+        "carbs": 36,
+        "fat": 20
+      },
+      "ingredients": [
+        "300 g - Sliced Potatoes",
+        "100 ml - Heavy Cream",
+        "50 g - Gruyere Cheese",
+        "5 g - Nutmeg",
+        "10 g - Garlic"
+      ]
+    },
+    {
+      "id": "d299",
+      "name": "Swedish Hasselback Potatoes",
+      "category": "Side-dish",
+      "prepTime": 45,
+      "macros": {
+        "calories": 230,
+        "protein": 4,
+        "carbs": 40,
+        "fat": 7
+      },
+      "ingredients": [
+        "300 g - Medium Potatoes",
+        "20 g - Butter",
+        "10 g - Breadcrumbs",
+        "5 g - Salt",
+        "5 g - Paprika"
+      ]
+    },
+    {
+      "id": "d300",
+      "name": "Velvety Roasted Pumpkin Soup",
+      "category": "Soup",
+      "prepTime": 40,
+      "macros": {
+        "calories": 180,
+        "protein": 3,
+        "carbs": 24,
+        "fat": 9
+      },
+      "ingredients": [
+        "400 g - Pumpkin",
+        "200 ml - Vegetable Stock",
+        "50 ml - Coconut Cream",
+        "10 g - Ginger",
+        "10 g - Onions"
+      ]
+    },
+    {
+      "id": "d301",
+      "name": "Creamy Pumpkin Risotto",
+      "category": "Pasta",
+      "prepTime": 35,
+      "macros": {
+        "calories": 420,
+        "protein": 9,
+        "carbs": 65,
+        "fat": 14
+      },
+      "ingredients": [
+        "100 g - Arborio Rice",
+        "150 g - Pumpkin Puree",
+        "500 ml - Vegetable Broth",
+        "30 g - Parmesan",
+        "20 g - Shallots"
+      ]
+    },
+    {
+      "id": "d302",
+      "name": "Baked Honey-Glazed Pumpkin",
+      "category": "Side-dish",
+      "prepTime": 30,
+      "macros": {
+        "calories": 150,
+        "protein": 2,
+        "carbs": 28,
+        "fat": 5
+      },
+      "ingredients": [
+        "300 g - Pumpkin Wedges",
+        "20 ml - Honey",
+        "15 ml - Olive Oil",
+        "5 g - Cinnamon",
+        "50 g - Toasted Seeds"
+      ]
+    },
+    {
+      "id": "d303",
+      "name": "Spiced Chickpea Curry",
+      "category": "Meat",
+      "prepTime": 30,
+      "macros": {
+        "calories": 310,
+        "protein": 12,
+        "carbs": 45,
+        "fat": 10
+      },
+      "ingredients": [
+        "200 g - Chickpeas",
+        "200 ml - Tomato Puree",
+        "100 ml - Coconut Milk",
+        "10 g - Curry Powder",
+        "5 g - Turmeric"
+      ]
+    },
+    {
+      "id": "d304",
+      "name": "Hearty Lentil & Kale Stew",
+      "category": "Soup",
+      "prepTime": 45,
+      "macros": {
+        "calories": 260,
+        "protein": 15,
+        "carbs": 40,
+        "fat": 6
+      },
+      "ingredients": [
+        "150 g - Green Lentils",
+        "50 g - Kale",
+        "400 ml - Vegetable Stock",
+        "50 g - Carrots",
+        "20 g - Celery"
+      ]
+    },
+    {
+      "id": "d305",
+      "name": "Tofu & Broccoli Stir-fry",
+      "category": "Side-dish",
+      "prepTime": 20,
+      "macros": {
+        "calories": 280,
+        "protein": 22,
+        "carbs": 12,
+        "fat": 18
+      },
+      "ingredients": [
+        "200 g - Firm Tofu",
+        "150 g - Broccoli",
+        "20 ml - Soy Sauce",
+        "10 ml - Sesame Oil",
+        "5 g - Ginger"
+      ]
+    },
+    {
+      "id": "d306",
+      "name": "Mediterranean Vegan Buddha Bowl",
+      "category": "Salad",
+      "prepTime": 25,
+      "macros": {
+        "calories": 420,
+        "protein": 14,
+        "carbs": 55,
+        "fat": 18
+      },
+      "ingredients": [
+        "100 g - Quinoa",
+        "50 g - Hummus",
+        "50 g - Cucumber",
+        "50 g - Cherry Tomatoes",
+        "10 ml - Tahini Sauce"
+      ]
+    },
+    {
+      "id": "d307",
+      "name": "Roasted Cauliflower Tacos (Vegan)",
+      "category": "Side-dish",
+      "prepTime": 30,
+      "macros": {
+        "calories": 350,
+        "protein": 8,
+        "carbs": 48,
+        "fat": 14
+      },
+      "ingredients": [
+        "3 x - Corn Tortillas",
+        "200 g - Roasted Cauliflower",
+        "30 g - Pickled Red Onions",
+        "20 g - Avocado Crema",
+        "10 ml - Lime Juice"
+      ]
+    },
     {
       "id": "d273",
       "name": "Cucumber Smashed Salad",
@@ -2327,11 +2701,11 @@
         "fat": 7
       },
       "ingredients": [
-        "200\u202fg - English Cucumber",
-        "10\u202fml - Black Vinegar",
-        "5\u202fml - Sesame Oil",
-        "5\u202fg - Garlic",
-        "2\u202fg - Chili Oil"
+        "200 g - English Cucumber",
+        "10 ml - Black Vinegar",
+        "5 ml - Sesame Oil",
+        "5 g - Garlic",
+        "2 g - Chili Oil"
       ]
     }
   ]

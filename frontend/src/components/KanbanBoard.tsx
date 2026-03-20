@@ -32,8 +32,10 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
   addMealToDay
 }) => {
   const planRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isGroceryModalOpen, setIsGroceryModalOpen] = useState(false);
   
   // Mobile specific state
@@ -41,6 +43,17 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
   const [activeDayForAdd, setActiveDayForAdd] = useState<string | null>(null);
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
   const [mobileSelectedCategory, setMobileSelectedCategory] = useState<string | null>(null);
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Derive unique categories from the recipe bank
   const categories = Array.from(new Set((data.columns.bank.items || []).map((r: Recipe) => r.category))).sort() as string[];
@@ -166,14 +179,14 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
     .filter((r: Recipe) => r.name.toLowerCase().includes(mobileSearchQuery.toLowerCase()));
 
   return (
-    <main className="flex flex-1 overflow-hidden h-[calc(100vh-65px-40px)] flex-col xl:flex-row">
+    <main className="flex flex-1 overflow-hidden flex-col xl:flex-row">
       {/* Grocery Modal */}
       {isGroceryModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
           <div className="bg-white dark:bg-slate-900 w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[80vh]">
             <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
               <div>
-                <h2 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Smart Grocery List</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Smart Grocery List</h2>
                 <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Aggregated for the week</p>
               </div>
               <button onClick={() => setIsGroceryModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
@@ -220,7 +233,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
           <div className="bg-white dark:bg-slate-900 w-full h-[80vh] max-h-[80vh] rounded-t-[32px] shadow-2xl flex flex-col animate-slide-up">
             <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex flex-col gap-4">
               <div className="flex justify-between items-center">
-                <h2 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight truncate">Add to {getColumnDayFull(daysToRender.indexOf(activeDayForAdd!))}</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight truncate">Add to {getColumnDayFull(daysToRender.indexOf(activeDayForAdd!))}</h2>
                 <button onClick={() => setIsAddMealModalOpen(false)} className="size-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex-shrink-0">
                   <span className="material-symbols-outlined">close</span>
                 </button>
@@ -355,22 +368,47 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
             <p className="text-slate-500 dark:text-slate-400 text-[14px] leading-[20px]">Drag dishes to your schedule</p>
           </div>
 
-          <div className="pt-2">
-            <div className="relative group">
-              <select 
-                value={selectedCategory || ''}
-                onChange={(e) => setSelectedCategory(e.target.value || null)}
-                className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-[12px] py-[10px] text-[14px] font-bold text-slate-700 dark:text-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer transition-all shadow-sm pr-[36px]"
-              >
-                <option value="">All Categories</option>
-                {categories.map(cat => (
-                  <option key={cat} value={cat}>{cat}</option>
-                ))}
-              </select>
-              <div className="absolute right-[12px] top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
-                <span className="material-symbols-outlined text-[18px]">expand_more</span>
+          <div className="pt-2 relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className={`w-full h-[40px] flex items-center justify-between bg-white dark:bg-slate-800 border ${isDropdownOpen ? 'border-primary ring-4 ring-primary/10' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-3 transition-all shadow-sm`}
+            >
+              <span className="text-[14px] font-bold text-slate-700 dark:text-slate-200">
+                {selectedCategory || 'All Categories'}
+              </span>
+              <span className={`material-symbols-outlined text-slate-400 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : ''}`}>
+                expand_more
+              </span>
+            </button>
+
+            {isDropdownOpen && (
+              <div className="absolute z-50 top-full left-0 right-0 mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="p-2 max-h-[300px] overflow-y-auto custom-scrollbar">
+                  <button
+                    onClick={() => {
+                      setSelectedCategory(null);
+                      setIsDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${!selectedCategory ? 'bg-primary/10 text-primary' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`}
+                  >
+                    All Categories
+                  </button>
+                  <div className="h-px bg-slate-100 dark:bg-slate-700/50 my-1 mx-2" />
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => {
+                        setSelectedCategory(cat);
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${selectedCategory === cat ? 'bg-primary/10 text-primary' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="space-y-[12px]">

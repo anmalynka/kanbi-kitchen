@@ -326,6 +326,43 @@
         "title": "Sunday",
         "items": []
       }
+    },
+    "2026-04-06": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": []
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": []
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
     }
   }
 }

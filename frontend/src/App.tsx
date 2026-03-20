@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 import KanbanBoard from './components/KanbanBoard';
+import RecipesPage from './components/RecipesPage';
 import axios from 'axios';
 import { Recipe } from './types';
 
@@ -13,12 +14,15 @@ interface DataState {
 }
 
 function App() {
+  const [activePage, setActivePage] = useState<'planner' | 'recipes'>('planner');
   const [currentDate, setCurrentDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
   const [calorieTarget, setCalorieTarget] = useState(2200);
   const [isCalorieModalOpen, setIsCalorieModalOpen] = useState(false);
   const [tempCalorie, setTempCalorie] = useState(calorieTarget.toString());
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
+  const [isSmallMobile, setIsSmallMobile] = useState(window.innerWidth < 600);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const getWeekId = (date: Date) => {
     const d = new Date(date);
@@ -47,7 +51,10 @@ function App() {
 
   // Initial load for recipes
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1280);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1280);
+      setIsSmallMobile(window.innerWidth < 600);
+    };
     window.addEventListener('resize', handleResize);
     
     const timer = setTimeout(() => {
@@ -236,6 +243,19 @@ function App() {
     }
   };
 
+  const addRecipe = (newRecipe: Recipe) => {
+    setData(prev => ({
+      ...prev,
+      columns: {
+        ...prev.columns,
+        bank: {
+          ...prev.columns.bank,
+          items: [...prev.columns.bank.items, newRecipe]
+        }
+      }
+    }));
+  };
+
   if (loading) {
     return (
       <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background-light dark:bg-background-dark font-display">
@@ -258,7 +278,7 @@ function App() {
             <div className="bg-white dark:bg-slate-900 w-full max-w-[600px] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
               <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
                 <div>
-                  <h2 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Set Calorie Target</h2>
+                  <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Set Calorie Target</h2>
                   <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Daily energy goal</p>
                 </div>
                 <button onClick={() => setIsCalorieModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
@@ -293,7 +313,7 @@ function App() {
                 </div>
                 <button
                   onClick={handleSaveCalorieTarget}
-                  className="w-full bg-primary text-white font-black uppercase text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
+                  className="w-full bg-primary text-white font-bold uppercase text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
                 >
                   Save Target
                 </button>
@@ -302,35 +322,94 @@ function App() {
           </div>
         )}
 
-        <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-[24px] pb-[13px] pt-[12px] sticky top-0 z-50">
-          <div className="flex items-center gap-[16px]">
-            <div className="size-[32px] overflow-hidden rounded-lg flex items-center justify-center">
+        <header className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-[24px] sticky top-0 z-50 h-[64px]">
+          <div className="flex items-center gap-[16px] w-[200px]">
+            <div className="size-[32px] overflow-hidden rounded-lg flex items-center justify-center cursor-pointer" onClick={() => { setActivePage('planner'); setIsMenuOpen(false); }}>
               <img src="/kanbi.png" alt="Kanbi Kitchen Logo" className="size-full object-cover" />
             </div>
             <h2 className="text-slate-900 dark:text-slate-100 text-[18px] font-bold leading-[22.5px] tracking-[-0.45px]">Kanbi Kitchen</h2>
           </div>
-          <nav className="hidden md:flex flex-1 justify-center gap-[32px]">
-            <a className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-[14px] font-medium transition-colors" href="#">Dashboard</a>
-            <a className="text-primary text-[14px] font-bold border-b-2 border-primary pb-[6px]" href="#">Weekly Planner</a>
-            <a className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-[14px] font-medium transition-colors" href="#">Inventory</a>
-            <a className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-[14px] font-medium transition-colors" href="#">Recipes</a>
+          
+          {/* Desktop/Tablet Nav */}
+          <nav className="hidden min-[600px]:flex flex-1 justify-center gap-[32px] h-full">
+            <button 
+              className={`text-[14px] transition-all duration-200 relative h-full flex items-center border-b-2 font-semibold ${activePage === 'planner' ? 'text-primary border-primary' : 'text-slate-600 dark:text-slate-400 hover:text-primary border-transparent'}`}
+              onClick={() => setActivePage('planner')}
+            >
+              Weekly Planner
+            </button>
+            <button 
+              className={`text-[14px] transition-all duration-200 relative h-full flex items-center border-b-2 font-semibold ${activePage === 'recipes' ? 'text-primary border-primary' : 'text-slate-600 dark:text-slate-400 hover:text-primary border-transparent'}`}
+              onClick={() => setActivePage('recipes')}
+            >
+              Recipes
+            </button>
           </nav>
+
+          {/* Mobile Hamburger Button */}
+          <div className="flex min-[600px]:hidden items-center justify-end w-[200px]">
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+            >
+              <span className="material-symbols-outlined text-[28px]">
+                {isMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+          </div>
+
+          <div className="hidden min-[600px]:block w-[200px]"></div>
+
+          {/* Mobile Menu Overlay */}
+          {isSmallMobile && isMenuOpen && (
+            <div className="absolute top-[64px] left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              <div className="flex flex-col p-4 gap-2">
+                <button 
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[15px] font-bold transition-all ${activePage === 'planner' ? 'bg-primary/10 text-primary' : 'text-slate-600 dark:text-slate-400'}`}
+                  onClick={() => {
+                    setActivePage('planner');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <span className="material-symbols-outlined">calendar_view_week</span>
+                  Weekly Planner
+                </button>
+                <button 
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[15px] font-bold transition-all ${activePage === 'recipes' ? 'bg-primary/10 text-primary' : 'text-slate-600 dark:text-slate-400'}`}
+                  onClick={() => {
+                    setActivePage('recipes');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <span className="material-symbols-outlined">restaurant_menu</span>
+                  Recipes
+                </button>
+              </div>
+            </div>
+          )}
         </header>
 
         <div className="flex-1 flex overflow-hidden relative">
-          <KanbanBoard 
-            data={data} 
-            deleteMeal={deleteMeal} 
-            clearPlan={clearPlan}
-            currentDate={currentDate}
-            onNextWeek={nextWeek}
-            onPrevWeek={prevWeek}
-            calorieTarget={calorieTarget}
-            viewMode={viewMode}
-            onViewModeChange={setViewMode}
-            isMobile={isMobile}
-            addMealToDay={addMealToDay}
-          />
+          {activePage === 'planner' ? (
+            <KanbanBoard 
+              data={data} 
+              deleteMeal={deleteMeal} 
+              clearPlan={clearPlan}
+              currentDate={currentDate}
+              onNextWeek={nextWeek}
+              onPrevWeek={prevWeek}
+              calorieTarget={calorieTarget}
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+              isMobile={isMobile}
+              addMealToDay={addMealToDay}
+            />
+          ) : (
+            <RecipesPage 
+              recipes={data.columns.bank.items} 
+              onAddRecipe={addRecipe}
+            />
+          )}
         </div>
 
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">

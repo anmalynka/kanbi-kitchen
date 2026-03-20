@@ -61,6 +61,30 @@ app.get('/api/recipes', (req, res) => {
     res.json(data.recipes);
 });
 
+app.post('/api/recipes', (req, res) => {
+    try {
+        const newRecipe = req.body;
+        const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
+        
+        // Robust ID generation: find max number after 'd'
+        const maxIdNum = data.recipes.reduce((max: number, r: any) => {
+            const num = parseInt(r.id.replace(/^d/, ''));
+            return !isNaN(num) ? Math.max(max, num) : max;
+        }, 0);
+        
+        newRecipe.id = `d${(maxIdNum + 1).toString().padStart(3, '0')}`;
+        
+        data.recipes.push(newRecipe);
+        fs.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
+        
+        console.log(`Successfully added recipe ${newRecipe.id}: ${newRecipe.name}`);
+        res.status(201).json(newRecipe);
+    } catch (err) {
+        console.error("Error saving recipe:", err);
+        res.status(500).json({ error: 'Failed to save recipe' });
+    }
+});
+
 // 2. Get/Update Weekly Plan
 app.get('/api/plan', (req, res) => {
     const weekId = req.query.week as string || 'legacy';
