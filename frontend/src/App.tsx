@@ -34,7 +34,7 @@ function App() {
 
   const weekId = getWeekId(currentDate);
 
-  const [viewMode, setViewMode] = useState<5 | 7>(5);
+  const [viewMode] = useState<5 | 7>(5);
   const [data, setData] = useState<DataState>({
     columns: {
       'bank': { id: 'bank', title: 'Dish Bank', items: [] as Recipe[] },
@@ -460,7 +460,6 @@ function App() {
               onPrevWeek={prevWeek}
               calorieTarget={calorieTarget}
               viewMode={viewMode}
-              onViewModeChange={setViewMode}
               isMobile={isMobile}
               addMealToDay={addMealToDay}
             />

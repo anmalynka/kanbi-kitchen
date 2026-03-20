@@ -13,7 +13,6 @@ interface KanbanBoardProps {
   onPrevWeek: () => void;
   calorieTarget: number;
   viewMode: 5 | 7;
-  onViewModeChange: (mode: 5 | 7) => void;
   isMobile: boolean;
   addMealToDay: (dayId: string, recipe: Recipe) => void;
 }
@@ -27,7 +26,6 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
   onPrevWeek, 
   calorieTarget,
   viewMode,
-  onViewModeChange,
   isMobile,
   addMealToDay
 }) => {
@@ -490,27 +488,27 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
       <section ref={planRef} className="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark p-[12px] xl:p-[24px]">
         <div className="flex flex-row justify-between items-center mb-[16px] xl:mb-[24px] gap-2">
            <div className="flex flex-row items-center gap-1 sm:gap-2">
-              <button onClick={onPrevWeek} className="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
-                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px] block">chevron_left</span>
+              <button onClick={onPrevWeek} className="size-8 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
+                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px]">chevron_left</span>
               </button>
-              <h2 className="text-[13px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[110px] sm:min-w-[200px] text-center whitespace-nowrap">{formatDateRange(monday, endDate)}</h2>
-              <button onClick={onNextWeek} className="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
-                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px] block">chevron_right</span>
+              <h2 className="text-[13px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[110px] sm:min-w-[200px] text-center whitespace-nowrap flex items-center justify-center h-8">{formatDateRange(monday, endDate)}</h2>
+              <button onClick={onNextWeek} className="size-8 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
+                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px]">chevron_right</span>
               </button>
            </div>
            
-           <div className="flex items-center gap-[4px] xl:gap-[12px] w-auto">
-             <button onClick={clearPlan} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-red-50 hover:text-red-600 transition-all shadow-sm">
+           <div className="flex items-center gap-[4px] xl:gap-[8px] w-auto">
+             <button onClick={clearPlan} className="flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-2 px-3 sm:px-4 text-slate-600 dark:text-slate-300 hover:bg-red-50 hover:text-red-600 transition-all shadow-sm">
                 <span className="material-symbols-outlined text-[18px]">delete_sweep</span>
-                <span className="hidden xl:inline font-bold text-[14px]">Clear</span>
+                <span className="hidden sm:inline font-bold text-[13px]">Clear</span>
              </button>
-             <button onClick={downloadAsImage} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all shadow-sm">
+             <button onClick={downloadAsImage} className="flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-2 px-3 sm:px-4 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all shadow-sm">
                 <span className="material-symbols-outlined text-[18px]">download</span>
-                <span className="hidden xl:inline font-bold text-[14px]">Download</span>
+                <span className="hidden sm:inline font-bold text-[13px]">Download</span>
              </button>
-             <button onClick={() => setIsGroceryModalOpen(true)} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-[#ec5b13] text-white shadow-lg shadow-primary/20 hover:bg-[#d95411] transition-all">
+             <button onClick={() => setIsGroceryModalOpen(true)} className="flex items-center justify-center gap-2 rounded-xl bg-[#ec5b13] py-2 px-3 sm:px-4 text-white shadow-lg shadow-primary/20 hover:bg-[#d95411] transition-all">
                 <span className="material-symbols-outlined text-[18px]">shopping_cart</span>
-                <span className="hidden xl:inline font-bold text-[14px]">Grocery List</span>
+                <span className="hidden sm:inline font-bold text-[13px]">Grocery List</span>
              </button>
            </div>
         </div>

@@ -82,32 +82,32 @@
       "mon": {
         "id": "mon",
         "title": "Monday",
-        "items": [
-          {
-            "id": "d034-yr1xe7dpe",
-            "name": "Chocolate Brownie",
-            "category": "Dessert",
-            "prepTime": 30,
-            "macros": {
-              "calories": 362,
-              "protein": 6,
-              "carbs": 44,
-              "fat": 18
-            },
-            "ingredients": [
-              "200 g - Dark Chocolate",
-              "150 g - Butter",
-              "100 g - Sugar",
-              "30 g - Flour",
-              "5 g - Baking Powder"
-            ]
-          }
-        ]
+        "items": []
       },
       "tue": {
         "id": "tue",
         "title": "Tuesday",
-        "items": []
+        "items": [
+          {
+            "id": "d318-0azsaz9yj",
+            "name": "Pain au Chocolat",
+            "category": "Bakery",
+            "isFavorite": false,
+            "prepTime": 180,
+            "macros": {
+              "calories": 464,
+              "protein": 8,
+              "carbs": 45,
+              "fat": 28
+            },
+            "ingredients": [
+              "100g - Puff Pastry",
+              "20g - Dark Chocolate Sticks",
+              "10g - Egg Wash",
+              "5g - Butter"
+            ]
+          }
+        ]
       },
       "wed": {
         "id": "wed",

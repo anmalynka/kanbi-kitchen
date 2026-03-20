@@ -33,32 +33,25 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit,
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/30 transition-all flex flex-col h-full group relative">
-      {/* Favorite Star */}
-      <button 
-        onClick={() => onToggleFavorite?.(recipe)}
-        className={`absolute top-4 right-4 z-10 size-8 flex items-center justify-center rounded-full transition-all ${recipe.isFavorite ? 'bg-amber-50 text-amber-500 shadow-sm' : 'bg-slate-50/50 text-slate-300 hover:text-amber-400 hover:bg-white'}`}
-      >
-        <span className={`material-symbols-outlined text-[20px] ${recipe.isFavorite ? 'fill-1' : ''}`} style={{ fontVariationSettings: recipe.isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
-          star
-        </span>
-      </button>
-
       <div className="p-5 flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-3">
-          <span className={`px-2 py-0.5 border ${getCategoryColor(recipe.category)} text-[11px] font-bold tracking-wider rounded-md`}>
-            {recipe.category}
-          </span>
-          <div className="flex items-center gap-3 text-slate-500 mr-8">
-            <div className="flex items-center gap-1">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <span className={`px-2 py-0.5 border ${getCategoryColor(recipe.category)} text-[11px] font-bold tracking-wider rounded-md`}>
+              {recipe.category}
+            </span>
+            <div className="flex items-center gap-1 text-slate-500">
               <span className="material-symbols-outlined text-sm">schedule</span>
               <span className="text-[12px] font-bold">{recipe.prepTime} min</span>
             </div>
+          </div>
+          
+          <div className="flex items-center gap-3">
             {(onEdit || onDelete) && (
-              <div className="flex items-center gap-1 border-l border-slate-200 dark:border-slate-700 pl-2">
+              <div className="flex items-center gap-1.5 border-r border-slate-200 dark:border-slate-700 pr-3 mr-1">
                 {onEdit && (
                   <button 
                     onClick={() => onEdit(recipe)}
-                    className="hover:text-primary transition-colors flex items-center"
+                    className="text-slate-400 hover:text-primary transition-colors flex items-center"
                     title="Edit recipe"
                   >
                     <span className="material-symbols-outlined text-[18px]">edit</span>
@@ -67,7 +60,7 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit,
                 {onDelete && (
                   <button 
                     onClick={() => onDelete(recipe.id)}
-                    className="hover:text-orange-500 transition-colors flex items-center"
+                    className="text-slate-400 hover:text-orange-500 transition-colors flex items-center"
                     title="Delete recipe"
                   >
                     <span className="material-symbols-outlined text-[18px]">delete</span>
@@ -75,6 +68,15 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit,
                 )}
               </div>
             )}
+
+            <button 
+              onClick={() => onToggleFavorite?.(recipe)}
+              className={`size-8 flex items-center justify-center rounded-full transition-all ${recipe.isFavorite ? 'bg-amber-50 text-amber-500 shadow-sm' : 'bg-slate-50 text-slate-300 hover:text-amber-400 hover:bg-white'}`}
+            >
+              <span className={`material-symbols-outlined text-[20px] ${recipe.isFavorite ? 'fill-1' : ''}`} style={{ fontVariationSettings: recipe.isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
+                star
+              </span>
+            </button>
           </div>
         </div>
 

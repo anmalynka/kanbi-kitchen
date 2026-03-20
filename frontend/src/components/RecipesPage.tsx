@@ -574,7 +574,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
           </div>
 
           {/* Filters Section */}
-          <div className="flex flex-col-reverse md:flex-row gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative group">
               <div className="absolute left-4 inset-y-0 flex items-center justify-center text-slate-500 group-focus-within:text-primary transition-colors">
                 <span className="material-symbols-outlined text-[20px]">search</span>
@@ -606,9 +606,12 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`w-full h-[48px] flex items-center justify-between bg-white dark:bg-slate-800 border ${isDropdownOpen ? 'border-primary ring-4 ring-primary/10' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 transition-all shadow-sm`}
               >
-                <span className="text-sm font-bold text-slate-900 dark:text-white">
-                  {selectedCategory || 'All Categories'}
-                </span>
+                <div className="flex items-center gap-2">
+                  {selectedCategory === 'Favorites' && <span className="material-symbols-outlined text-amber-500 text-[18px] fill-1" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>}
+                  <span className="text-sm font-bold text-slate-900 dark:text-white">
+                    {selectedCategory || 'All Categories'}
+                  </span>
+                </div>
                 <span className={`material-symbols-outlined text-slate-400 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : ''}`}>
                   expand_more
                 </span>
@@ -634,8 +637,9 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                           setSelectedCategory(cat);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${selectedCategory === cat ? 'bg-primary/10 text-primary' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`}
+                        className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${selectedCategory === cat ? 'bg-primary/10 text-primary' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/50'} flex items-center gap-2`}
                       >
+                        {cat === 'Favorites' && <span className="material-symbols-outlined text-amber-500 text-[14px] fill-1" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>}
                         {cat}
                       </button>
                     ))}
