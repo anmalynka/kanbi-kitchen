@@ -11,6 +11,7 @@ export interface Recipe {
   };
   ingredients: string[];
   image?: string;
+  isFavorite?: boolean;
 }
 
 export interface PlanColumn {

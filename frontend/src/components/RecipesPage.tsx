@@ -45,6 +45,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
   });
 
   const categories = Array.from(new Set(recipes.map((r) => r.category))).sort();
+  const allCategories = recipes.some(r => r.isFavorite) ? ['Favorites', ...categories] : categories;
 
   const handleEdit = (recipe: Recipe) => {
     // Parse ingredients: "200 g - Name" -> { qty: "200", unit: "g", name: "Name" }
@@ -87,9 +88,22 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
     }
   };
 
+  const handleToggleFavorite = async (recipe: Recipe) => {
+    try {
+      const updated = { ...recipe, isFavorite: !recipe.isFavorite };
+      const res = await axios.put(`/api/recipes/${recipe.id}`, updated);
+      if (onUpdateRecipe) onUpdateRecipe(res.data);
+    } catch (err) {
+      console.error("Error toggling favorite:", err);
+    }
+  };
+
   const filteredRecipes = recipes.filter((recipe) => {
     const matchesSearch = recipe.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = !selectedCategory || recipe.category === selectedCategory;
+    let matchesCategory = !selectedCategory || recipe.category === selectedCategory;
+    if (selectedCategory === 'Favorites') {
+      matchesCategory = recipe.isFavorite === true;
+    }
     return matchesSearch && matchesCategory;
   });
 
@@ -173,7 +187,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
   const handleAddIngredient = () => {
     setNewRecipe({
       ...newRecipe,
-      ingredients: [...newRecipe.ingredients, { qty: '', unit: 'g', name: '' }]
+      ingredients: [...newRecipe.ingredients, { qty: '', unit: 'g', name: '', error: false }]
     });
   };
 
@@ -295,7 +309,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
         category: '',
         prepTime: 15,
         macros: { calories: 0, protein: 0, carbs: 0, fat: 0 },
-        ingredients: [{ qty: '', unit: 'g', name: '' }]
+        ingredients: [{ qty: '', unit: 'g', name: '', error: false }]
       });
     } catch (err) {
       console.error("Error saving recipe:", err);
@@ -532,7 +546,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
         </div>
       )}
 
-      <div className="max-w-[1600px] mx-auto p-[12px] xl:p-[24px]">
+      <div className="max-w-[1600px] mx-auto p-[12px] xl:px-[24px] xl:pb-[24px] xl:pt-[16px]">
         {/* Sticky Header Section */}
         <div className="sticky top-0 z-40 bg-[#F8F6F6] dark:bg-slate-900/50 pb-6">
           <div className="flex flex-row items-center justify-between gap-6 mb-4 pt-2">
@@ -547,7 +561,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                   category: '',
                   prepTime: 15,
                   macros: { calories: 0, protein: 0, carbs: 0, fat: 0 },
-                  ingredients: [{ qty: '', unit: 'g', name: '' }]
+                  ingredients: [{ qty: '', unit: 'g', name: '', error: false }]
                 });
                 setIsEditing(false);
                 setIsAddModalOpen(true);
@@ -613,7 +627,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                       All Categories
                     </button>
                     <div className="h-px bg-slate-100 dark:bg-slate-700/50 my-1 mx-2" />
-                    {categories.map((cat) => (
+                    {allCategories.map((cat) => (
                       <button
                         key={cat}
                         onClick={() => {
@@ -641,6 +655,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                   recipe={recipe} 
                   onEdit={ownedRecipeIds.includes(recipe.id) ? handleEdit : undefined}
                   onDelete={ownedRecipeIds.includes(recipe.id) ? handleDeleteClick : undefined}
+                  onToggleFavorite={handleToggleFavorite}
                 />
               </div>
             ))}

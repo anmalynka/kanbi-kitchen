@@ -61,6 +61,7 @@ const validateRecipe = (recipe: any) => {
         id: recipe.id ? sanitizeString(recipe.id, 50) : undefined,
         name: sanitizeString(recipe.name, 50) || 'Untitled Recipe',
         category: sanitizeString(recipe.category, 30) || 'Other',
+        isFavorite: Boolean(recipe.isFavorite),
         prepTime: typeof recipe.prepTime === 'number' ? Math.max(0, Math.min(recipe.prepTime, 1440)) : 15,
         macros: {
             calories: typeof recipe.macros?.calories === 'number' ? Math.max(0, Math.min(recipe.macros.calories, 10000)) : 0,

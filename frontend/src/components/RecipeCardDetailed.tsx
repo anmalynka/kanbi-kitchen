@@ -5,9 +5,10 @@ interface RecipeCardDetailedProps {
   recipe: Recipe;
   onEdit?: (recipe: Recipe) => void;
   onDelete?: (recipeId: string) => void;
+  onToggleFavorite?: (recipe: Recipe) => void;
 }
 
-const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit, onDelete }) => {
+const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit, onDelete, onToggleFavorite }) => {
   const macros = recipe.macros;
   const totalCalories = macros.protein * 4 + macros.carbs * 4 + macros.fat * 9;
   
@@ -17,27 +18,37 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit,
 
   const getCategoryColor = (category: string) => {
     const cat = category.toLowerCase();
-    if (cat.includes('meat') || cat.includes('chicken') || cat.includes('beef')) return 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300';
-    if (cat.includes('fish') || cat.includes('seafood') || cat.includes('salmon')) return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
-    if (cat.includes('veg')) return 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300';
-    if (cat.includes('pasta') || cat.includes('italian')) return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300';
-    if (cat.includes('pizza')) return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300';
-    if (cat.includes('salad')) return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
-    if (cat.includes('dessert') || cat.includes('sweet')) return 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-300';
-    if (cat.includes('breakfast')) return 'bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300';
-    if (cat.includes('soup')) return 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300';
-    if (cat.includes('side') || cat.includes('snack')) return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300';
-    return 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400';
+    if (cat.includes('meat') || cat.includes('chicken') || cat.includes('beef')) return 'border-rose-200 text-rose-500 dark:border-rose-900/50 dark:text-rose-400';
+    if (cat.includes('fish') || cat.includes('seafood') || cat.includes('salmon')) return 'border-sky-200 text-sky-500 dark:border-sky-900/50 dark:text-sky-400';
+    if (cat.includes('veg')) return 'border-teal-200 text-teal-500 dark:border-teal-900/50 dark:text-teal-400';
+    if (cat.includes('pasta') || cat.includes('italian')) return 'border-orange-200 text-orange-500 dark:border-orange-900/50 dark:text-orange-400';
+    if (cat.includes('pizza')) return 'border-amber-200 text-amber-500 dark:border-amber-900/50 dark:text-amber-400';
+    if (cat.includes('salad')) return 'border-emerald-200 text-emerald-500 dark:border-emerald-900/50 dark:text-emerald-400';
+    if (cat.includes('dessert') || cat.includes('sweet')) return 'border-fuchsia-200 text-fuchsia-500 dark:border-fuchsia-900/50 dark:text-fuchsia-400';
+    if (cat.includes('breakfast')) return 'border-violet-200 text-violet-500 dark:border-violet-900/50 dark:text-violet-400';
+    if (cat.includes('soup')) return 'border-indigo-200 text-indigo-500 dark:border-indigo-900/50 dark:text-indigo-400';
+    if (cat.includes('side') || cat.includes('snack')) return 'border-slate-200 text-slate-500 dark:border-slate-700 dark:text-slate-400';
+    return 'border-zinc-200 text-zinc-500 dark:border-zinc-700 dark:text-zinc-400';
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/30 transition-all flex flex-col h-full group">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/30 transition-all flex flex-col h-full group relative">
+      {/* Favorite Star */}
+      <button 
+        onClick={() => onToggleFavorite?.(recipe)}
+        className={`absolute top-4 right-4 z-10 size-8 flex items-center justify-center rounded-full transition-all ${recipe.isFavorite ? 'bg-amber-50 text-amber-500 shadow-sm' : 'bg-slate-50/50 text-slate-300 hover:text-amber-400 hover:bg-white'}`}
+      >
+        <span className={`material-symbols-outlined text-[20px] ${recipe.isFavorite ? 'fill-1' : ''}`} style={{ fontVariationSettings: recipe.isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
+          star
+        </span>
+      </button>
+
       <div className="p-5 flex flex-col flex-1">
         <div className="flex justify-between items-start mb-3">
-          <span className={`px-2 py-0.5 ${getCategoryColor(recipe.category)} text-[12px] font-bold tracking-wider rounded-md`}>
+          <span className={`px-2 py-0.5 border ${getCategoryColor(recipe.category)} text-[11px] font-bold tracking-wider rounded-md`}>
             {recipe.category}
           </span>
-          <div className="flex items-center gap-3 text-slate-500">
+          <div className="flex items-center gap-3 text-slate-500 mr-8">
             <div className="flex items-center gap-1">
               <span className="material-symbols-outlined text-sm">schedule</span>
               <span className="text-[12px] font-bold">{recipe.prepTime} min</span>

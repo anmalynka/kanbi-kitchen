@@ -469,7 +469,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
                 <Droppable droppableId={`bank-${cat}`}>
                   {(provided) => (
                     <div {...provided.droppableProps} ref={provided.innerRef} className="min-h-[40px] flex flex-col gap-3">
-                      {recipes.filter(r => r && r.id).map((recipe: Recipe, index: number) => (
+                      {recipes.filter((r: Recipe) => r && r.id).map((recipe: Recipe, index: number) => (
 
                         <RecipeCard 
                           key={`bank-${recipe.id}-${index}`} 
@@ -488,47 +488,29 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
       </aside>
 
       <section ref={planRef} className="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark p-[12px] xl:p-[24px]">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-[16px] xl:mb-[24px] gap-4">
-           <div className="flex flex-row items-center justify-center gap-2 sm:gap-[16px]">
-              <div className="flex items-center gap-1 sm:gap-2">
-                <button onClick={onPrevWeek} className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
-                  <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[22px] sm:text-[24px]">chevron_left</span>
-                </button>
-                <h2 className="text-[15px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[140px] sm:min-w-[200px] text-center whitespace-nowrap">{formatDateRange(monday, endDate)}</h2>
-                <button onClick={onNextWeek} className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
-                  <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[22px] sm:text-[24px]">chevron_right</span>
-                </button>
-              </div>
-
-              {/* View Mode Switcher */}
-              <div className="hidden sm:flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm shrink-0">
-                <button 
-                  onClick={() => onViewModeChange(5)}
-                  className={`px-3 py-1 rounded-lg text-[12px] xl:text-xs font-black transition-all ${viewMode === 5 ? 'bg-white dark:bg-slate-700 text-primary shadow-sm' : 'text-slate-500 hover:text-slate-600'}`}
-                >
-                  5d
-                </button>
-                <button 
-                  onClick={() => onViewModeChange(7)}
-                  className={`px-3 py-1 rounded-lg text-[12px] xl:text-xs font-black transition-all ${viewMode === 7 ? 'bg-white dark:bg-slate-700 text-primary shadow-sm' : 'text-slate-500 hover:text-slate-600'}`}
-                >
-                  7d
-                </button>
-              </div>
+        <div className="flex flex-row justify-between items-center mb-[16px] xl:mb-[24px] gap-2">
+           <div className="flex flex-row items-center gap-1 sm:gap-2">
+              <button onClick={onPrevWeek} className="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
+                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px] block">chevron_left</span>
+              </button>
+              <h2 className="text-[13px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[110px] sm:min-w-[200px] text-center whitespace-nowrap">{formatDateRange(monday, endDate)}</h2>
+              <button onClick={onNextWeek} className="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
+                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px] block">chevron_right</span>
+              </button>
            </div>
            
-           <div className="flex items-center gap-[8px] xl:gap-[12px] w-auto">
-             <button onClick={clearPlan} className="flex items-center justify-center gap-[8px] rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 xl:px-[16px] py-2 xl:py-[8px] text-[12px] xl:text-[14px] font-bold text-slate-600 dark:text-slate-300 hover:bg-red-50 hover:text-red-600 transition-all shadow-sm">
+           <div className="flex items-center gap-[4px] xl:gap-[12px] w-auto">
+             <button onClick={clearPlan} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-red-50 hover:text-red-600 transition-all shadow-sm">
                 <span className="material-symbols-outlined text-[18px]">delete_sweep</span>
-                <span className="hidden xl:inline">Clear</span>
+                <span className="hidden xl:inline font-bold text-[14px]">Clear</span>
              </button>
-             <button onClick={downloadAsImage} className="flex items-center justify-center gap-[8px] rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 xl:px-[16px] py-2 xl:py-[8px] text-[12px] xl:text-[14px] font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all shadow-sm">
+             <button onClick={downloadAsImage} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all shadow-sm">
                 <span className="material-symbols-outlined text-[18px]">download</span>
-                <span className="hidden xl:inline">Download</span>
+                <span className="hidden xl:inline font-bold text-[14px]">Download</span>
              </button>
-             <button onClick={() => setIsGroceryModalOpen(true)} className="flex items-center justify-center gap-[8px] rounded-[12px] bg-[#ec5b13] px-3 xl:px-[16px] py-2 xl:py-[8px] text-[12px] xl:text-[14px] font-bold text-white shadow-lg shadow-primary/20 hover:bg-[#d95411] transition-all">
+             <button onClick={() => setIsGroceryModalOpen(true)} className="size-[32px] xl:w-auto xl:h-auto flex items-center justify-center gap-[8px] rounded-[10px] xl:rounded-[12px] bg-[#ec5b13] text-white shadow-lg shadow-primary/20 hover:bg-[#d95411] transition-all">
                 <span className="material-symbols-outlined text-[18px]">shopping_cart</span>
-                <span className="hidden xl:inline">Grocery List</span>
+                <span className="hidden xl:inline font-bold text-[14px]">Grocery List</span>
              </button>
            </div>
         </div>
@@ -540,7 +522,6 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
             if (!col) return null;
             const macros = calculateMacros(col.items || []);
             const isOverTarget = macros.calories > calorieTarget;
-            const caloriesPercent = Math.min((macros.calories / calorieTarget) * 100, 100);
 
             return (
               <div 
@@ -597,7 +578,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
                         className={`flex flex-col gap-3 min-h-[100%] transition-colors pb-4 ${snapshot.isDraggingOver ? 'bg-primary/5 rounded-xl' : ''}`}
                       >
 
-                        {col.items?.filter(r => r && r.id).map((recipe: Recipe, index: number) => (
+                        {col.items?.filter((r: Recipe) => r && r.id).map((recipe: Recipe, index: number) => (
                           <RecipeCard 
                             key={`board-${recipe.id}-${index}`} 
                             recipe={recipe} 
