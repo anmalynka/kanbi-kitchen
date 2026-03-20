@@ -25,41 +25,70 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 const openai = process.env.OPENAI_API_KEY ? new openai_1.default({ apiKey: process.env.OPENAI_API_KEY }) : null;
 // Helper to read/write plan
-const getPlan = () => {
-    const defaultPlan = {
-        columns: {
-            mon: { id: 'mon', title: 'Monday', items: [] },
-            tue: { id: 'tue', title: 'Tuesday', items: [] },
-            wed: { id: 'wed', title: 'Wednesday', items: [] },
-            thu: { id: 'thu', title: 'Thursday', items: [] },
-            fri: { id: 'fri', title: 'Friday', items: [] },
-            sat: { id: 'sat', title: 'Saturday', items: [] },
-            sun: { id: 'sun', title: 'Sunday', items: [] }
-        }
-    };
+const getPlans = () => {
     if (!fs_1.default.existsSync(planPath))
-        return defaultPlan;
+        return {};
     try {
-        return JSON.parse(fs_1.default.readFileSync(planPath, 'utf8'));
+        const data = JSON.parse(fs_1.default.readFileSync(planPath, 'utf8'));
+        // Support migration from single plan to multi-week
+        if (data.columns && !data.plans) {
+            return { "legacy": data.columns };
+        }
+        return data.plans || {};
     }
     catch (e) {
-        return defaultPlan;
+        return {};
     }
 };
-const savePlan = (plan) => {
-    fs_1.default.writeFileSync(planPath, JSON.stringify(plan, null, 2));
+const getDefaultColumns = () => ({
+    mon: { id: 'mon', title: 'Monday', items: [] },
+    tue: { id: 'tue', title: 'Tuesday', items: [] },
+    wed: { id: 'wed', title: 'Wednesday', items: [] },
+    thu: { id: 'thu', title: 'Thursday', items: [] },
+    fri: { id: 'fri', title: 'Friday', items: [] },
+    sat: { id: 'sat', title: 'Saturday', items: [] },
+    sun: { id: 'sun', title: 'Sunday', items: [] }
+});
+const savePlans = (plans) => {
+    fs_1.default.writeFileSync(planPath, JSON.stringify({ plans }, null, 2));
 };
 // 1. Get Recipes (from recipes.json)
 app.get('/api/recipes', (req, res) => {
     const data = JSON.parse(fs_1.default.readFileSync(recipesPath, 'utf8'));
     res.json(data.recipes);
 });
+app.post('/api/recipes', (req, res) => {
+    try {
+        const newRecipe = req.body;
+        const data = JSON.parse(fs_1.default.readFileSync(recipesPath, 'utf8'));
+        // Robust ID generation: find max number after 'd'
+        const maxIdNum = data.recipes.reduce((max, r) => {
+            const num = parseInt(r.id.replace(/^d/, ''));
+            return !isNaN(num) ? Math.max(max, num) : max;
+        }, 0);
+        newRecipe.id = `d${(maxIdNum + 1).toString().padStart(3, '0')}`;
+        data.recipes.push(newRecipe);
+        fs_1.default.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
+        console.log(`Successfully added recipe ${newRecipe.id}: ${newRecipe.name}`);
+        res.status(201).json(newRecipe);
+    }
+    catch (err) {
+        console.error("Error saving recipe:", err);
+        res.status(500).json({ error: 'Failed to save recipe' });
+    }
+});
 // 2. Get/Update Weekly Plan
 app.get('/api/plan', (req, res) => {
-    res.json(getPlan());
+    const weekId = req.query.week || 'legacy';
+    const plans = getPlans();
+    res.json({ columns: plans[weekId] || getDefaultColumns() });
 });
 app.post('/api/plan', (req, res) => {
-    savePlan(req.body);
+    const weekId = req.query.week || 'legacy';
+    const { columns } = req.body;
+    const plans = getPlans();
+    plans[weekId] = columns;
+    savePlans(plans);
     res.json({ message: 'Plan saved successfully' });
 });
 app.get('/health', (req, res) => {

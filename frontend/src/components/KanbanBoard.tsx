@@ -312,7 +312,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
           <div className={`grid gap-6 ${viewMode === 5 ? 'grid-cols-5' : 'grid-cols-7'}`}>
             {daysToRender.map((day, idx) => (
               <div key={day} className="flex flex-col">
-                <h3 className="text-[10px] font-black text-primary uppercase mb-4 tracking-tighter border-b-2 border-primary/20 pb-2">
+                <h3 className="text-[10px] font-black text-primary uppercase pt-2 mb-4 tracking-tighter border-b-2 border-primary/20 pb-2">
                   {getColumnDayFull(idx)} ({getColumnDate(idx)})
                 </h3>
                 <div className="space-y-3">
@@ -520,7 +520,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
                 key={col.id} 
                 className="flex flex-col gap-[4px] h-full bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-[4px] relative border border-slate-200/50 dark:border-slate-700/50 shrink-0 w-[85vw] max-w-[280px] min-w-[140px] xl:w-auto xl:max-w-none xl:shrink snap-center"
               >
-                <div className="text-center pb-[4px] border-b-2 border-transparent shrink-0">
+                <div className="text-center pt-[8px] pb-[4px] border-b-2 border-transparent shrink-0">
                   <p className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase leading-[14px] mb-1 truncate">
                     {getColumnDayFull(idx)} ({getColumnDate(idx)})
                   </p>

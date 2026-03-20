@@ -2707,6 +2707,27 @@
         "5 g - Garlic",
         "2 g - Chili Oil"
       ]
+    },
+    {
+      "name": "Pizza on cottage cheese",
+      "category": "Pizza",
+      "prepTime": 40,
+      "macros": {
+        "calories": 0,
+        "protein": 0,
+        "carbs": 0,
+        "fat": 0
+      },
+      "ingredients": [
+        "200 g - Cottage cheese",
+        "1 pcs - Egg",
+        "80 g - Flour",
+        "10 g - Vegetable oil",
+        "5 g - Baking powder",
+        "50 g - Sour cream or greek yogurt"
+      ],
+      "id": "d308"
     }
+  
   ]
 }

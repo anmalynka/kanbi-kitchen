@@ -116,7 +116,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
       {isAddModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
           <div className="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]">
-            <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
+            <div className="sticky top-0 z-10 p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 shrink-0">
               <div>
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Add New Recipe</h2>
                 <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Create a custom dish</p>
@@ -126,7 +126,8 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
               </button>
             </div>
             
-            <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col min-h-0">
+              <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Basic Info */}
                 <div className="space-y-4">
@@ -136,7 +137,10 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
                       required
                       type="text"
                       value={newRecipe.name}
-                      onChange={(e) => setNewRecipe({...newRecipe, name: e.target.value})}
+                      onChange={(e) => {
+                        let cleaned = e.target.value.replace(/[^a-zA-Z0-9\s-]/g, '').slice(0, 50);
+                        setNewRecipe({...newRecipe, name: cleaned});
+                      }}
                       className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                       placeholder="e.g. Classic Margherita"
                     />
@@ -209,53 +213,65 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
                   </button>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {newRecipe.ingredients.map((ing, idx) => (
-                    <div key={idx} className="flex gap-2 items-center">
-                      <input 
-                        required
-                        type="number"
-                        placeholder="Qty"
-                        value={ing.qty}
-                        onChange={(e) => handleIngredientChange(idx, 'qty', e.target.value)}
-                        className="w-[80px] bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
-                      />
-                      <div className="relative w-[80px]">
-                        <select 
-                          value={ing.unit}
-                          onChange={(e) => handleIngredientChange(idx, 'unit', e.target.value)}
-                          className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-2 text-xs font-bold appearance-none pr-6"
-                        >
-                          <option value="g">g</option>
-                          <option value="ml">ml</option>
-                          <option value="pcs">pcs</option>
-                        </select>
-                        <div className="absolute right-2 inset-y-0 flex items-center pointer-events-none text-slate-400">
-                          <span className="material-symbols-outlined text-[16px]">expand_more</span>
+                    <div key={idx} className="flex flex-col sm:flex-row gap-2 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700/50 relative">
+                      <div className="flex gap-2">
+                        <div className="flex-1 sm:w-[80px] sm:flex-none">
+                          <label className="block sm:hidden text-[8px] font-bold text-slate-400 uppercase mb-1">Qty</label>
+                          <input 
+                            required
+                            type="number"
+                            placeholder="Qty"
+                            value={ing.qty}
+                            onChange={(e) => handleIngredientChange(idx, 'qty', e.target.value)}
+                            className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                          />
+                        </div>
+                        <div className="flex-1 sm:w-[80px] sm:flex-none">
+                          <label className="block sm:hidden text-[8px] font-bold text-slate-400 uppercase mb-1">Unit</label>
+                          <div className="relative w-full">
+                            <select 
+                              value={ing.unit}
+                              onChange={(e) => handleIngredientChange(idx, 'unit', e.target.value)}
+                              className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-2 text-xs font-bold appearance-none pr-6"
+                            >
+                              <option value="g">g</option>
+                              <option value="ml">ml</option>
+                              <option value="pcs">pcs</option>
+                            </select>
+                            <div className="absolute right-2 inset-y-0 flex items-center pointer-events-none text-slate-400">
+                              <span className="material-symbols-outlined text-[16px]">expand_more</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <input 
-                        required
-                        type="text"
-                        placeholder="Ingredient name..."
-                        value={ing.name}
-                        onChange={(e) => handleIngredientChange(idx, 'name', e.target.value)}
-                        className="flex-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2 text-xs font-bold"
-                      />
+                      <div className="flex-1">
+                        <label className="block sm:hidden text-[8px] font-bold text-slate-400 uppercase mb-1">Ingredient Name</label>
+                        <input 
+                          required
+                          type="text"
+                          placeholder="Ingredient name..."
+                          value={ing.name}
+                          onChange={(e) => handleIngredientChange(idx, 'name', e.target.value)}
+                          className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2 text-xs font-bold"
+                        />
+                      </div>
                       <button 
                         type="button"
                         disabled={newRecipe.ingredients.length === 1}
                         onClick={() => handleRemoveIngredient(idx)}
-                        className="size-8 flex items-center justify-center text-slate-300 hover:text-orange-500 transition-colors disabled:opacity-0"
+                        className="absolute -top-2 -right-2 size-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-300 hover:text-orange-500 shadow-sm transition-colors disabled:opacity-0"
                       >
-                        <span className="material-symbols-outlined text-[18px]">delete</span>
+                        <span className="material-symbols-outlined text-[16px]">close</span>
                       </button>
                     </div>
                   ))}
                 </div>
               </div>
+            </div>
 
-              <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-3">
+            <div className="sticky bottom-0 z-10 p-6 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex gap-3 shrink-0">
                 <button 
                   type="submit"
                   className="flex-1 bg-primary text-white font-bold uppercase text-xs py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all"
@@ -288,7 +304,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
               className="flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all active:scale-95 shrink-0"
             >
               <span className="material-symbols-outlined text-[20px]">add_circle</span>
-              Add New Recipe
+              <span className="hidden sm:inline">Add </span>New Recipe
             </button>
           </div>
 

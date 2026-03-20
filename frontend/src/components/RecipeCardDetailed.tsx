@@ -13,11 +13,26 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe }) => {
   const carbsPercent = Math.round((macros.carbs * 4 / totalCalories) * 100);
   const fatPercent = Math.round((macros.fat * 9 / totalCalories) * 100);
 
+  const getCategoryColor = (category: string) => {
+    const cat = category.toLowerCase();
+    if (cat.includes('meat') || cat.includes('chicken') || cat.includes('beef')) return 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300';
+    if (cat.includes('fish') || cat.includes('seafood') || cat.includes('salmon')) return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
+    if (cat.includes('veg')) return 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300';
+    if (cat.includes('pasta') || cat.includes('italian')) return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300';
+    if (cat.includes('pizza')) return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300';
+    if (cat.includes('salad')) return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+    if (cat.includes('dessert') || cat.includes('sweet')) return 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-300';
+    if (cat.includes('breakfast')) return 'bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300';
+    if (cat.includes('soup')) return 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300';
+    if (cat.includes('side') || cat.includes('snack')) return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300';
+    return 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400';
+  };
+
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/30 transition-all flex flex-col h-full group">
       <div className="p-5 flex flex-col flex-1">
         <div className="flex justify-between items-start mb-3">
-          <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-md">
+          <span className={`px-2 py-0.5 ${getCategoryColor(recipe.category)} text-[10px] font-bold uppercase tracking-wider rounded-md`}>
             {recipe.category}
           </span>
           <div className="flex items-center gap-1 text-slate-400">

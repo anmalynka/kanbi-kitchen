@@ -22,9 +22,33 @@ const planPath = fs.existsSync(path.join(__dirname, '../../plan.json'))
     : path.join(process.cwd(), './plan.json');
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '100kb' }));
 
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
+
+// Helper to sanitize and validate
+const sanitizeString = (str: any, maxLength = 100) => {
+    if (typeof str !== 'string') return '';
+    return str.replace(/<[^>]*>?/gm, '').trim().slice(0, maxLength);
+};
+
+const validateRecipe = (recipe: any) => {
+    if (!recipe || typeof recipe !== 'object') return null;
+    return {
+        name: sanitizeString(recipe.name, 50) || 'Untitled Recipe',
+        category: sanitizeString(recipe.category, 30) || 'Other',
+        prepTime: typeof recipe.prepTime === 'number' ? Math.max(0, Math.min(recipe.prepTime, 1440)) : 15,
+        macros: {
+            calories: typeof recipe.macros?.calories === 'number' ? Math.max(0, Math.min(recipe.macros.calories, 10000)) : 0,
+            protein: typeof recipe.macros?.protein === 'number' ? Math.max(0, Math.min(recipe.macros.protein, 1000)) : 0,
+            carbs: typeof recipe.macros?.carbs === 'number' ? Math.max(0, Math.min(recipe.macros.carbs, 1000)) : 0,
+            fat: typeof recipe.macros?.fat === 'number' ? Math.max(0, Math.min(recipe.macros.fat, 1000)) : 0,
+        },
+        ingredients: Array.isArray(recipe.ingredients) 
+            ? recipe.ingredients.map((i: any) => sanitizeString(i, 150)).filter(Boolean).slice(0, 50)
+            : []
+    };
+};
 
 // Helper to read/write plan
 const getPlans = () => {
@@ -63,16 +87,26 @@ app.get('/api/recipes', (req, res) => {
 
 app.post('/api/recipes', (req, res) => {
     try {
-        const newRecipe = req.body;
+        const validatedRecipe = validateRecipe(req.body);
+        if (!validatedRecipe) return res.status(400).json({ error: 'Invalid recipe data' });
+
         const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
         
+        // Prevent abuse: limit total number of recipes
+        if (data.recipes.length >= 200) {
+            return res.status(400).json({ error: 'Maximum recipe limit reached' });
+        }
+
         // Robust ID generation: find max number after 'd'
         const maxIdNum = data.recipes.reduce((max: number, r: any) => {
             const num = parseInt(r.id.replace(/^d/, ''));
             return !isNaN(num) ? Math.max(max, num) : max;
         }, 0);
         
-        newRecipe.id = `d${(maxIdNum + 1).toString().padStart(3, '0')}`;
+        const newRecipe = {
+            ...validatedRecipe,
+            id: `d${(maxIdNum + 1).toString().padStart(3, '0')}`
+        };
         
         data.recipes.push(newRecipe);
         fs.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
@@ -94,9 +128,41 @@ app.get('/api/plan', (req, res) => {
 
 app.post('/api/plan', (req, res) => {
     const weekId = req.query.week as string || 'legacy';
+    
+    // Validate weekId
+    if (weekId !== 'legacy' && !/^\d{4}-\d{2}-\d{2}$/.test(weekId)) {
+        return res.status(400).json({ error: 'Invalid week ID' });
+    }
+
     const { columns } = req.body;
+    if (!columns || typeof columns !== 'object') {
+        return res.status(400).json({ error: 'Invalid columns data' });
+    }
+
     const plans = getPlans();
-    plans[weekId] = columns;
+    
+    // Limit number of stored plans to prevent disk abuse
+    if (Object.keys(plans).length >= 50 && !plans[weekId]) {
+        return res.status(400).json({ error: 'Storage limit reached' });
+    }
+
+    // Basic structure validation for columns
+    const dayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    const validatedColumns: any = {};
+    
+    for (const key of dayKeys) {
+        if (columns[key]) {
+            validatedColumns[key] = {
+                id: key,
+                title: columns[key].title || '',
+                items: Array.isArray(columns[key].items) 
+                    ? columns[key].items.map((r: any) => validateRecipe(r)).filter(Boolean)
+                    : []
+            };
+        }
+    }
+
+    plans[weekId] = validatedColumns;
     savePlans(plans);
     res.json({ message: 'Plan saved successfully' });
 });
@@ -109,6 +175,14 @@ app.get('/health', (req, res) => {
 app.post('/api/ai/process', async (req, res) => {
     const { plan, mode } = req.body; // mode: 'shopping' | 'prep'
     
+    if (mode !== 'shopping' && mode !== 'prep') {
+        return res.status(400).json({ error: 'Invalid mode' });
+    }
+
+    if (!plan || typeof plan !== 'object') {
+        return res.status(400).json({ error: 'Invalid plan' });
+    }
+
     if (!openai) {
         return res.json({ 
             output: "AI Key missing. Here is a mock list: 1. Onions (3), 2. Chicken, 3. Olive Oil." 

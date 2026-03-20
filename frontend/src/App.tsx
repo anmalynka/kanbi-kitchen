@@ -21,7 +21,7 @@ function App() {
   const [isCalorieModalOpen, setIsCalorieModalOpen] = useState(false);
   const [tempCalorie, setTempCalorie] = useState(calorieTarget.toString());
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
-  const [isSmallMobile, setIsSmallMobile] = useState(window.innerWidth < 600);
+  const [isSmallMobile, setIsSmallMobile] = useState(window.innerWidth < 700);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const getWeekId = (date: Date) => {
@@ -53,7 +53,7 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1280);
-      setIsSmallMobile(window.innerWidth < 600);
+      setIsSmallMobile(window.innerWidth < 700);
     };
     window.addEventListener('resize', handleResize);
     
@@ -331,7 +331,7 @@ function App() {
           </div>
           
           {/* Desktop/Tablet Nav */}
-          <nav className="hidden min-[600px]:flex flex-1 justify-center gap-[32px] h-full">
+          <nav className="hidden min-[700px]:flex flex-1 justify-center gap-[32px] h-full">
             <button 
               className={`text-[14px] transition-all duration-200 relative h-full flex items-center border-b-2 font-semibold ${activePage === 'planner' ? 'text-primary border-primary' : 'text-slate-600 dark:text-slate-400 hover:text-primary border-transparent'}`}
               onClick={() => setActivePage('planner')}
@@ -347,7 +347,7 @@ function App() {
           </nav>
 
           {/* Mobile Hamburger Button */}
-          <div className="flex min-[600px]:hidden items-center justify-end w-[200px]">
+          <div className="flex min-[700px]:hidden items-center justify-end w-[200px]">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
@@ -358,7 +358,7 @@ function App() {
             </button>
           </div>
 
-          <div className="hidden min-[600px]:block w-[200px]"></div>
+          <div className="hidden min-[700px]:block w-[200px]"></div>
 
           {/* Mobile Menu Overlay */}
           {isSmallMobile && isMenuOpen && (
