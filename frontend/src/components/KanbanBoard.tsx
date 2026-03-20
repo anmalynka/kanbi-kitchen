@@ -289,7 +289,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
       <div 
         id="plan-export-view" 
         style={{ display: 'none' }}
-        className="fixed top-0 left-0 w-[1200px] bg-white p-12 flex gap-12 font-display"
+        className="fixed top-0 left-0 w-[1600px] bg-white p-12 flex gap-12 font-display"
       >
         <div className="flex-1">
           <div className="mb-10 border-b-4 border-primary pb-4">
@@ -326,6 +326,25 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Grocery Side Panel for Export */}
+        <div className="w-[300px] bg-slate-50 p-8 rounded-[32px] border-2 border-slate-100 flex flex-col shrink-0">
+          <div className="mb-8">
+            <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase">Grocery List</h2>
+            <div className="h-1 w-12 bg-primary mt-2"></div>
+          </div>
+          <ul className="space-y-4">
+            {getSmartShoppingList().map((item, idx) => (
+              <li key={idx} className="flex items-start gap-3 text-sm font-bold text-slate-700">
+                <div className="size-4 border-2 border-primary/30 rounded mt-0.5 shrink-0" />
+                {item}
+              </li>
+            ))}
+            {getSmartShoppingList().length === 0 && (
+              <li className="text-slate-400 italic text-sm">No items in your list.</li>
+            )}
+          </ul>
         </div>
       </div>
 

@@ -349,17 +349,9 @@ function App() {
             </span>
           </div>
           <div className="flex gap-[16px] items-center">
-            <span className="flex items-center gap-[4px]">
-              <div className="size-[8px] rounded-full bg-green-500"></div> 
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] hidden sm:inline">System Sync OK</span>
-            </span>
-            <span className="flex items-center gap-[4px]">
-              <div className="size-[8px] rounded-full bg-primary"></div> 
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] hidden sm:inline">Draft Auto-saved</span>
-            </span>
+             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Kanbi Kitchen v1.0</span>
           </div>
-        </footer>
-      </div>
+        </footer>      </div>
     </DragDropContext>
   );
 }

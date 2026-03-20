@@ -126,6 +126,178 @@
               "10 g - Cinnamon",
               "5 g - Butter"
             ]
+          },
+          {
+            "id": "d035-kype9erk2",
+            "name": "Apple Pie",
+            "category": "Dessert",
+            "prepTime": 60,
+            "macros": {
+              "calories": 420,
+              "protein": 4,
+              "carbs": 58,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Apples",
+              "200 g - Pie Crust",
+              "50 g - Sugar",
+              "10 g - Cinnamon",
+              "5 g - Butter"
+            ]
+          }
+        ]
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": [
+          {
+            "id": "d071-hfh1tai16",
+            "name": "Cheesecake",
+            "category": "Dessert",
+            "prepTime": 45,
+            "macros": {
+              "calories": 450,
+              "protein": 6,
+              "carbs": 48,
+              "fat": 24
+            },
+            "ingredients": [
+              "200 g - Cream Cheese",
+              "100 g - Sugar",
+              "50 g - Eggs",
+              "20 g - Sour Cream",
+              "10 g - Vanilla"
+            ]
+          }
+        ]
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
+    },
+    "2026-03-23": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": []
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": [
+          {
+            "id": "d034-cvp0136q2",
+            "name": "Chocolate Brownie",
+            "category": "Dessert",
+            "prepTime": 30,
+            "macros": {
+              "calories": 350,
+              "protein": 6,
+              "carbs": 44,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Dark Chocolate",
+              "150 g - Butter",
+              "100 g - Sugar",
+              "30 g - Flour",
+              "5 g - Baking Powder"
+            ]
+          },
+          {
+            "id": "d035-8z286f7jn",
+            "name": "Apple Pie",
+            "category": "Dessert",
+            "prepTime": 60,
+            "macros": {
+              "calories": 420,
+              "protein": 4,
+              "carbs": 58,
+              "fat": 18
+            },
+            "ingredients": [
+              "200 g - Apples",
+              "200 g - Pie Crust",
+              "50 g - Sugar",
+              "10 g - Cinnamon",
+              "5 g - Butter"
+            ]
+          }
+        ]
+      },
+      "wed": {
+        "id": "wed",
+        "title": "Wednesday",
+        "items": []
+      },
+      "thu": {
+        "id": "thu",
+        "title": "Thursday",
+        "items": []
+      },
+      "fri": {
+        "id": "fri",
+        "title": "Friday",
+        "items": []
+      },
+      "sat": {
+        "id": "sat",
+        "title": "Saturday",
+        "items": []
+      },
+      "sun": {
+        "id": "sun",
+        "title": "Sunday",
+        "items": []
+      }
+    },
+    "2026-03-30": {
+      "mon": {
+        "id": "mon",
+        "title": "Monday",
+        "items": []
+      },
+      "tue": {
+        "id": "tue",
+        "title": "Tuesday",
+        "items": [
+          {
+            "id": "d257-0lphem98c",
+            "name": "Tuna Tataki with Sesame",
+            "category": "Fish",
+            "prepTime": 15,
+            "macros": {
+              "calories": 210,
+              "protein": 30,
+              "carbs": 4,
+              "fat": 8
+            },
+            "ingredients": [
+              "150 g - Fresh Tuna Loin",
+              "15 g - Sesame Seeds",
+              "20 ml - Soy Sauce",
+              "10 ml - Lime Juice",
+              "5 ml - Sesame Oil"
+            ]
           }
         ]
       },
