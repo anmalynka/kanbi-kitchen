@@ -9,9 +9,19 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const openai_1 = __importDefault(require("openai"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
+const openai_service_1 = require("./services/openai.service");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
+// Rate limiter for AI endpoints
+const aiLimiter = (0, express_rate_limit_1.default)({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 10, // limit each IP to 10 requests per windowMs
+    message: { error: 'Too many AI requests from this IP, please try again after an hour' },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 // Resolve paths to handle both local dev and Docker production
 // In Docker, files are in the same dir as package.json
 // In local dev, they are in the root
@@ -22,8 +32,32 @@ const planPath = fs_1.default.existsSync(path_1.default.join(__dirname, '../../p
     ? path_1.default.join(__dirname, '../../plan.json')
     : path_1.default.join(process.cwd(), './plan.json');
 app.use((0, cors_1.default)());
-app.use(express_1.default.json());
+app.use(express_1.default.json({ limit: '100kb' }));
 const openai = process.env.OPENAI_API_KEY ? new openai_1.default({ apiKey: process.env.OPENAI_API_KEY }) : null;
+// Helper to sanitize and validate
+const sanitizeString = (str, maxLength = 100) => {
+    if (typeof str !== 'string')
+        return '';
+    return str.replace(/<[^>]*>?/gm, '').trim().slice(0, maxLength);
+};
+const validateRecipe = (recipe) => {
+    if (!recipe || typeof recipe !== 'object')
+        return null;
+    return {
+        name: sanitizeString(recipe.name, 50) || 'Untitled Recipe',
+        category: sanitizeString(recipe.category, 30) || 'Other',
+        prepTime: typeof recipe.prepTime === 'number' ? Math.max(0, Math.min(recipe.prepTime, 1440)) : 15,
+        macros: {
+            calories: typeof recipe.macros?.calories === 'number' ? Math.max(0, Math.min(recipe.macros.calories, 10000)) : 0,
+            protein: typeof recipe.macros?.protein === 'number' ? Math.max(0, Math.min(recipe.macros.protein, 1000)) : 0,
+            carbs: typeof recipe.macros?.carbs === 'number' ? Math.max(0, Math.min(recipe.macros.carbs, 1000)) : 0,
+            fat: typeof recipe.macros?.fat === 'number' ? Math.max(0, Math.min(recipe.macros.fat, 1000)) : 0,
+        },
+        ingredients: Array.isArray(recipe.ingredients)
+            ? recipe.ingredients.map((i) => sanitizeString(i, 150)).filter(Boolean).slice(0, 50)
+            : []
+    };
+};
 // Helper to read/write plan
 const getPlans = () => {
     if (!fs_1.default.existsSync(planPath))
@@ -59,14 +93,23 @@ app.get('/api/recipes', (req, res) => {
 });
 app.post('/api/recipes', (req, res) => {
     try {
-        const newRecipe = req.body;
+        const validatedRecipe = validateRecipe(req.body);
+        if (!validatedRecipe)
+            return res.status(400).json({ error: 'Invalid recipe data' });
         const data = JSON.parse(fs_1.default.readFileSync(recipesPath, 'utf8'));
+        // Prevent abuse: limit total number of recipes
+        if (data.recipes.length >= 200) {
+            return res.status(400).json({ error: 'Maximum recipe limit reached' });
+        }
         // Robust ID generation: find max number after 'd'
         const maxIdNum = data.recipes.reduce((max, r) => {
             const num = parseInt(r.id.replace(/^d/, ''));
             return !isNaN(num) ? Math.max(max, num) : max;
         }, 0);
-        newRecipe.id = `d${(maxIdNum + 1).toString().padStart(3, '0')}`;
+        const newRecipe = {
+            ...validatedRecipe,
+            id: `d${(maxIdNum + 1).toString().padStart(3, '0')}`
+        };
         data.recipes.push(newRecipe);
         fs_1.default.writeFileSync(recipesPath, JSON.stringify(data, null, 2), 'utf8');
         console.log(`Successfully added recipe ${newRecipe.id}: ${newRecipe.name}`);
@@ -85,9 +128,34 @@ app.get('/api/plan', (req, res) => {
 });
 app.post('/api/plan', (req, res) => {
     const weekId = req.query.week || 'legacy';
+    // Validate weekId
+    if (weekId !== 'legacy' && !/^\d{4}-\d{2}-\d{2}$/.test(weekId)) {
+        return res.status(400).json({ error: 'Invalid week ID' });
+    }
     const { columns } = req.body;
+    if (!columns || typeof columns !== 'object') {
+        return res.status(400).json({ error: 'Invalid columns data' });
+    }
     const plans = getPlans();
-    plans[weekId] = columns;
+    // Limit number of stored plans to prevent disk abuse
+    if (Object.keys(plans).length >= 50 && !plans[weekId]) {
+        return res.status(400).json({ error: 'Storage limit reached' });
+    }
+    // Basic structure validation for columns
+    const dayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    const validatedColumns = {};
+    for (const key of dayKeys) {
+        if (columns[key]) {
+            validatedColumns[key] = {
+                id: key,
+                title: columns[key].title || '',
+                items: Array.isArray(columns[key].items)
+                    ? columns[key].items.map((r) => validateRecipe(r)).filter(Boolean)
+                    : []
+            };
+        }
+    }
+    plans[weekId] = validatedColumns;
     savePlans(plans);
     res.json({ message: 'Plan saved successfully' });
 });
@@ -95,8 +163,42 @@ app.get('/health', (req, res) => {
     res.send('OK');
 });
 // 3. AI: Generate Shopping List & Prep Timeline
+// New Route: Estimate Nutrition
+app.post('/api/ai/estimate', aiLimiter, async (req, res) => {
+    const { recipeName, ingredients } = req.body;
+    if (!recipeName || typeof recipeName !== 'string') {
+        return res.status(400).json({ error: 'Recipe name is required' });
+    }
+    // Limit input length
+    if (recipeName.length > 100) {
+        return res.status(400).json({ error: 'Recipe name too long' });
+    }
+    const safeIngredients = Array.isArray(ingredients)
+        ? ingredients.filter(i => typeof i === 'string').map(i => i.slice(0, 100))
+        : [];
+    if (safeIngredients.length > 20) {
+        return res.status(400).json({ error: 'Too many ingredients' });
+    }
+    try {
+        const result = await (0, openai_service_1.estimateNutrition)(recipeName, safeIngredients);
+        if (!result) {
+            return res.status(500).json({ error: 'Failed to estimate nutrition' });
+        }
+        res.json(result);
+    }
+    catch (err) {
+        console.error("AI Estimate Error:", err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 app.post('/api/ai/process', async (req, res) => {
     const { plan, mode } = req.body; // mode: 'shopping' | 'prep'
+    if (mode !== 'shopping' && mode !== 'prep') {
+        return res.status(400).json({ error: 'Invalid mode' });
+    }
+    if (!plan || typeof plan !== 'object') {
+        return res.status(400).json({ error: 'Invalid plan' });
+    }
     if (!openai) {
         return res.json({
             output: "AI Key missing. Here is a mock list: 1. Onions (3), 2. Chicken, 3. Olive Oil."

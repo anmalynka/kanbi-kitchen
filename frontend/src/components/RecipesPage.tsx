@@ -16,6 +16,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
 
   // Add Recipe Modal State
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEstimating, setIsEstimating] = useState(false);
   const [newRecipe, setNewRecipe] = useState({
     name: '',
     category: '',
@@ -42,6 +43,46 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleEstimateNutrition = async () => {
+    if (!newRecipe.name) {
+      alert("Please enter a recipe name first.");
+      return;
+    }
+    
+    setIsEstimating(true);
+    try {
+      const ingredientNames = newRecipe.ingredients
+        .filter(i => i.name)
+        .map(i => `${i.qty} ${i.unit} ${i.name}`);
+
+      const res = await axios.post('/api/ai/estimate', {
+        recipeName: newRecipe.name,
+        ingredients: ingredientNames
+      });
+
+      if (res.data) {
+        setNewRecipe(prev => ({
+          ...prev,
+          macros: {
+            calories: res.data.calories || 0,
+            protein: res.data.protein || 0,
+            carbs: res.data.carbs || 0,
+            fat: res.data.fat || 0
+          }
+        }));
+      }
+    } catch (error: any) {
+      console.error("Error estimating nutrition:", error);
+      if (error.response?.status === 429) {
+          alert("Too many requests. Please wait a while before trying again.");
+      } else {
+          alert("Failed to estimate nutrition. Please try again or enter manually.");
+      }
+    } finally {
+      setIsEstimating(false);
+    }
+  };
 
   const handleAddIngredient = () => {
     setNewRecipe({
@@ -177,7 +218,20 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe }) => {
 
                 {/* Macros */}
                 <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700/50">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Nutritional Info (Optional)</p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Nutritional Info (Optional)</p>
+                    <button
+                      type="button"
+                      onClick={handleEstimateNutrition}
+                      disabled={isEstimating || !newRecipe.name}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-lg text-[10px] font-bold uppercase shadow-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <span className={`material-symbols-outlined text-[14px] ${isEstimating ? 'animate-spin' : ''}`}>
+                        {isEstimating ? 'refresh' : 'auto_awesome'}
+                      </span>
+                      {isEstimating ? 'Estimating...' : 'Auto-Estimate'}
+                    </button>
+                  </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[8px] font-bold text-slate-400 uppercase mb-1">Calories</label>

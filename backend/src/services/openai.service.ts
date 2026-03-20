@@ -42,3 +42,37 @@ export const generateShoppingList = async (plan: any) => {
     // Implementation would go here
     return { items: ['AI Generated Item 1', 'AI Generated Item 2'] };
 }
+
+export const estimateNutrition = async (recipeName: string, ingredients: string[]) => {
+  if (!openai) {
+    return {
+      calories: 500,
+      protein: 20,
+      carbs: 60,
+      fat: 15
+    };
+  }
+
+  try {
+    const prompt = `Estimate the nutritional values (calories, protein, carbs, fat) for one serving of a recipe named "${recipeName}" with the following ingredients: ${ingredients.join(', ')}. Return ONLY a JSON object with keys: "calories" (number), "protein" (number in grams), "carbs" (number in grams), "fat" (number in grams). Do not include any other text.`;
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: 'You are a nutrition expert. specific, concise, and accurate.' },
+        { role: 'user', content: prompt }
+      ],
+      max_tokens: 150,
+      temperature: 0.3,
+    });
+
+    const content = response.choices[0].message.content || '{}';
+    // Clean up markdown code blocks if present
+    const jsonString = content.replace(/```json\n?|\n?```/g, '').trim();
+    return JSON.parse(jsonString);
+  } catch (error) {
+    console.error('OpenAI Error estimating nutrition:', error);
+    // Fallback or rethrow
+    return null;
+  }
+};

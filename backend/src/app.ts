@@ -4,11 +4,22 @@ import fs from 'fs';
 import path from 'path';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
+import rateLimit from 'express-rate-limit';
+import { estimateNutritionGemini } from './services/gemini.service';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Rate limiter for AI endpoints
+const aiLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 10, // limit each IP to 10 requests per windowMs
+    message: { error: 'Too many AI requests from this IP, please try again after an hour' },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 // Resolve paths to handle both local dev and Docker production
 // In Docker, files are in the same dir as package.json
@@ -172,6 +183,39 @@ app.get('/health', (req, res) => {
 });
 
 // 3. AI: Generate Shopping List & Prep Timeline
+// New Route: Estimate Nutrition
+app.post('/api/ai/estimate', aiLimiter, async (req, res) => {
+    const { recipeName, ingredients } = req.body;
+
+    if (!recipeName || typeof recipeName !== 'string') {
+        return res.status(400).json({ error: 'Recipe name is required' });
+    }
+    
+    // Limit input length
+    if (recipeName.length > 100) {
+        return res.status(400).json({ error: 'Recipe name too long' });
+    }
+    
+    const safeIngredients = Array.isArray(ingredients) 
+        ? ingredients.filter(i => typeof i === 'string').map(i => i.slice(0, 100))
+        : [];
+        
+    if (safeIngredients.length > 20) {
+        return res.status(400).json({ error: 'Too many ingredients' });
+    }
+
+    try {
+        const result = await estimateNutritionGemini(recipeName, safeIngredients);
+        if (!result) {
+             return res.status(500).json({ error: 'Failed to estimate nutrition' });
+        }
+        res.json(result);
+    } catch (err) {
+        console.error("AI Estimate Error:", err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 app.post('/api/ai/process', async (req, res) => {
     const { plan, mode } = req.body; // mode: 'shopping' | 'prep'
     
