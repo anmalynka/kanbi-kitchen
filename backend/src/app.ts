@@ -34,7 +34,9 @@ const getPlan = () => {
             tue: { id: 'tue', title: 'Tuesday', items: [] },
             wed: { id: 'wed', title: 'Wednesday', items: [] },
             thu: { id: 'thu', title: 'Thursday', items: [] },
-            fri: { id: 'fri', title: 'Friday', items: [] }
+            fri: { id: 'fri', title: 'Friday', items: [] },
+            sat: { id: 'sat', title: 'Saturday', items: [] },
+            sun: { id: 'sun', title: 'Sunday', items: [] }
         }
     };
     if (!fs.existsSync(planPath)) return defaultPlan;

@@ -32,7 +32,9 @@ const getPlan = () => {
             tue: { id: 'tue', title: 'Tuesday', items: [] },
             wed: { id: 'wed', title: 'Wednesday', items: [] },
             thu: { id: 'thu', title: 'Thursday', items: [] },
-            fri: { id: 'fri', title: 'Friday', items: [] }
+            fri: { id: 'fri', title: 'Friday', items: [] },
+            sat: { id: 'sat', title: 'Saturday', items: [] },
+            sun: { id: 'sun', title: 'Sunday', items: [] }
         }
     };
     if (!fs_1.default.existsSync(planPath))
@@ -93,6 +95,16 @@ app.post('/api/ai/process', async (req, res) => {
         res.status(500).json({ error: "AI failed to process" });
     }
 });
+// Serve frontend static files from 'public' or 'dist'
+const frontendPath = path_1.default.join(__dirname, '../public');
+if (fs_1.default.existsSync(frontendPath)) {
+    app.use(express_1.default.static(frontendPath));
+    app.get('*', (req, res) => {
+        if (!req.path.startsWith('/api')) {
+            res.sendFile(path_1.default.join(frontendPath, 'index.html'));
+        }
+    });
+}
 app.listen(port, () => {
     console.log(`Backend running at http://localhost:${port}`);
 });

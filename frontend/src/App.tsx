@@ -18,20 +18,27 @@ function App() {
   const [calorieTarget, setCalorieTarget] = useState(2200);
   const [isCalorieModalOpen, setIsCalorieModalOpen] = useState(false);
   const [tempCalorie, setTempCalorie] = useState(calorieTarget.toString());
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
+  const [viewMode, setViewMode] = useState<5 | 7>(5);
   const [data, setData] = useState<DataState>({
     columns: {
       'bank': { id: 'bank', title: 'Dish Bank', items: [] as Recipe[] },
-      'mon': { id: 'mon', title: '14', day: 'Mon', items: [] as Recipe[] },
-      'tue': { id: 'tue', title: '15', day: 'Tue', items: [] as Recipe[] },
-      'wed': { id: 'wed', title: '16', day: 'Wed', items: [] as Recipe[] },
-      'thu': { id: 'thu', title: '17', day: 'Thu', items: [] as Recipe[] },
-      'fri': { id: 'fri', title: '18', day: 'Fri', items: [] as Recipe[] },
+      'mon': { id: 'mon', title: 'Monday', day: 'Mon', items: [] as Recipe[] },
+      'tue': { id: 'tue', title: 'Tuesday', day: 'Tue', items: [] as Recipe[] },
+      'wed': { id: 'wed', title: 'Wednesday', day: 'Wed', items: [] as Recipe[] },
+      'thu': { id: 'thu', title: 'Thursday', day: 'Thu', items: [] as Recipe[] },
+      'fri': { id: 'fri', title: 'Friday', day: 'Fri', items: [] as Recipe[] },
+      'sat': { id: 'sat', title: 'Saturday', day: 'Sat', items: [] as Recipe[] },
+      'sun': { id: 'sun', title: 'Sunday', day: 'Sun', items: [] as Recipe[] },
     },
-    columnOrder: ['bank', 'mon', 'tue', 'wed', 'thu', 'fri']
+    columnOrder: ['bank', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
   });
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1280);
+    window.addEventListener('resize', handleResize);
+    
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -46,6 +53,7 @@ function App() {
         setData(prev => ({
           ...prev,
           columns: {
+            ...prev.columns,
             ...planRes.data.columns,
             bank: { id: 'bank', title: 'Dish Bank', items: recipesRes.data }
           }
@@ -56,7 +64,10 @@ function App() {
     };
     fetchData();
 
-    return () => clearTimeout(timer);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
   }, []);
 
   const onDragEnd = async (result: DropResult) => {
@@ -83,12 +94,10 @@ function App() {
       newColumns = { ...data.columns, [startColumn.id]: { ...startColumn, items: newItems } };
     } 
     else if (isSourceBank) {
-      const cat = source.droppableId.replace('bank-', '');
-      const bankItems = startColumn.items.filter(r => r.category === cat);
-      const itemToClone = bankItems[source.index];
+      const itemToClone = startColumn.items.find(r => `bank-item-${r.id}` === result.draggableId);
+      if (!itemToClone) return;
       
-      const originalId = itemToClone.id.replace('bank-item-', '');
-      const uniqueId = `${originalId}-${Math.random().toString(36).substr(2, 9)}`;
+      const uniqueId = `${itemToClone.id}-${Math.random().toString(36).substr(2, 9)}`;
       const clonedItem = { ...itemToClone, id: uniqueId };
       
       const finishItems = Array.from(finishColumn.items);
@@ -122,8 +131,30 @@ function App() {
     }
   };
 
+  const addMealToDay = async (dayId: string, recipe: Recipe) => {
+    const col = data.columns[dayId];
+    if (!col) return;
+
+    const uniqueId = `${recipe.id}-${Math.random().toString(36).substr(2, 9)}`;
+    const clonedItem = { ...recipe, id: uniqueId };
+    
+    const newItems = [...col.items, clonedItem];
+    const newColumns = { ...data.columns, [dayId]: { ...col, items: newItems } };
+    
+    setData({ ...data, columns: newColumns });
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { bank, ...planColumns } = newColumns;
+    try {
+      await axios.post('/api/plan', { columns: planColumns });
+    } catch (err) {
+      console.error("Error saving plan:", err);
+    }
+  };
+
   const deleteMeal = async (columnId: string, index: number) => {
     const col = data.columns[columnId];
+    if (!col) return;
     const newItems = Array.from(col.items);
     newItems.splice(index, 1);
     
@@ -137,11 +168,13 @@ function App() {
 
   const clearPlan = async () => {
     const newColumns = { ...data.columns };
-    ['mon', 'tue', 'wed', 'thu', 'fri'].forEach(day => {
-      newColumns[day] = {
-        ...newColumns[day],
-        items: []
-      };
+    ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].forEach(day => {
+      if (newColumns[day]) {
+        newColumns[day] = {
+          ...newColumns[day],
+          items: []
+        };
+      }
     });
     
     setData({ ...data, columns: newColumns });
@@ -180,7 +213,7 @@ function App() {
         <div className="w-[300px] h-[300px] mb-8 overflow-hidden rounded-3xl shadow-2xl animate-pulse">
           <img src="/kanbi.png" alt="Kanbi Kitchen Logo" className="w-full h-full object-cover" />
         </div>
-        <h1 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter animate-bounce">
+        <h1 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter animate-bounce text-center px-4">
           Kanbi Kitchen Loading...
         </h1>
       </div>
@@ -193,7 +226,7 @@ function App() {
         {/* Calorie Modal */}
         {isCalorieModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-            <div className="bg-white dark:bg-slate-900 w-full max-w-sm rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+            <div className="bg-white dark:bg-slate-900 w-full max-w-[600px] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
               <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
                 <div>
                   <h2 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Set Calorie Target</h2>
@@ -264,13 +297,17 @@ function App() {
             onNextWeek={nextWeek}
             onPrevWeek={prevWeek}
             calorieTarget={calorieTarget}
+            viewMode={viewMode}
+            onViewModeChange={setViewMode}
+            isMobile={isMobile}
+            addMealToDay={addMealToDay}
           />
         </div>
 
         <footer className="h-[40px] bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-[24px] flex items-center justify-between">
           <div className="flex gap-[24px]">
             <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] flex items-center gap-2">
-              Calories Target: {calorieTarget.toLocaleString()}/day
+              <span className="hidden sm:inline">Calories Target:</span> {calorieTarget.toLocaleString()}/day
               <button 
                 onClick={() => {
                   setTempCalorie(calorieTarget.toString());
@@ -285,11 +322,11 @@ function App() {
           <div className="flex gap-[16px] items-center">
             <span className="flex items-center gap-[4px]">
               <div className="size-[8px] rounded-full bg-green-500"></div> 
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">System Sync OK</span>
+              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] hidden sm:inline">System Sync OK</span>
             </span>
             <span className="flex items-center gap-[4px]">
               <div className="size-[8px] rounded-full bg-primary"></div> 
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px]">Draft Auto-saved</span>
+              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[1px] hidden sm:inline">Draft Auto-saved</span>
             </span>
           </div>
         </footer>
