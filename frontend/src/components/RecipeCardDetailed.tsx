@@ -85,7 +85,7 @@ const RecipeCardDetailed: React.FC<RecipeCardDetailedProps> = ({ recipe, onEdit,
         </h3>
 
         <div className="mb-4 flex-1">
-          <p className="text-[12px] font-bold text-slate-500 tracking-widest mb-1.5">Ingredients</p>
+          <p className="text-[12px] font-bold text-slate-500 tracking-widest mb-1.5">INGREDIENTS</p>
           <ul className="space-y-1.5">
             {recipe.ingredients.map((ing, idx) => (
               <li key={idx} className="text-[12px] text-slate-700 dark:text-slate-400 flex items-start gap-2">

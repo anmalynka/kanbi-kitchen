@@ -575,33 +575,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
 
           {/* Filters Section */}
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1 relative group">
-              <div className="absolute left-4 inset-y-0 flex items-center justify-center text-slate-500 group-focus-within:text-primary transition-colors">
-                <span className="material-symbols-outlined text-[20px]">search</span>
-              </div>
-              <input
-                type="text"
-                placeholder="Search recipes by name..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-[48px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl pl-12 pr-[100px] text-sm font-normal text-slate-900 dark:text-white focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all outline-none shadow-sm"
-              />
-              {searchQuery && (
-                <div className="absolute right-4 inset-y-0 flex items-center gap-2">
-                  <span className="text-[12px] font-bold text-slate-500 tracking-widest bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-md">
-                    {filteredRecipes.length} {filteredRecipes.length === 1 ? 'match' : 'matches'}
-                  </span>
-                  <button 
-                    onClick={() => setSearchQuery('')}
-                    className="flex items-center text-slate-500 hover:text-primary transition-colors"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">close</span>
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <div className="w-full md:w-[360px] relative" ref={dropdownRef}>
+            <div className="w-full md:w-[360px] relative order-1 md:order-2" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`w-full h-[48px] flex items-center justify-between bg-white dark:bg-slate-800 border ${isDropdownOpen ? 'border-primary ring-4 ring-primary/10' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 transition-all shadow-sm`}
@@ -647,12 +621,38 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
                 </div>
               )}
             </div>
+
+            <div className="flex-1 relative group order-2 md:order-1">
+              <div className="absolute left-4 inset-y-0 flex items-center justify-center text-slate-500 group-focus-within:text-primary transition-colors">
+                <span className="material-symbols-outlined text-[20px]">search</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Search recipes by name..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full h-[48px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl pl-12 pr-[100px] text-sm font-normal text-slate-900 dark:text-white focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all outline-none shadow-sm"
+              />
+              {searchQuery && (
+                <div className="absolute right-4 inset-y-0 flex items-center gap-2">
+                  <span className="text-[12px] font-bold text-slate-500 tracking-widest bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-md">
+                    {filteredRecipes.length} {filteredRecipes.length === 1 ? 'match' : 'matches'}
+                  </span>
+                  <button 
+                    onClick={() => setSearchQuery('')}
+                    className="flex items-center text-slate-500 hover:text-primary transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">close</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Grid Section - Masonry Layout */}
         {filteredRecipes.length > 0 ? (
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 xl:gap-4 space-y-3 xl:space-y-4">
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 min-[1440px]:columns-5 min-[1920px]:columns-8 gap-3 xl:gap-4 space-y-3 xl:space-y-4">
             {filteredRecipes.map((recipe) => (
               <div key={recipe.id} className="break-inside-avoid mb-3 xl:mb-4">
                 <RecipeCardDetailed 

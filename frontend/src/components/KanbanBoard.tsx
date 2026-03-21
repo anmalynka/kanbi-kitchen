@@ -13,6 +13,7 @@ interface KanbanBoardProps {
   onPrevWeek: () => void;
   calorieTarget: number;
   viewMode: 5 | 7;
+  onViewModeChange: (mode: 5 | 7) => void;
   isMobile: boolean;
   addMealToDay: (dayId: string, recipe: Recipe) => void;
 }
@@ -26,6 +27,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
   onPrevWeek, 
   calorieTarget,
   viewMode,
+  onViewModeChange,
   isMobile,
   addMealToDay
 }) => {
