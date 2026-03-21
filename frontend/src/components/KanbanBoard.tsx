@@ -58,6 +58,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
 
   // Derive unique categories from the recipe bank
   const categories = Array.from(new Set((data.columns.bank.items || []).map((r: Recipe) => r.category))).sort() as string[];
+  const hasFavorites = (data.columns.bank.items || []).some((r: Recipe) => r.isFavorite);
 
   const getMonday = (d: Date) => {
     d = new Date(d);
@@ -417,6 +418,18 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
                   >
                     All Categories
                   </button>
+                  {hasFavorites && (
+                    <button
+                      onClick={() => {
+                        setSelectedCategory('Favorites');
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${selectedCategory === 'Favorites' ? 'bg-primary/10 text-primary' : 'text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50'} flex items-center gap-2`}
+                    >
+                      <span className="material-symbols-outlined text-amber-500 text-[14px] fill-1" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                      Favorites
+                    </button>
+                  )}
                   <div className="h-px bg-slate-100 dark:bg-slate-700/50 my-1 mx-2" />
                   {categories.map((cat) => (
                     <button
@@ -464,11 +477,14 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
           </div>
         </div>
         <div className="flex-1 overflow-y-auto px-[16px] pb-[16px] space-y-[24px]">
-          {categories
-            .filter(cat => !selectedCategory || selectedCategory === cat)
+          {(selectedCategory === 'Favorites' ? ['Favorites'] : categories)
+            .filter(cat => !selectedCategory || selectedCategory === cat || (selectedCategory === 'Favorites' && cat === 'Favorites'))
             .map(cat => {
             const recipes = (data.columns.bank.items || [])
-              .filter((r: Recipe) => r.category === cat)
+              .filter((r: Recipe) => {
+                if (cat === 'Favorites') return r.isFavorite;
+                return r.category === cat;
+              })
               .filter((r: Recipe) => r.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
             if (recipes.length === 0) return null;

@@ -9,6 +9,16 @@ import dotenv from 'dotenv';
 dotenv.config({ override: true });
 dotenv.config({ path: path.join(__dirname, '../../.env'), override: true });
 
+console.log('--- Server Environment Check ---');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('PORT:', process.env.PORT);
+console.log('GEMINI_API_KEY present:', !!process.env.GEMINI_API_KEY);
+if (process.env.GEMINI_API_KEY) {
+    console.log('GEMINI_API_KEY starts with:', process.env.GEMINI_API_KEY.substring(0, 8));
+}
+console.log('OPENAI_API_KEY present:', !!process.env.OPENAI_API_KEY);
+console.log('-------------------------------');
+
 import rateLimit from 'express-rate-limit';
 import { estimateNutritionGemini } from './services/gemini.service';
 
@@ -305,12 +315,9 @@ app.post('/api/ai/estimate', aiLimiter, async (req, res) => {
 
     try {
         if (!process.env.GEMINI_API_KEY) {
-            console.log("No GEMINI_API_KEY found, returning mock nutrition data");
-            return res.json({
-                calories: 450,
-                protein: 25,
-                carbs: 50,
-                fat: 15
+            console.error("GEMINI_API_KEY missing in production environment");
+            return res.status(500).json({ 
+                error: 'AI configuration missing on server. Please check environment variables.' 
             });
         }
 

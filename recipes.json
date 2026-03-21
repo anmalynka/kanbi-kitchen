@@ -625,6 +625,7 @@
       "id": "d036",
       "name": "Cauliflower Fried Rice",
       "category": "Side-dish",
+      "isFavorite": true,
       "prepTime": 25,
       "macros": {
         "calories": 216,
@@ -1255,6 +1256,7 @@
       "id": "d070",
       "name": "Tuna Salad",
       "category": "Salad",
+      "isFavorite": false,
       "prepTime": 15,
       "macros": {
         "calories": 204,

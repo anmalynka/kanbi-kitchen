@@ -45,7 +45,8 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
   });
 
   const categories = Array.from(new Set(recipes.map((r) => r.category))).sort();
-  const allCategories = recipes.some(r => r.isFavorite) ? ['Favorites', ...categories] : categories;
+  const hasFavorites = recipes.some(r => r.isFavorite);
+  const allCategories = (hasFavorites || selectedCategory === 'Favorites') ? ['Favorites', ...categories] : categories;
 
   const handleEdit = (recipe: Recipe) => {
     // Parse ingredients: "200 g - Name" -> { qty: "200", unit: "g", name: "Name" }
