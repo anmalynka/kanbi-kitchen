@@ -6,8 +6,8 @@ import OpenAI from 'openai';
 import dotenv from 'dotenv';
 
 // Load env vars from both local and root (for various dev setups)
-dotenv.config();
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+dotenv.config({ override: true });
+dotenv.config({ path: path.join(__dirname, '../../.env'), override: true });
 
 import rateLimit from 'express-rate-limit';
 import { estimateNutritionGemini } from './services/gemini.service';

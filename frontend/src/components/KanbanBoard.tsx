@@ -316,62 +316,72 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
       <div 
         id="plan-export-view" 
         style={{ display: 'none' }}
-        className="fixed top-0 left-0 w-[1600px] bg-white p-12 flex gap-12 font-display"
+        className="fixed top-0 left-0 w-[1600px] bg-white p-12 flex flex-col gap-12 font-display"
       >
-        <div className="flex-1">
-          <div className="mb-10 border-b-4 border-primary pb-4">
-            <h1 className="text-4xl font-black text-slate-900 tracking-tight">Weekly Meal Plan</h1>
-            <p className="text-slate-500 font-bold tracking-widest text-[12px] mt-1">{formatDateRange(monday, endDate)}</p>
+        <div className="flex flex-col">
+          <div className="mb-10 border-b-4 border-primary pb-4 flex justify-between items-end">
+            <div>
+              <h1 className="text-4xl font-black text-slate-900 tracking-tight uppercase">Weekly Meal Plan</h1>
+              <p className="text-slate-500 font-bold tracking-widest text-[14px] mt-2 uppercase">{formatDateRange(monday, endDate)}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-slate-400 font-black text-[12px] tracking-[4px] uppercase">Kanbi Kitchen</p>
+            </div>
           </div>
-          <div className={`grid gap-6 ${viewMode === 5 ? 'grid-cols-5' : 'grid-cols-7'}`}>
+          <div className={`grid gap-4 ${viewMode === 5 ? 'grid-cols-5' : 'grid-cols-7'}`}>
             {daysToRender.map((day, idx) => (
-              <div key={day} className="flex flex-col">
-                <h3 className="text-[12px] font-black text-primary pt-2 mb-4 tracking-tighter border-b-2 border-primary/20 pb-2">
-                  {getColumnDayFull(idx)} ({getColumnDate(idx)})
+              <div key={day} className="flex flex-col bg-slate-50/50 rounded-2xl border border-slate-100 p-4 min-h-[600px]">
+                <h3 className="text-[14px] font-black text-primary mb-6 tracking-widest border-b-2 border-primary/20 pb-3 uppercase text-center">
+                  {getColumnDayFull(idx)} <br/>
+                  <span className="text-slate-400 text-[20px]">{getColumnDate(idx)}</span>
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {(data.columns[day]?.items || []).map((item: Recipe, recipeIdx: number) => (
-                    <div key={`${item.id}-${recipeIdx}`} className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col gap-2">
-                      <div className="text-[12px] font-black text-slate-900 leading-tight border-b border-slate-200 pb-1.5">
+                    <div key={`${item.id}-${recipeIdx}`} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+                      <div className="text-[14px] font-black text-slate-900 leading-tight border-b border-slate-100 pb-2 uppercase">
                         {item.name}
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[12px] font-black text-primary tracking-widest">Ingredients</span>
-                        <ul className="space-y-0.5">
+                      <div className="flex flex-col gap-2">
+                        <span className="text-[10px] font-black text-primary tracking-[2px] uppercase">INGREDIENTS</span>
+                        <ul className="space-y-1">
                           {item.ingredients?.map((ing, idx) => (
-                            <li key={idx} className="text-[12px] font-medium text-slate-700 flex items-start gap-1.5">
-                              <div className="size-1 rounded-full bg-slate-300 mt-1 shrink-0" />
-                              {ing}
+                            <li key={idx} className="text-[11px] font-bold text-slate-600 flex items-start gap-2">
+                              <div className="size-1 rounded-full bg-primary/30 mt-1.5 shrink-0" />
+                              <span className="leading-tight">{ing}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
+                      <div className="mt-1 pt-2 border-t border-slate-50 flex justify-between items-center">
+                        <span className="text-[10px] font-black text-slate-400 tracking-widest uppercase">{item.macros.calories} KCAL</span>
+                      </div>
                     </div>
                   ))}
-                  {(data.columns[day]?.items || []).length === 0 && <span className="text-[12px] text-slate-500 italic">No meals scheduled</span>}
+                  {(data.columns[day]?.items || []).length === 0 && (
+                    <div className="flex-1 flex items-center justify-center border-2 border-dashed border-slate-200 rounded-2xl">
+                      <span className="text-[11px] font-black text-slate-300 uppercase tracking-widest rotate-[-45deg]">Rest Day</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Grocery Side Panel for Export */}
-        <div className="w-[300px] bg-slate-50 p-8 rounded-[32px] border-2 border-slate-100 flex flex-col shrink-0">
-          <div className="mb-8">
-            <h2 className="text-2xl font-black text-slate-900 tracking-tight">Grocery List</h2>
-            <div className="h-1 w-12 bg-primary mt-2"></div>
+        {/* Grocery Panel for Export */}
+        <div className="w-full bg-slate-900 p-10 rounded-[40px] flex flex-col">
+          <div className="mb-8 flex justify-between items-center border-b border-white/10 pb-6">
+            <h2 className="text-3xl font-black text-white tracking-tighter uppercase">Shopping List</h2>
+            <p className="text-primary font-black tracking-[3px] text-[12px] uppercase">{getSmartShoppingList().length} Items Needed</p>
           </div>
-          <ul className="space-y-4">
+          <div className="columns-3 gap-12 space-y-4">
             {getSmartShoppingList().map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-sm font-bold text-slate-700">
-                <div className="size-4 border-2 border-primary/30 rounded mt-0.5 shrink-0" />
-                {item}
-              </li>
+              <div key={idx} className="flex items-start gap-4 text-[13px] font-bold text-slate-300 break-inside-avoid py-1">
+                <div className="size-4 border-2 border-primary/50 rounded-md mt-0.5 shrink-0" />
+                <span className="uppercase tracking-tight">{item}</span>
+              </div>
             ))}
-            {getSmartShoppingList().length === 0 && (
-              <li className="text-slate-500 italic text-sm">No items in your list.</li>
-            )}
-          </ul>
+          </div>
         </div>
       </div>
 
@@ -465,7 +475,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
 
             return (
               <section key={cat} className="space-y-[12px]">
-                <h3 className="text-[12px] font-bold tracking-[0.6px] text-slate-500 px-[4px] leading-[16px]">{cat}</h3>
+                <h3 className="text-[12px] font-bold tracking-[0.6px] text-slate-500 px-[4px] leading-[16px] uppercase">{cat}</h3>
                 <Droppable droppableId={`bank-${cat}`}>
                   {(provided) => (
                     <div {...provided.droppableProps} ref={provided.innerRef} className="min-h-[40px] flex flex-col gap-3">
@@ -488,15 +498,30 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({
       </aside>
 
       <section ref={planRef} className="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark p-[12px] xl:p-[24px]">
-        <div className="flex flex-row justify-between items-center mb-[16px] xl:mb-[24px] gap-2">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-[16px] xl:mb-[24px] gap-4 sm:gap-2">
            <div className="flex flex-row items-center gap-1 sm:gap-2">
               <button onClick={onPrevWeek} className="size-8 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
                 <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px]">chevron_left</span>
               </button>
-              <h2 className="text-[13px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[110px] sm:min-w-[200px] text-center whitespace-nowrap flex items-center justify-center h-8">{formatDateRange(monday, endDate)}</h2>
+              <h2 className="text-[16px] sm:text-lg xl:text-[20px] font-bold text-slate-900 dark:text-white min-w-[110px] sm:min-w-[200px] text-center whitespace-nowrap flex items-center justify-center h-8">{formatDateRange(monday, endDate)}</h2>
               <button onClick={onNextWeek} className="size-8 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors shrink-0">
                 <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 text-[20px] sm:text-[24px]">chevron_right</span>
               </button>
+
+              <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl ml-2 shrink-0">
+                <button 
+                  onClick={() => onViewModeChange(5)}
+                  className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all ${viewMode === 5 ? 'bg-white dark:bg-slate-700 text-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                  5D
+                </button>
+                <button 
+                  onClick={() => onViewModeChange(7)}
+                  className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all ${viewMode === 7 ? 'bg-white dark:bg-slate-700 text-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                  7D
+                </button>
+              </div>
            </div>
            
            <div className="flex items-center gap-[4px] xl:gap-[8px] w-auto">

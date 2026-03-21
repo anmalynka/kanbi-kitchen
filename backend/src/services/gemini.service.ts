@@ -2,13 +2,19 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 import path from 'path';
 
-// Load env vars from both local and root (for various dev setups)
-dotenv.config();
-dotenv.config({ path: path.join(process.cwd(), '.env') });
-dotenv.config({ path: path.join(process.cwd(), '../.env') });
+// Load env vars with override to ensure .env values win over shell environment
+dotenv.config({ override: true });
+dotenv.config({ path: path.join(process.cwd(), '.env'), override: true });
+dotenv.config({ path: path.join(process.cwd(), '../.env'), override: true });
 
 const getGenAI = () => {
   const apiKey = process.env.GEMINI_API_KEY;
+  // Log the first few characters to verify it's the correct key without exposing it
+  if (apiKey) {
+    console.log(`Using API Key starting with: ${apiKey.substring(0, 8)}...`);
+  } else {
+    console.error('No GEMINI_API_KEY found in process.env');
+  }
   if (!apiKey) return null;
   return new GoogleGenerativeAI(apiKey);
 };
@@ -21,7 +27,7 @@ export const estimateNutritionGemini = async (recipeName: string, ingredients: s
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `Estimate the total nutritional values (calories, protein, carbs, fat) for one serving based STRICTLY on this list of ingredients and their quantities: ${ingredients.join(', ')}. 
 

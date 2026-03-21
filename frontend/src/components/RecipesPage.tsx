@@ -652,7 +652,7 @@ const RecipesPage: React.FC<RecipesPageProps> = ({ recipes, onAddRecipe, onUpdat
 
         {/* Grid Section - Masonry Layout */}
         {filteredRecipes.length > 0 ? (
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 min-[1440px]:columns-5 min-[1920px]:columns-8 gap-3 xl:gap-4 space-y-3 xl:space-y-4">
+          <div className="columns-1 sm:columns-2 lg:columns-3 min-[1440px]:columns-5 min-[1920px]:columns-8 gap-3 xl:gap-4 space-y-3 xl:space-y-4">
             {filteredRecipes.map((recipe) => (
               <div key={recipe.id} className="break-inside-avoid mb-3 xl:mb-4">
                 <RecipeCardDetailed 
