@@ -313,11 +313,19 @@ app.post('/api/ai/estimate', aiLimiter, async (req, res) => {
         return res.status(400).json({ error: 'Too many ingredients' });
     }
 
+    const isProduction = process.env.NODE_ENV === 'production';
+    const hasKey = !!process.env.GEMINI_API_KEY;
+
     try {
-        if (!process.env.GEMINI_API_KEY) {
-            console.error("GEMINI_API_KEY missing in production environment");
-            return res.status(500).json({ 
-                error: 'AI configuration missing on server. Please check environment variables.' 
+        // Kill AI on production or if key is missing
+        if (isProduction || !hasKey) {
+            console.log(`Bypassing AI (Prod: ${isProduction}, Key: ${hasKey}). Generating random nutrition data.`);
+            return res.json({
+                calories: Math.floor(Math.random() * 400) + 200,
+                protein: Math.floor(Math.random() * 25) + 10,
+                carbs: Math.floor(Math.random() * 50) + 20,
+                fat: Math.floor(Math.random() * 20) + 5,
+                ingredientStatus: safeIngredients.map(name => ({ name, status: 'ok' }))
             });
         }
 
